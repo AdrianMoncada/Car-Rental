@@ -1,9 +1,7 @@
 package com.example.demo.API.persistence.entities;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.*;
 
 @Setter
