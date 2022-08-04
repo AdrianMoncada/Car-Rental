@@ -6,8 +6,8 @@ const Header = () =>{
   
       <Headers>
           <ContainerIcon>
-             <Icon src= "./assets/logo1.png" alt='digitlB'/>
-             <p>modificar eslogan</p>
+             <Icon src="/logo1.png" alt='digitlB'/>
+             <p>modificar </p>
           </ContainerIcon>
         
           <ContainerBtn>
