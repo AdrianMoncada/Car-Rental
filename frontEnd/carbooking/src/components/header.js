@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Headers,ButtonSign,ContainerBtn,Icon,ContainerIcon } from '../pages/home/home.styles'
 
 const Header = () =>{
@@ -7,7 +6,7 @@ const Header = () =>{
   
       <Headers>
           <ContainerIcon>
-             <Icon src="/logo1.png" alt='digitlB'/>
+             <Icon src= "./assets/logo1.png" alt='digitlB'/>
              <p>modificar eslogan</p>
           </ContainerIcon>
         
