@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/classes")
 public class ClassController {
@@ -14,9 +16,9 @@ public class ClassController {
     ClassService service;
 
     //Get
-    @GetMapping("/{id}")
-    public Class getClass(@PathVariable Long id) {
-        return service.getById(id);
+    @GetMapping()
+    public List<Class> getAll() {
+        return service.getAll();
     }
 
 
