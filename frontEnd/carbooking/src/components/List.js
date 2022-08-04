@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import data from './data.json';
+import data from '../resources/data.json';
 import {Conteiner} from "./Styles"
 
 
