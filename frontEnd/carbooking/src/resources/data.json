@@ -1,0 +1,92 @@
+[
+    {
+     "id": "1", 
+     "product":{
+        "img": "https://www.carmaxrentacar.com/guayaquil/wp-content/uploads/2018/03/aveo-emotion-carmax.jpg",
+        "category": "Económico",
+        "title": "Aveo Emotion",
+        "location": "Barranquilla",
+        "description": "String"		
+        } 
+    }, 
+    {
+     "id": "2", 
+     "product":{
+        "img": "https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_1280.jpg",
+        "category": "Lujo",
+        "title": "String",
+        "location": "Bucaramanga",
+        "description": "String"		
+        } 
+    }, 
+    {
+     "id": "3", 
+     "product":{
+        "img": "link",
+        "category": "String",
+        "title": "String",
+        "location": "Cali",
+        "description": "String"		
+        } 
+    }, 
+    {
+     "id": "4", 
+     "product":{
+        "img": "link",
+        "category": "String",
+        "title": "String",
+        "location": "Bogotá",
+        "description": "String"		
+        } 
+    }, 
+    {
+     "id": "5", 
+     "product":{
+        "img": "link",
+        "category": "String",
+        "title": "String",
+        "location": "Medellín",
+        "description": "String"		
+        } 
+    },
+    {
+     "id": "6", 
+     "product":{
+        "img": "https://static7.depositphotos.com/1062035/748/i/450/depositphotos_7486397-stock-photo-compact-hatchback.jpg",
+        "category": "String",
+        "title": "String",
+        "location": "Barranquilla",
+        "description": "String"		
+        }  
+    }, 
+    {
+     "id": "7", 
+     "product":{
+        "img": "https://st2.depositphotos.com/3591429/8171/i/950/depositphotos_81719116-stock-photo-design-elegance-automobile.jpg",
+        "category": "String",
+        "title": "String",
+        "location": "Tunja",
+        "description": "String"		
+        } 
+    }, 
+    {
+     "id": "8", 
+     "product":{
+        "img": "link",
+        "category": "String",
+        "title": "String",
+        "location": "Buenaventura",
+        "description": "String"		
+        } 
+    },
+    {
+        "id": "9", 
+        "product":{
+           "img": "https://st2.depositphotos.com/3591429/8171/i/950/depositphotos_81719116-stock-photo-design-elegance-automobile.jpg",
+           "category": "String",
+           "title": "String",
+           "location": "Tunja",
+           "description": "String"		
+           } 
+       }
+]
