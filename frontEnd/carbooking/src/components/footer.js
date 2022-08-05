@@ -1,5 +1,7 @@
 import { Footers,SocialMediaContainer,FaceBook,Instagram,LinedIn,Twetter,AuthRigth } from '../pages/home/home.styles';
 import React from 'react';
+import { FaFacebook, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
+
 const Footer = () =>{
     return (
          <Footers>
@@ -8,10 +10,10 @@ const Footer = () =>{
              </AuthRigth>
             
              <SocialMediaContainer>
-                <FaceBook src='/facebook.png' alt='logo facebook'/>
-                <LinedIn src='/linkedin.png' alt='logo linkedin'/>
-                <Twetter src='/tweet.png' alt='logo tweeter'/>
-                <Instagram src='/instagram.png' alt='logo instagram'/> 
+                <FaFacebook />
+                <FaLinkedinIn />
+                <FaTwitter />
+                <FaInstagram />
              </SocialMediaContainer>
             
          </Footers>
