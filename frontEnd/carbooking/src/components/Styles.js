@@ -10,6 +10,7 @@ export const Cards = styled.div`
    box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
    border-radius: 30px;
    width: 100%;
+   background-color: #fff;
 `
 export const ImageContainer = styled.div`
      width: 50%;
@@ -17,7 +18,7 @@ export const ImageContainer = styled.div`
 `
 
 export const Image = styled.img`
-     width: 95%;
+     width: 100%;
      height: 100%;
      border-radius: 10px;
 `
@@ -52,5 +53,5 @@ export const Information = styled.article`
      flex-direction: column;
      align-items: flex-start;
      width: 60%;
-     margin: 10px;
+     margin: 15px;
 `
