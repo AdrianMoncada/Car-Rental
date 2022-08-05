@@ -135,15 +135,5 @@ export const SocialMediaContainer = styled.div`
     display: none;
   }
 `;
-export const FaceBook = styled.img`
-  height:20px;
-`;
-export const LinedIn = styled.img`
-  height:20px;
-`;
-export const  Twetter= styled.img`
-height:20px;
-`;
-export const Instagram = styled.img`
-  height:20px;
-`;
+
+

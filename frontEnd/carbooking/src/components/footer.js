@@ -1,4 +1,4 @@
-import { Footers,SocialMediaContainer,FaceBook,Instagram,LinedIn,Twetter,AuthRigth } from '../pages/home/home.styles';
+import { Footers,SocialMediaContainer,AuthRigth } from '../pages/home/home.styles';
 import React from 'react';
 import { FaFacebook, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 
