@@ -1,23 +1,58 @@
 import styled from "styled-components";
 
 export const Cards = styled.div`
-    border:5px solid blue;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 393px;
-    height: 491px; 
+    width: 710px;
+    height: 279x; 
     margin: 30px;
+    -webkit-box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
+   -moz-box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
+   box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
+   border-radius: 30px;
+   width: 100%;
 `
+export const ImageContainer = styled.div`
+     width: 50%;
+     border-radius: 10px;
+`
+
 export const Image = styled.img`
-     border: 5px solid gray;
-     width:98%;
-     height: 40%; 
+     width: 95%;
+     height: 100%;
+     border-radius: 10px;
 `
 
 export const Conteiner = styled.div`
-     border: 5px solid red;
+     border: 1px solid black;
      display: flex;
      justify-content: space-around;
      flex-wrap: wrap; 
+`
+export const ButtonContainer = styled.div` 
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+`
+export const Button = styled.button`
+     width: 40%;
+     cursor: pointer;
+     padding: 0.7rem 2.3rem;
+     border-radius: 0.2rem;
+     background-color: #fff;
+     border: 2px solid #f0572d;
+     color:  #f0572d;
+     font-size: 1rem;
+     font-weight: 600;
+     position: relative;
+     right: 10px;
+
+` 
+
+export const Information = styled.article`
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     
+     width: 60%;
+     margin: 10px;
 `
