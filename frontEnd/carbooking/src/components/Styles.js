@@ -23,7 +23,6 @@ export const Image = styled.img`
 `
 
 export const Conteiner = styled.div`
-     border: 1px solid black;
      display: flex;
      justify-content: space-around;
      flex-wrap: wrap; 
@@ -52,7 +51,6 @@ export const Information = styled.article`
      display: flex;
      flex-direction: column;
      align-items: flex-start;
-     
      width: 60%;
      margin: 10px;
 `
