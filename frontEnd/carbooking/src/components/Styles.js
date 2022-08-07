@@ -11,6 +11,7 @@ export const Cards = styled.div`
    border-radius: 30px;
    width: 100%;
    background-color: #fff;
+   text-align:left;
 `
 export const ImageContainer = styled.div`
      width: 50%;
