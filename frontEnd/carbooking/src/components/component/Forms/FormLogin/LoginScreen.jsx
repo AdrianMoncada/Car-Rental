@@ -1,5 +1,21 @@
+/*import React, { useState, useContext, useEffect } from "react";
+import {
+  Formulario,
+  /*Label,*/ //ContenedorBotonCentrado,
+  /*Boton,
+  MensajeError,
+} from "../../../elementStyle/Form";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import ComponenteInput from "../../ComponenteInput/ComponenteInput";
+import { useNavigate } from "react-router-dom";
+import UserProvider from "../../../context/UserContext";
+import { loginApi } from "../RegisterLoginHelper";*/
 
-const FormLogin = () => {
+import React from 'react';
+
+function LoginScreens() {
   const { user, loginLogoutEvent } = useContext(UserProvider);
   const [email, cambiarCorreo] = useState({ campo: "", valido: null });
   const [password, cambiarPassword] = useState({ campo: "", valido: null });
@@ -8,41 +24,43 @@ const FormLogin = () => {
   const navigate = useNavigate();
 
   const expresiones = {
-    password: /^.{6,15}$/, // 6 a 15 digitos.
+    password: /^.{6,15}$/,
     email: /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/, //coreo electrónico válido
   };
 
-  useEffect(()=>{
-    cambiarFormularioValido(true)
-  },[email.campo,password.campo])
+  useEffect(() => {
+    cambiarFormularioValido(true);
+  }, [email.campo, password.campo]);
 
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if(email.valido && password.valido){
-        const respuestaPost = await loginApi({
-          username: email.campo,
-          password: password.campo,
+    if (email.valido && password.valido) {
+      const respuestaPost = await loginApi({
+        username: email.campo,
+        password: password.campo,
+      });
+      if (respuestaPost) {
+        loginLogoutEvent({
+          nombre: respuestaPost.nombre,
+          apellido: respuestaPost.apellido,
+          mail: respuestaPost.emailUsuario,
+          id: respuestaPost.id && respuestaPost.id,
+          auth: true,
+          redirect: false,
+          rol: respuestaPost.rol,
+          ciudad: respuestaPost.ciudad ? respuestaPost.ciudad : ""
         });
-        if (respuestaPost) {
-          loginLogoutEvent({
-            nombre: respuestaPost.nombre,
-            apellido: respuestaPost.apellido,
-            mail: respuestaPost.emailUsuario,
-            id: respuestaPost.id&&respuestaPost.id,
-            auth: true,
-            redirect: false,
-            rol: respuestaPost.rol,
-            ciudad: respuestaPost.ciudad ? respuestaPost.ciudad : ""});
-            
-          navigate("/")}else{
-          
-            cambiarFormularioValido(false)
+
+        navigate("/");
+      } else {
+
+        cambiarFormularioValido(false);
       }
-      
-        }
-    console.log("formvalid: ",formularioValido)
+
+    }
+    console.log("formvalid: ", formularioValido);
   };
 
   return (
@@ -66,8 +84,7 @@ const FormLogin = () => {
             placeholder="Correo electrónico"
             name="email"
             parrafoError="Correo inválido"
-            expresionRegular={expresiones.email}
-          />
+            expresionRegular={expresiones.email} />
           <ComponenteInput
             estado={password}
             cambiarEstado={cambiarPassword}
@@ -76,13 +93,12 @@ const FormLogin = () => {
             placeholder="Escriba su contraseña"
             name="password1"
             parrafoError="La contraseña debe tener minimo 6 caracteres"
-            expresionRegular={expresiones.password}
-          />
-          { formularioValido === false && (
+            expresionRegular={expresiones.password} />
+          {formularioValido === false && (
             <MensajeError>
               <p>
                 <FontAwesomeIcon icon={faExclamationTriangle} />
-                Por favor vuelva a intentarlo, sus credenciales son inválidas 
+                Por favor vuelva a intentarlo, sus credenciales son inválidas
               </p>
             </MensajeError>
           )}
@@ -99,6 +115,6 @@ const FormLogin = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FormLogin;
