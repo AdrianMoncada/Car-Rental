@@ -14,7 +14,7 @@ export const Cards = styled.div`
    text-align: justify;
 
 
-   @media (max-width: 624px) {
+   @media (max-width: 800px) {
      display: flex;
      flex-direction: column;
     }
@@ -29,7 +29,7 @@ export const HeartContainer = styled.div`
 
 
 
-     @media (max-width: 624px) {
+     @media (max-width: 800px) {
           display: flex;
           height: 100%;  
           width: 100%; 
@@ -39,7 +39,7 @@ export const HeartContainer = styled.div`
 export const ImageContainer = styled.div`
      width: 50%;
      border-radius: 10px;
-     @media (max-width: 624px) {
+     @media (max-width: 800px) {
           display: flex;
           height: 100%;  
           width: 100%; 
@@ -84,9 +84,9 @@ export const Information = styled.article`
      align-items: flex-start;
      width: 60%;
      margin: 15px;
-     @media (max-width: 624px) {
+     @media (max-width: 800px) {
           display: flex;
-          height: 90%;  
-          width: 90%; 
+          height: 98%;  
+          width: 95%; 
          }
 `
