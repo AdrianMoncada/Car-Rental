@@ -3,13 +3,19 @@ import styled from "styled-components";
 //contenedor de todas las cartas
 export const CardsContainer = styled.div`
   display: flex;
+  flex-direction: row;
   background:white;
   width:100% ;
-  height:280px;
+  height:380px;
   justify-content: space-between;
   place-content: center;
   margin-top: -20px;
   padding-top : 15px;
+  @media (max-width: 667px) {
+    flex-direction: column;
+    height:2000px;
+    
+    }
 
 `;
 
@@ -19,16 +25,30 @@ export const ProductCard = styled.div`
  width: 250px;
  height:270px;
  margin-right:20px;
+ margin-top:70px;
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
 background:white;
+@media (max-width: 667px) {
+  margin-bottom:40px;
+  margin-top:20px;
+  margin-left:30px;
+  width: 500px;
+  height:400px;
+
+  }
 `;
 
 export const ProductCardImg = styled.img`
   width: 300px;
   height: 180px;
   object-fit: cover;
+  @media (max-width: 667px) {
+    width: 500px;
+    height: 300px;
+  
+    }
 
 `;
 
@@ -39,6 +59,24 @@ export const Description = styled.div`
 ;
 
 `;
+
+export const Title = styled.div`
+  display:none;
+  width: 800px;
+  height:60px;
+  
+
+  @media (max-width: 667px) {
+    display: flex;
+    width: 380px;
+    height:70px;
+    margin-top: 1px;
+    padding-left:8px;
+    margin-left:20px;
+
+    }
+`;
+
 export const NameCategory = styled.div`
 font-weight: bold;
 font-size: medium;
