@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Getter
 @ToString
 @Entity
-@Table(name = "classes")
-public class Class {
+@Table(name = "categories")
+public class Category {
     @Id
-    @SequenceGenerator(name = "class_sequence", sequenceName = "class_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "class_sequence")
+    @SequenceGenerator(name = "category_sequence", sequenceName = "category_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_sequence")
     private Long id;
 
     @Column
@@ -26,11 +26,11 @@ public class Class {
 
 
     //Constructor vacio
-    public Class(){
+    public Category(){
     }
 
     //CONSTRUCTOR
-    public Class(String title, String description, String urlImage) {
+    public Category(String title, String description, String urlImage) {
         this.title = title;
         this.description = description;
         this.urlImage = urlImage;
