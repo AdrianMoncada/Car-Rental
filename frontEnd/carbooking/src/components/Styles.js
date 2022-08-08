@@ -25,7 +25,7 @@ export const HeartContainer = styled.div`
      height: 30px;
      display: flex;
      justify-content: flex-end;
-     color: #f0572d;
+     color: red;
 
 
 
@@ -53,7 +53,8 @@ export const Image = styled.img`
 `
 
 export const IconContainer = styled.div`
-     color: #f0572d;
+         color: #f0572d;
+
 `
 
 export const Conteiner = styled.div`
