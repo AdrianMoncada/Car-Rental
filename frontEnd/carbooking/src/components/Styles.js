@@ -22,9 +22,12 @@ export const Cards = styled.div`
 
 export const HeartContainer = styled.div`
      width: 100%;
+     height: 30px;
      display: flex;
      justify-content: flex-end;
      color: red;
+
+
 
      @media (max-width: 624px) {
           display: flex;

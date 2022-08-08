@@ -10,7 +10,7 @@ export default function Card({title, img, category, location, description}) {
                 <Image src={img} alt="Img"/>
             </ImageContainer>
             <Information>
-                 <HeartContainer> <FaHeart/> </HeartContainer>
+                 <HeartContainer> <FaHeart style= {{fontSize: '30px'}}/> </HeartContainer>
                 <h3>{category}</h3>
                 <h2>{title}</h2>
                 <div> <FaCar /> <FaDesktop/> <FaWifi/> </div>
