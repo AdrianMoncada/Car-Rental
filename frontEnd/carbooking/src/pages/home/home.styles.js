@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background: #C4C4C4;
+  background: #e9ebee;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -49,7 +49,7 @@ export const ContainerIcon2 = styled.div`
   margin-left:40px;
   margin-top 10px;
    
-  @media (max-width: 624px) {
+  @media (max-width: 667px) {
   display: flex;
   }
 `;
@@ -73,7 +73,7 @@ export const ContainerBtn = styled.div`
   margin-top:30px;
   padding-right:40px;
   width:400px;
-  @media (max-width: 624px) {
+  @media (max-width: 667px) {
   display: none;
   }
 `;
@@ -95,7 +95,7 @@ export const ContainerMenu = styled.div`
   padding-left:200px;
   width:50px;
 
-  @media (max-width: 624px) {
+  @media (max-width: 667px) {
   display: flex;
   }
 `;
@@ -119,7 +119,7 @@ export const Footers = styled.footer `
 export const AuthRigth = styled.div`
   display:flex;
 
-  @media (max-width: 624px) {
+  @media (max-width: 667px) {
     display: flex-start;
    }
 `;
@@ -131,7 +131,7 @@ export const SocialMediaContainer = styled.div`
   height: 58px;
   padding-right:40px;
 
-  @media (max-width: 624px) {
+  @media (max-width: 667px) {
     display: none;
   }
 `;
