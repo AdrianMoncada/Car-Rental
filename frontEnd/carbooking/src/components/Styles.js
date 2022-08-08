@@ -12,10 +12,35 @@ export const Cards = styled.div`
    width: 100%;
    background-color: #fff;
    text-align: justify;
+
+
+   @media (max-width: 624px) {
+     display: flex;
+     flex-direction: column;
+    }
 `
+
+export const HeartContainer = styled.div`
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     color: red;
+
+     @media (max-width: 624px) {
+          display: flex;
+          height: 100%;  
+          width: 100%; 
+         }
+`
+
 export const ImageContainer = styled.div`
      width: 50%;
      border-radius: 10px;
+     @media (max-width: 624px) {
+          display: flex;
+          height: 100%;  
+          width: 100%; 
+         }
 `
 
 export const Image = styled.img`
@@ -33,6 +58,7 @@ export const ButtonContainer = styled.div`
      width: 100%;
      display: flex;
      justify-content: flex-end;
+
 `
 export const Button = styled.button`
      width: 40%;
@@ -55,4 +81,9 @@ export const Information = styled.article`
      align-items: flex-start;
      width: 60%;
      margin: 15px;
+     @media (max-width: 624px) {
+          display: flex;
+          height: 90%;  
+          width: 90%; 
+         }
 `
