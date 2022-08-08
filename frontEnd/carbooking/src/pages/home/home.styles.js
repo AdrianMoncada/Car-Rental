@@ -86,7 +86,7 @@ export const ButtonSign = styled.button`
   color:#F0572D;
   border: 1px solid #F0572D;
   margin-right:10px;
-  
+  cursor: pointer;
 `;
 export const ContainerMenu = styled.div`
   display: none;
