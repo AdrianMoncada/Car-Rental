@@ -1,10 +1,20 @@
 import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 import Home from './pages/home/home';
-//import vehiculosStack from "carbooking/src/components/Vehiculos/vehiculosStack"
+import Login from './pages/Login/Login';
 
 function App() {
   return (
-    <Home/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

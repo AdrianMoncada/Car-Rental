@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Headers,ButtonSign,ContainerBtn,
         Icon,ContainerIcon,ContainerMenu,
-        Menu,Icon2,ContainerIcon2 } from '../pages/home/home.styles'
+        Menu,Icon2,ContainerIcon2 } from '../pages/home/home.styles';
+//import {LoginScreen } from 'component/Forms/FormLogin/LoginScreen.jsx'
 
-const Header = () =>{
+const Header = () => {
     return (
-  
       <Headers>
           <ContainerIcon>
              <Icon src="/logo1.png" alt='digitlB'/>
@@ -21,8 +22,10 @@ const Header = () =>{
           </ContainerMenu>
         
           <ContainerBtn>
-             <ButtonSign>Crear cuenta</ButtonSign>
-             <ButtonSign>Iniciar sesion</ButtonSign>
+               <ButtonSign>Crear cuenta</ButtonSign>
+               <Link to="/login">
+                  <ButtonSign>Iniciar sesion</ButtonSign>
+               </Link>
           </ContainerBtn>
       </Headers>
 
