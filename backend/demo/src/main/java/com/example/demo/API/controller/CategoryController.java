@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,11 +15,10 @@ public class CategoryController {
     CategoryService service;
 
     //Get
-    @GetMapping()
-    public List<Category> getAll() {
-        return service.getAll();
+    @GetMapping
+    public ResponseEntity<?> getAllCategories() {
+        return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
     }
-
 
     //Post
     @PostMapping
