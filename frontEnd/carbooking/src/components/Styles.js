@@ -80,7 +80,7 @@ export const Button = styled.button`
      font-weight: 600;
      position: relative;
      right: 10px;
-
+     z-index: 0;
 ` 
 
 export const Information = styled.article`

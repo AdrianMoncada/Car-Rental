@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Headers = styled.header`
+    width: 100%;
+    position: fixed;
+`
 
 export const Form = styled.form`
     display: flex;
@@ -10,7 +14,7 @@ export const Form = styled.form`
 
     @media (min-width: 600px) {
         text-align: justify;
-        height: 700px;
+        height: 900px;
     }
 
 `
@@ -48,6 +52,14 @@ export const UltimoParrafo = styled.p`
     text-align: center;
 }
 `
+
+export const Footers = styled.footer`
+width: 100%;
+position: fixed;
+   left: 0;
+   bottom: 0;
+`
+
 export const ErrorMessage = styled.h3`
     color: red;
 `

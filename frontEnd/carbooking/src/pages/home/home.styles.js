@@ -20,6 +20,9 @@ export const Headers = styled.header`
   background: #FFFFFF;
   justify-content: space-between;
   border-bottom: 1px solid #c7c7c7;
+  position: sticky;   
+  top: 0; 
+  z-index: 1;
 `;
 
 export const ContainerIcon = styled.div`
