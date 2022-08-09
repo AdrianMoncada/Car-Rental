@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100%;
+
   min-height: 100vh;
   background: #e9ebee;
   display: flex;
@@ -17,6 +18,8 @@ export const Headers = styled.header`
   display: flex;
   width: 100%;
   height: 80px;
+  position: sticky;
+  top: 0px;
   background: #FFFFFF;
   justify-content: space-between;
   border-bottom: 1px solid #c7c7c7;
@@ -107,13 +110,13 @@ export const Menu = styled.img`
 export const Footers = styled.footer `
   display:flex;
   justify-content: space-between;
+  position: sticky;
+  bottom: 0px;
   background-color: #F0572D;
   color:white;
   padding: 24px;
   width: 100%;
   height: 58px;
-  margin-top:100%;
- 
 `;
 
 export const AuthRigth = styled.div`
