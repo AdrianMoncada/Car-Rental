@@ -19,14 +19,13 @@ public class CategoryService {
         return repository.findAll();
     }
 
-    public Optional<Category> getById(Long id){
-            Category aCategory = repository.findById(id).get();
-            return Optional.of(aCategory);
-    }
+    public Optional<Category> findById(Long id) {
+        return repository.findById(id);
+    };
 
     public String delete(Long id) {
-        repository.deleteById(id);
-        return "Category with id: "+ id + " was deleted. ";
+            repository.deleteById(id);
+            return "ID " + id + " has been deleted.";
     }
 
     public Optional<Category> update(Category c, Long id) {
@@ -37,7 +36,7 @@ public class CategoryService {
             modifiedC.setUrlImage(c.getUrlImage());
 
             repository.save(modifiedC);
-            return getById(id);
+            return findById(id);
         } else {
             return null;
         }
