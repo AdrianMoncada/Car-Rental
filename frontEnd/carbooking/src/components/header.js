@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 import { Headers,ButtonSign,ContainerBtn,
         Icon,ContainerIcon,ContainerMenu,
         Menu,Icon2,ContainerIcon2 } from '../pages/home/home.styles';
-//import {LoginScreen } from 'component/Forms/FormLogin/LoginScreen.jsx'
+
 
 const Header = () => {
+   const navigate = useNavigate();
     return (
       <Headers>
           <ContainerIcon>
              <Icon src="/logo1.png" alt='digitlB'/>
-            
              <p>Tu camino, tus reglas </p>
           </ContainerIcon>
           <ContainerIcon2>
@@ -22,10 +22,9 @@ const Header = () => {
           </ContainerMenu>
         
           <ContainerBtn>
-               <ButtonSign>Crear cuenta</ButtonSign>
-               <Link to="/login">
-                  <ButtonSign>Iniciar sesion</ButtonSign>
-               </Link>
+               <ButtonSign onClick={() => navigate("signup")}>Crear cuenta</ButtonSign>
+               <ButtonSign onClick={() => navigate("signin")}>Iniciar sesion</ButtonSign>
+              
           </ContainerBtn>
       </Headers>
 
