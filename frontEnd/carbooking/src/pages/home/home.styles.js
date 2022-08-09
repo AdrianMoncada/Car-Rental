@@ -112,7 +112,6 @@ export const Footers = styled.footer `
   padding: 24px;
   width: 100%;
   height: 58px;
-  margin-top:100%;
  
 `;
 

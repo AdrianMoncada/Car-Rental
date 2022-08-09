@@ -47,6 +47,7 @@ export const UltimoParrafo = styled.p`
     width: 30%;
     text-align: center;
 }
-    
-
+`
+export const ErrorMessage = styled.h3`
+    color: red;
 `
