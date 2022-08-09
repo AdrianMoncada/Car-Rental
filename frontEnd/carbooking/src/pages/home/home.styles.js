@@ -23,6 +23,9 @@ export const Headers = styled.header`
   background: #FFFFFF;
   justify-content: space-between;
   border-bottom: 1px solid #c7c7c7;
+  position: sticky;   
+  top: 0; 
+  z-index: 1;
 `;
 
 export const ContainerIcon = styled.div`
@@ -89,7 +92,7 @@ export const ButtonSign = styled.button`
   color:#F0572D;
   border: 1px solid #F0572D;
   margin-right:10px;
-  
+  cursor: pointer;
 `;
 export const ContainerMenu = styled.div`
   display: none;
@@ -117,6 +120,7 @@ export const Footers = styled.footer `
   padding: 24px;
   width: 100%;
   height: 58px;
+ 
 `;
 
 export const AuthRigth = styled.div`

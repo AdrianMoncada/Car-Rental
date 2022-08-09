@@ -29,17 +29,20 @@ public class CategoryController {
     //Update
     @PutMapping("/{id}")
     public ResponseEntity<?> updateCategory(@RequestBody Category aCategory, @PathVariable Long id){
-        Optional<Category> OCategory = service.getById(id);
-
-        if(OCategory.isPresent()){
-            return ResponseEntity.ok(service.update(aCategory, id));
+        Optional<Category> optionalCategory= service.findById(id);
+        if(!optionalCategory.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Category found with id: " + id);
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.status(HttpStatus.OK).body(service.update(aCategory, id));
     }
 
     //Delete
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCategory(@PathVariable Long id){
+        Optional<Category> optionalCategory= service.findById(id);
+        if(!optionalCategory.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Category found with id: " + id);
+        }
         return ResponseEntity.status(HttpStatus.OK).body(service.delete(id));
     }
 
