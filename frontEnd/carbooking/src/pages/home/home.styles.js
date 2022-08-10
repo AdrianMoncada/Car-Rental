@@ -24,7 +24,6 @@ export const Headers = styled.header`
   background: #212F3C;
   opacity: 0.96;
   justify-content: space-between;
-  border-bottom: 1px solid #c7c7c7;
   position: sticky;   
   top: 0; 
   z-index: 1;

@@ -4,7 +4,7 @@
         "product": {
             "title": "Economicos",
             "image": "https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?cs=srgb&dl=pexels-mike-b-1007410.jpg&fm=jpg"
-        },
+        }, 
         "stock": 55
     },
     {
@@ -24,7 +24,7 @@
         "stock": 12
     },
     {
-        "id": "3",
+        "id": "4",
         "product": {
             "title": "Minivan",
             "image": "https://images.pexels.com/photos/11139392/pexels-photo-11139392.jpeg?cs=srgb&dl=pexels-hasan-gulec-11139392.jpg&fm=jpg"

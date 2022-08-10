@@ -5,12 +5,13 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
   background-image: url("https://www.marriott.com/content/dam/mcom-loyalty/redeem/place-image-here-4@2x.jpg");
+  
   width:100% ;
   height:500px;
   justify-content: space-between;
   place-content: center;
   margin-top: -20px;
-  padding-top : 15px;
+  padding-top : 14px;
   @media (max-width: 667px) {
     flex-direction: column;
     height:2000px;
