@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  background:white;
+  background-image: url("https://www.marriott.com/content/dam/mcom-loyalty/redeem/place-image-here-4@2x.jpg");
   width:100% ;
-  height:380px;
+  height:500px;
   justify-content: space-between;
   place-content: center;
   margin-top: -20px;
@@ -24,12 +24,15 @@ export const CardsContainer = styled.div`
 export const ProductCard = styled.div`
  width: 250px;
  height:270px;
+ background-color:hsla(0,0%,100%,.3);
  margin-right:20px;
  margin-top:70px;
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
-background:white;
+ :hover{
+  webkit-transform:scale(1.2);transform:scale(1.2);
+ }
 @media (max-width: 667px) {
   margin-bottom:40px;
   margin-top:20px;
@@ -44,6 +47,7 @@ export const ProductCardImg = styled.img`
   width: 300px;
   height: 180px;
   object-fit: cover;
+ 
   @media (max-width: 667px) {
     width: 500px;
     height: 300px;
@@ -69,6 +73,8 @@ export const Title = styled.div`
   @media (max-width: 667px) {
     display: flex;
     width: 380px;
+    font-size:small;
+    color:white;
     height:70px;
     margin-top: 1px;
     padding-left:8px;
@@ -88,7 +94,7 @@ justify-content: flex-start
 export const CantForRent = styled.div`
 height: 32px;
 color: #31363F;
-opacity: 0.6;
+opacity: 0.9;
 margin-left:5px;
 display:flex;
 justify-content: flex-start

@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100%;
 
   min-height: 100vh;
-  background: #e9ebee;
+  background: #808B96;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -17,10 +17,12 @@ export const Container = styled.div`
 export const Headers = styled.header`
   display: flex;
   width: 100%;
-  height: 80px;
+  height: 100px;
   position: sticky;
   top: 0px;
-  background: #FFFFFF;
+  color:white;
+  background: #212F3C;
+  opacity: 0.96;
   justify-content: space-between;
   border-bottom: 1px solid #c7c7c7;
   position: sticky;   
@@ -31,9 +33,10 @@ export const Headers = styled.header`
 export const ContainerIcon = styled.div`
   display: flex;
   justify-content:space-between;
+
   margin-top:30px;
   padding-right:20px;
-  width:230px;
+  width:252px;
   margin-left:40px;
   margin-top 10px;
 
@@ -43,7 +46,8 @@ export const ContainerIcon = styled.div`
 `;
 
 export const Icon = styled.img`
-  height:50px;
+  height:70px;
+ 
 `;
 
 export const ContainerIcon2 = styled.div`
@@ -61,7 +65,7 @@ export const ContainerIcon2 = styled.div`
 `;
 
 export const Icon2 = styled.img`
-  height:50px;
+  height:70px;
 `;
 
 export const text = styled.p`
@@ -113,9 +117,9 @@ export const Menu = styled.img`
 export const Footers = styled.footer `
   display:flex;
   justify-content: space-between;
-  position: sticky;
   bottom: 0px;
-  background-color: #F0572D;
+  background: #212F3C;
+  opacity: 0.96;
   color:white;
   padding: 24px;
   width: 100%;

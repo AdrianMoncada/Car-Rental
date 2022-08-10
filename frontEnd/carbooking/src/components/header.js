@@ -12,11 +12,11 @@ const Header = () => {
    return (
       <Headers>
          <ContainerIcon>
-            <Link to="/home"><Icon src="/logo1.png" alt='digitlB' /></Link>
-            <p>Tu camino, tus reglas </p>
+            <Link to="/home"><Icon src="/per2.png" alt='digitlB' /></Link>
+            <p>Tu camino, tus reglas</p>
          </ContainerIcon>
          <ContainerIcon2>
-            <Link to="/home"><Icon2 src="/logo 5.png" alt='digitlB' /></Link>
+            <Link to="/home"><Icon2 src="/per2.png" alt='digitlB' /></Link>
 
          </ContainerIcon2>
          <ContainerMenu>
