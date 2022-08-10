@@ -6,16 +6,18 @@ export const CardsContainer = styled.div`
   flex-direction: row;
   background-image: url("https://www.marriott.com/content/dam/mcom-loyalty/redeem/place-image-here-4@2x.jpg");
   
-  width:100% ;
+  width:100%;
   height:500px;
   justify-content: space-between;
   place-content: center;
   margin-top: -20px;
   padding-top : 14px;
+
   @media (max-width: 667px) {
     flex-direction: column;
-    height:2000px;
-    
+    height: 100%;
+    justify-content: center;
+    align-items: center;
     }
 
 `;
@@ -31,6 +33,7 @@ export const ProductCard = styled.div`
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
+ cursor:pointer;
  :hover{
   webkit-transform:scale(1.2);transform:scale(1.2);
  }
@@ -38,9 +41,8 @@ export const ProductCard = styled.div`
   margin-bottom:40px;
   margin-top:20px;
   margin-left:30px;
-  width: 500px;
-  height:400px;
-
+  width: 90%;
+  height: 100%;
   }
 `;
 
@@ -50,7 +52,7 @@ export const ProductCardImg = styled.img`
   object-fit: cover;
  
   @media (max-width: 667px) {
-    width: 500px;
+    width: 100%;
     height: 300px;
   
     }
