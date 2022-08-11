@@ -30,28 +30,36 @@ const Header = ({ mostrarModal, usuario }) => {
       <ContainerMenu>
         <Menu src="/menu.png" alt="digitlB" />
       </ContainerMenu>
-
-const Header = () => {
-   const navigate = useNavigate();
-   return (
-      <Headers>
-         <ContainerIcon>
-            <Link to="/home"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-            <p>Tu camino, tus reglas</p>
-         </ContainerIcon>
-        
-         <ContainerMenu>
-         <Menum/>
-         </ContainerMenu>
-
-         <ContainerBtn>
+      <ContainerBtn>
             <ButtonSign onClick={() => navigate("signup")}>Crear cuenta</ButtonSign>
             <ButtonSign onClick={() => navigate("signin")}>Iniciar sesion</ButtonSign>
 
          </ContainerBtn>
       </Headers>
-
-   )
+  )
 }
+
+// const Header = () => {
+// const navigate = useNavigate();
+//    return (
+//       <Headers>
+//          <ContainerIcon>
+//             <Link to="/home"><Icon src="/per2.png" alt='morgamlogo' /></Link>
+//             <p>Tu camino, tus reglas</p>
+//          </ContainerIcon>
+        
+//          <ContainerMenu>
+//          <Menu/>
+//          </ContainerMenu>
+
+//          <ContainerBtn>
+//             <ButtonSign onClick={() => navigate("signup")}>Crear cuenta</ButtonSign>
+//             <ButtonSign onClick={() => navigate("signin")}>Iniciar sesion</ButtonSign>
+
+//          </ContainerBtn>
+//       </Headers>
+
+//    )
+// }
 
 export default Header
