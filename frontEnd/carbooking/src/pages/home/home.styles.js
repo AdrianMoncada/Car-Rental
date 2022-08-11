@@ -101,7 +101,7 @@ export const ContainerMenu = styled.div`
   display: none;
   margin-top:30px;
   padding-right:40px;
-  padding-left:200px;
+  padding-left:180px;
   width:50px;
 
   @media (max-width: 667px) {
