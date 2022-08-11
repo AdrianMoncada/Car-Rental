@@ -1,10 +1,18 @@
 import React from 'react'; 
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer } from './Register.styles';
+import { Headers, Footers } from '../Login/login.styles';
 
 export default function Register (){
 
     return(
 
+
+        <body>
+            <Headers>
+                <Header/>
+            </Headers>
         <Form >
 
             <h1> Registro </h1>
@@ -52,7 +60,10 @@ export default function Register (){
             <CenteredText> ¿Ya tienes una cuenta? Entra aquí </CenteredText>
             <LastParagraph>Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y Condiciones</LastParagraph>
         </Form>
-
+            <Footers>
+                <Footer/>               
+            </Footers>
+        </body>
 
     );
 
