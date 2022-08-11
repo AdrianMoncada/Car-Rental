@@ -32,7 +32,7 @@ const Header = ({ mostrarModal, usuario }) => {
       </ContainerMenu>
 
 const Header = () => {
-   const navigate = useNavigate();
+const navigate = useNavigate();
    return (
       <Headers>
          <ContainerIcon>
