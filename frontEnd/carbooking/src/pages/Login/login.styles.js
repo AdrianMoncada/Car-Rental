@@ -10,11 +10,10 @@ export const Form = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center;     
 
     @media (min-width: 600px) {
         text-align: justify;
-        height: 900px;
     }
 
 `

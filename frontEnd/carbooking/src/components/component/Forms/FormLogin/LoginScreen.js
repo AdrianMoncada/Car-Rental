@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Button,
   ErrorMessage,
@@ -8,18 +7,11 @@ import {
   UltimoParrafo,
 } from "../../../../pages/Login/login.styles";
 
-function LoginScreens() {
+function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
   const [correo, cambiarCorreo] = useState("");
   const [password, cambiarPassword] = useState("");
   const [primerCarga, cambiarPrimerCarga] = useState(true);
   const [formularioValido, cambiarFormularioValido] = useState(false);
-  const navigate = useNavigate();
-
-  const user = {
-    nombre: "Administrador",
-    correo: "admin@carbooking.com",
-    password: "123456",
-  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -34,14 +26,17 @@ function LoginScreens() {
     } else if (password.length < 6) {
       console.log("Password menos 6 caracteres");
       formValido = false;
-    } else if (correo !== user.correo || password !== user.password) {
+    } else if (correo !== usuario.correo || password !== usuario.password) {
       console.log("Datos no coinciden");
       formValido = false;
     }
 
     if (formValido) {
-      // Guardar el nombre -> user.nombre (Usar Context o Redux)
-      navigate("/");
+      cambiarUsuario((dataUser) => ({
+        ...dataUser,
+        acceso: true,
+      }));
+      cerrarModal();
     }
 
     cambiarFormularioValido(formValido);
@@ -52,7 +47,9 @@ function LoginScreens() {
       <h1> Iniciar Sesión </h1>
 
       {!primerCarga && !formularioValido && (
-        <ErrorMessage>Por favor vuelva a intentarlo, sus credenciales son inválidas</ErrorMessage>
+        <ErrorMessage>
+          Por favor vuelva a intentarlo, sus credenciales son inválidas
+        </ErrorMessage>
       )}
 
       <h3> E-mail </h3>
@@ -74,6 +71,7 @@ function LoginScreens() {
       />
 
       <br></br>
+
       <Button type="submit"> Iniciar sesión </Button>
 
       <p> ¿No te has registrado? Entra aquí </p>
