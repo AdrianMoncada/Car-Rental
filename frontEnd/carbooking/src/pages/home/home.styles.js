@@ -125,7 +125,7 @@ export const Footers = styled.footer `
   color:white;
   padding: 24px;
   width: 100%;
-  height: 58px;
+  height: 100px;
  
 `;
 
