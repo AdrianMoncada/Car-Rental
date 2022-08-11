@@ -1,5 +1,6 @@
 import React from 'react'; 
-import Header from '../../components/header';
+import HeaderSecond from '../../components/hearderSecond';
+
 import Footer from '../../components/footer';
 import { Link} from "react-router-dom";
 import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer, TextLink } from './Register.styles';
@@ -12,7 +13,7 @@ export default function Register (){
 
         <body>
             <Headers>
-                <Header/>
+                <HeaderSecond/>
             </Headers>
         <Form >
 

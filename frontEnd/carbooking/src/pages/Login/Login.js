@@ -1,16 +1,22 @@
 import React from 'react'; 
 import LoginScreens from '../../components/component/Forms/FormLogin/LoginScreen';
-import Modal from 'react-bootstrap/Modal';
+import Footer from '../../components/footer';
 
-export default function Login ({mostrar, cerrarModal, usuario, cambiarUsuario}){
+import HeaderSecond from '../../components/hearderSecond';
+import { Headers, Footers} from './login.styles';
+
+export default function Login (){
 
     return(
-      <Modal show={mostrar} onHide={cerrarModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body><LoginScreens usuario={usuario} cambiarUsuario={cambiarUsuario} cerrarModal={cerrarModal} /></Modal.Body>
-      </Modal>
+      <body>
+        <Headers> 
+          <HeaderSecond/>
+        </Headers>
+        <LoginScreens />
+        <Footers>
+          <Footer />
+        </Footers>
+      </body>
     );
 
 }

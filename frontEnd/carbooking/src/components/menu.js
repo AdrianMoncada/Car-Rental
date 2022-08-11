@@ -9,8 +9,8 @@ const Menum = () => {
       <div>
          <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value=""/>
          <label for="abrir-cerrar">&#9776; 
-         <span class="abrir">Abrir</span>
-         <span class="cerrar">Cerrar</span>
+         <span class="abrir"></span>
+         <span class="cerrar"></span>
          </label>
          <div id="sidebar" class="sidebar">
          <ul class="menu">
