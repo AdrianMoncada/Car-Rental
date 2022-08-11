@@ -56,7 +56,7 @@ export default function Register (){
             </InputsContainer>
 
             <br></br>
-            <Button type="submit"> Iniciar sesión </Button>
+            <Button type="submit"> Registrarse </Button>
 
             <CenteredText> ¿Ya tienes una cuenta? Entra aquí </CenteredText>
             <LastParagraph>Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y Condiciones</LastParagraph>
