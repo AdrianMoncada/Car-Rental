@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Body = styled.body`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+
 export const Headers = styled.header`
     width: 100%;
     position: fixed;
@@ -11,6 +18,8 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
     text-align: center;     
+    margin-top: 150px;
+    margin-bottom: 100px;
 
     @media (min-width: 600px) {
         text-align: justify;

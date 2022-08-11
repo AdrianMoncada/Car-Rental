@@ -3,12 +3,12 @@ import LoginScreens from '../../components/component/Forms/FormLogin/LoginScreen
 import Footer from '../../components/footer';
 
 import HeaderSecond from '../../components/hearderSecond';
-import { Headers, Footers} from './login.styles';
+import { Headers, Footers, Body} from './login.styles';
 
 export default function Login (){
 
     return(
-      <body>
+      <Body>
         <Headers> 
           <HeaderSecond/>
         </Headers>
@@ -16,7 +16,7 @@ export default function Login (){
         <Footers>
           <Footer />
         </Footers>
-      </body>
+      </Body>
     );
 
 }
