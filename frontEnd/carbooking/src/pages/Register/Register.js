@@ -66,11 +66,11 @@ export default function Register (){
             </InputsContainer>
 
             <br></br>
-            <Button type="submit"> Iniciar sesión </Button>
+            <Button type="submit"> Registrarse </Button>
             
 
             <TextLink>
-                <p> ¿Ya tienes una cuenta?ㅤ</p>
+                <p> ¿Ya tienes una cuenta?</p>
                 <p> <Link to="/signin"> Entra aquí </Link> </p>
 
             </TextLink>
