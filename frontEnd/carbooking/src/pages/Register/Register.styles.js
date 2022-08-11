@@ -1,12 +1,23 @@
 import styled from "styled-components";
 
+export const Body = styled.body`
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    
+`
+
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    align-content: space-around;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 150px;
+    margin-bottom: 150px;
 
     @media (min-width: 768px) { 
         height: 700px;
@@ -66,6 +77,9 @@ export const TextLink = styled.p`
     display: flex;
     flex-direction: row;
     text-align: center;
+    justify-content: center;
+    position: relative;
+    top: 10px;
 `
 
 export const LastParagraph = styled.p`

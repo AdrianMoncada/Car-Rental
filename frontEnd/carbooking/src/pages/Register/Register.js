@@ -3,7 +3,15 @@ import HeaderSecond from '../../components/hearderSecond';
 
 import Footer from '../../components/footer';
 import { Link} from "react-router-dom";
-import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer, TextLink } from './Register.styles';
+import {Form, 
+        Button,
+        Inputs,
+        CenteredText,
+        LastParagraph,
+        InputsContainer,
+        TextLink,
+        Body
+    } from './Register.styles';
 import { Headers, Footers } from '../Login/login.styles';
 
 export default function Register (){
@@ -11,13 +19,14 @@ export default function Register (){
     return(
 
 
-        <body>
+        <Body>
             <Headers>
                 <HeaderSecond/>
             </Headers>
         <Form >
 
             <h1> Registro </h1>
+
             <CenteredText> Por favor, complete este formulario para crear una cuenta.</CenteredText>
             
             <InputsContainer>
@@ -72,7 +81,7 @@ export default function Register (){
             <Footers>
                 <Footer/>               
             </Footers>
-        </body>
+        </Body>
 
     );
 
