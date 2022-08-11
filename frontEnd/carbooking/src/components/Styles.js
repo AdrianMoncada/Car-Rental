@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const Cards = styled.div`
     display: flex;
-    width: 710px;
-    height: 279x; 
     margin: 30px;
+    flex-direction: column;
     -webkit-box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
    -moz-box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
    box-shadow: 29px 22px 50px -1px rgba(0,0,0,0.38);
@@ -13,43 +12,41 @@ export const Cards = styled.div`
    background-color: #fff;
    text-align: justify;
 
-
-   @media (max-width: 800px) {
+   @media (min-width: 900px) {
      display: flex;
-     flex-direction: column;
-    }
+     flex-direction: row;
+   }
 `
 
 export const HeartContainer = styled.div`
      width: 100%;
-     height: 30px;
+     height: px;
      display: flex;
      justify-content: flex-end;
      color: red;
-
-
-
-     @media (max-width: 800px) {
-          display: flex;
-          height: 100%;  
-          width: 100%; 
-         }
 `
 
 export const ImageContainer = styled.div`
-     width: 50%;
+     display: flex;
+     width: 100%;
+     height: 100%;
      border-radius: 10px;
-     @media (max-width: 800px) {
-          display: flex;
-          height: 100%;  
-          width: 100%; 
-         }
+
+     @media (min-width: 667px) {
+          width:100%;
+          height:100%;
+      }
+
 `
 
 export const Image = styled.img`
      width: 100%;
      height: 100%;
      border-radius: 10px;
+
+     @media (min-width: 667px) {
+          width:100%;
+      }
 `
 
 export const IconContainer = styled.div`
@@ -86,12 +83,12 @@ export const Button = styled.button`
 export const Information = styled.article`
      display: flex;
      flex-direction: column;
-     align-items: flex-start;
-     width: 60%;
+     width: 90%;
      margin: 15px;
-     @media (max-width: 800px) {
-          display: flex;
-          height: 98%;  
-          width: 95%; 
-         }
+     
+     @media (min-width: 667px) {
+          display: flex; 
+          width:95%;
+      }
+
 `
