@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  background-image: url("https://www.marriott.com/content/dam/mcom-loyalty/redeem/place-image-here-4@2x.jpg");
+  background-image: url("https://images.pexels.com/photos/566061/pexels-photo-566061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2021/08/30123956/Tips-for-Road-Trip-Cover-30-08-1.jpg");
   
-  width:100% ;
+  width: 100%;
   height:500px;
   justify-content: space-between;
   place-content: center;
@@ -23,7 +23,7 @@ export const CardsContainer = styled.div`
 //contenedor de cada carro
 
 export const ProductCard = styled.div`
- width: 250px;
+ width: 350px;
  height:270px;
  background-color:hsla(0,0%,100%,.3);
  margin-right:20px;
