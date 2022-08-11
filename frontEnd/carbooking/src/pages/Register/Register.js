@@ -2,7 +2,8 @@ import React from 'react';
 import HeaderSecond from '../../components/hearderSecond';
 
 import Footer from '../../components/footer';
-import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer } from './Register.styles';
+import { Link} from "react-router-dom";
+import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer, TextLink } from './Register.styles';
 import { Headers, Footers } from '../Login/login.styles';
 
 export default function Register (){
@@ -57,8 +58,15 @@ export default function Register (){
 
             <br></br>
             <Button type="submit"> Registrarse </Button>
+            
 
-            <CenteredText> ¿Ya tienes una cuenta? Entra aquí </CenteredText>
+            <TextLink>
+                <p> ¿Ya tienes una cuenta?</p>
+                <p> <Link to="/signin"> Entra aquí </Link> </p>
+
+            </TextLink>
+           
+           
             <LastParagraph>Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y Condiciones</LastParagraph>
         </Form>
             <Footers>

@@ -44,7 +44,7 @@ export const Inputs = styled.input`
     }
 `
 
-export const UltimoParrafo = styled.p`
+export const LastParagraph = styled.p`
 
 @media (min-width: 1000px) {
     width: 30%;

@@ -4,7 +4,7 @@ import {
   ErrorMessage,
   Form,
   Inputs,
-  UltimoParrafo,
+  LastParagraph,
 } from "../../../../pages/Login/login.styles";
 
 function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
@@ -74,11 +74,12 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
 
       <Button type="submit"> Iniciar sesión </Button>
 
-      <p> ¿No te has registrado? Entra aquí </p>
-      <UltimoParrafo>
+      <p> ¿No te has registrado?  Entra aquí </p>
+
+      <LastParagraph>
         Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y
         Condiciones
-      </UltimoParrafo>
+      </LastParagraph>
     </Form>
   );
 }

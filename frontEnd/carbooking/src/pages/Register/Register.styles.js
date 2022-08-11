@@ -6,6 +6,14 @@ export const Form = styled.form`
     flex-direction: column;
     align-content: space-around;
     align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 768px) { 
+        height: 700px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+
 `
 export const CenteredText = styled.p`
     display: flex;
@@ -30,6 +38,7 @@ export const Inputs = styled.input`
 
     @media (min-width: 667px) {
         width:98%;
+        height: 40px;
     }
 `
 
@@ -51,6 +60,12 @@ export const Button = styled.button`
         width:40%;
     }
 
+`
+
+export const TextLink = styled.p`
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 `
 
 export const LastParagraph = styled.p`
