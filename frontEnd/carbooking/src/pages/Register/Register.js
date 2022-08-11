@@ -1,5 +1,6 @@
 import React from 'react'; 
-import Header from '../../components/header';
+import HeaderSecond from '../../components/hearderSecond';
+
 import Footer from '../../components/footer';
 import {Form, Button, Inputs, CenteredText, LastParagraph, InputsContainer } from './Register.styles';
 import { Headers, Footers } from '../Login/login.styles';
@@ -11,7 +12,7 @@ export default function Register (){
 
         <body>
             <Headers>
-                <Header/>
+                <HeaderSecond/>
             </Headers>
         <Form >
 

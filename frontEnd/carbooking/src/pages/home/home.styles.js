@@ -32,14 +32,15 @@ export const Headers = styled.header`
 export const ContainerIcon = styled.div`
   display: flex;
   justify-content:space-between;
+  align-items:center;
 
   margin-top:30px;
-  padding-right:20px;
-  width:252px;
+  padding-right:40px;
+  width:290px;
   margin-left:40px;
   margin-top 10px;
 
-  @media (max-width: 640px) {
+  @media (max-width: 237px) {
     display: none;
   }
 `;
@@ -100,8 +101,10 @@ export const ButtonSign = styled.button`
 export const ContainerMenu = styled.div`
   display: none;
   margin-top:30px;
-  padding-right:40px;
-  padding-left:180px;
+  backgroun:blue;
+
+  padding-right:60px;
+  padding-left:20px;
   width:50px;
 
   @media (max-width: 667px) {
