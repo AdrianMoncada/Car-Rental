@@ -19,26 +19,26 @@ export default function Register (){
             <CenteredText> Por favor, complete este formulario para crear una cuenta.</CenteredText>
             
             <InputsContainer>
-            <h3> Nombre </h3>
+            <h6> Nombre </h6>
             <Inputs 
             placeholder='Nombre'
             type="text"
             
             />
 
-            <h3> Apellido </h3>
+            <h6> Apellido </h6>
             <Inputs 
             placeholder='Apellido'
             type="text"
             
             />
-            <h3> E-mail </h3>
+            <h6> E-mail </h6>
             <Inputs
                 placeholder='Correo electronico'
                 type="email"
             />
 
-            <h3> Contraseña </h3>
+            <h6> Contraseña </h6>
             <Inputs 
                 
                 placeholder='Contraseña'
@@ -46,7 +46,7 @@ export default function Register (){
             />
 
 
-            <h3> Confirmar Contraseña </h3>
+            <h6> Confirmar Contraseña </h6>
             <Inputs 
                 
                 placeholder='Confirmar Contraseña'

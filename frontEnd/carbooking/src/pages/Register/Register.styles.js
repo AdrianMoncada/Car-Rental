@@ -6,7 +6,6 @@ export const Form = styled.form`
     flex-direction: column;
     align-content: space-around;
     align-items: center;
-    border: 5px solid blue;
 `
 export const CenteredText = styled.p`
     display: flex;
