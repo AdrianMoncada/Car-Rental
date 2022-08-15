@@ -18,6 +18,8 @@ test website:
     image: alpine
     stage: test
     script:
+        - cd frontEnd
+        - cd carbooking
         - test -f build/index.html
 
 unit test:
