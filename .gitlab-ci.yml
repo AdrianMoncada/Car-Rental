@@ -2,6 +2,6 @@ build website:
     image: node:16
     script:
         - cd frontEnd
-        - cd cardbooking
+        - cd carbooking
         - yarn install
         - yarn build
