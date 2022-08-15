@@ -24,6 +24,8 @@ unit test:
     image: node:16-alpine
     stage: test
     script:
+        - cd frontEnd
+        - cd cardbooking
         - yarn install
         - yarn test
 
