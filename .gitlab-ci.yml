@@ -1,5 +1,5 @@
 build website:
-    image: alpine
+    image: node:16
     script:
         - yarn install
         - yarn build
