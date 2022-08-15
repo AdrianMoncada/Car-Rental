@@ -11,7 +11,8 @@ build website:
         - yarn install
         - yarn build
     artifacts:
-        - build
+        paths:
+            - build
 
 test website:
     image: alpine
