@@ -1,7 +1,29 @@
+stages:
+    - build
+    - test
+
 build website:
     image: node:16-alpine
+    stage: build
     script:
         - cd frontEnd
         - cd carbooking
         - yarn install
         - yarn build
+    artifacts:
+        - build
+
+test website:
+    image: alpine
+    stage: test
+    script:
+        - test -f build/index.html
+
+unit test:
+    image: node:16-alpine
+    stage: test
+    script:
+        - yarn install
+        - yarn test
+
+
