@@ -21,10 +21,10 @@ test website:
         - yarn global add serve
         - apk add curl
         - serve -s build &
-        - sleep 25
+        - sleep 10
         - curl http://localhost:3000 | grep "React App"
 
-.unit test:
+unit test:
     image: node:16-alpine
     stage: test
     script:
