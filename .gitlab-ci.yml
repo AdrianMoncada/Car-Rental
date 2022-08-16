@@ -22,7 +22,7 @@ test website:
         - apk add curl
         - serve -s build &
         - sleep 10
-        - curl http://localhost:3000 | grep "React App"
+        - curl http://localhost:3000
 
 unit test:
     image: node:16-alpine
