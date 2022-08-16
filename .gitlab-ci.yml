@@ -20,10 +20,8 @@ test website:
     script:
         - yarn global add serve
         - apk add curl
-        - ls
-        - cd frontEnd
         - serve -s build &
-        - sleep 10
+        - sleep 25
         - curl http://localhost:3000 | grep "React App"
 
 .unit test:
