@@ -19,8 +19,11 @@ test website:
     stage: test
     script:
         - yarn global add serve
+        - apk add curl
         - ls
-        - serve -s build
+        - serve -s build &
+        - sleep 10
+        - curl http://localhost:3000/home | grep "Alquila tu vehiculo"
 
 .unit test:
     image: node:16-alpine
