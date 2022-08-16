@@ -14,7 +14,7 @@ build website:
         paths:
             - build
 
-.test website:
+test website:
     image: node:16-alpine
     stage: test
     script:
