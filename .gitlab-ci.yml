@@ -21,6 +21,7 @@ test website:
         - yarn global add serve
         - apk add curl
         - ls
+        - cd frontEnd
         - serve -s build &
         - sleep 10
         - curl http://localhost:3000 | grep "React App"
