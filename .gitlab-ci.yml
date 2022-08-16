@@ -19,8 +19,9 @@ test website:
     stage: test
     script:
         - ls
+        - serve -s build
 
-unit test:
+.unit test:
     image: node:16-alpine
     stage: test
     script:
