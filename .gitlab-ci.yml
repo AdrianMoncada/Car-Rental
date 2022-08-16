@@ -23,7 +23,7 @@ test website:
         - ls
         - serve -s build &
         - sleep 10
-        - curl http://localhost:3000/home | grep "Alquila tu vehiculo"
+        - curl http://localhost:3000/home | grep "React App"
 
 .unit test:
     image: node:16-alpine
