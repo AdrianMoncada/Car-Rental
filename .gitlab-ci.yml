@@ -25,7 +25,7 @@ unit test:
     stage: test
     script:
         - cd frontEnd
-        - cd cardbooking
+        - cd carbooking
         - yarn install
         - yarn test
 
