@@ -15,9 +15,10 @@ build website:
             - build
 
 test website:
-    image: alpine
+    image: node:16-alpine
     stage: test
     script:
+        - yarn global add serve
         - ls
         - serve -s build
 
