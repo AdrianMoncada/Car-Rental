@@ -38,7 +38,7 @@ deploy to s3:
     stage: deploy
     image: 
         name: amazon/aws-cli:2.4.11
-        entrypoing: [""]
+        entrypoint: [""]
     script:
         - aws --version
 
