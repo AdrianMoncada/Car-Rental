@@ -3,7 +3,7 @@ stages:
     - test
     - deploy
 
-build website:
+.build website:
     image: node:16-alpine
     stage: build
     script:
@@ -15,7 +15,7 @@ build website:
         paths:
             - build
 
-test website:
+.test website:
     image: node:16-alpine
     stage: test
     script:
@@ -25,7 +25,7 @@ test website:
         - sleep 10
         - curl http://localhost:3000
 
-unit test:
+.unit test:
     image: node:16-alpine
     stage: test
     script:
