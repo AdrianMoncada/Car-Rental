@@ -34,6 +34,7 @@ public class CategoryService {
             modifiedC.setTitle(c.getTitle());
             modifiedC.setDescription(c.getDescription());
             modifiedC.setUrlImage(c.getUrlImage());
+            modifiedC.setProduct(c.getProduct());
 
             repository.save(modifiedC);
             return findById(id);
