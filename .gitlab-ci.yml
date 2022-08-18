@@ -15,7 +15,7 @@ build website:
         paths:
             - build
 
-.test website:
+test website:
     image: node:16-alpine
     stage: test
     script:
@@ -25,7 +25,7 @@ build website:
         - sleep 10
         - curl http://localhost:3000
 
-.unit test:
+unit test:
     image: node:16-alpine
     stage: test
     script:
@@ -42,6 +42,6 @@ deploy to s3:
     script:
         - aws --version
         - echo "Hello S3 new" > test.txt
-        - aws s3 cp test.txt s3://$AWS_S3_BUCKET/test.txt
+        - aws s3 sync build.txt s3://$AWS_S3_BUCKET --delete
 
 
