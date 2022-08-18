@@ -25,7 +25,7 @@ test website:
         - sleep 10
         - curl http://localhost:3000
 
-unit test:
+.unit test:
     image: node:16-alpine
     stage: test
     script:
