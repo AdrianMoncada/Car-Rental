@@ -1,6 +1,7 @@
 package com.example.demo.API.controller;
 
 
+import com.example.demo.API.persistence.DTO.ProductDTO;
 import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,23 +22,44 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+
     //Get
-    @GetMapping
-    public ResponseEntity<?> getAllProduct() {
-        return ResponseEntity.status(HttpStatus.OK).body(productService.getAll());
+    @GetMapping()
+    public List<ProductDTO> getAll() {
+        return productService.getAllProductDTO();
     }
 
     //Get(por ID)
     @GetMapping("/{id}")
-    public Optional<Product> getById(@PathVariable Long id){
+    public Optional<Product> findById(@PathVariable Long id){
         return productService.findById(id);
     }
 
+    //GET POR ID DTO
+    @GetMapping("/DTO/{id}")
+    public List<ProductDTO> findByIdDTO(@PathVariable Long id){
+        return productService.findBydDTO(id);
+    }
+
+
 
     //Post
+    /*@PostMapping
+    public ResponseEntity<HttpStatus> createProduct(@RequestBody Product aProduct){
+        try {
+            productService.save(aProduct);
+            System.out.println("OK Mio");
+            return ResponseEntity.ok(HttpStatus.CREATED);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }*/
     @PostMapping
-    public ResponseEntity<?> createProduct(@RequestBody Product aProduct){
-        return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(aProduct));
+    public ResponseEntity<?> createProduct(@Validated @RequestBody Product aProduct){
+        Product createProduct = productService.save(aProduct);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createProduct.getId()).toUri();
+        return ResponseEntity.created(location).body(createProduct);
     }
 
     //Update

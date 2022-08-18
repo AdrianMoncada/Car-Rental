@@ -1,6 +1,5 @@
 package com.example.demo.API.controller;
 
-import com.example.demo.API.persistence.entities.Category;
 import com.example.demo.API.persistence.entities.City;
 import com.example.demo.API.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/cities")
 public class CityController {
@@ -33,7 +31,8 @@ public class CityController {
     //Post
     @PostMapping
     public ResponseEntity<?> createCity(@RequestBody City aCity){
-        return ResponseEntity.status(HttpStatus.CREATED).body(cityService.save(aCity));
+        cityService.save(aCity);
+        return ResponseEntity.ok((HttpStatus.OK));
     }
 
     //Update
@@ -50,10 +49,7 @@ public class CityController {
     //Delete
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCity(@PathVariable Long id){
-        Optional<City> optionalCity= cityService.findById(id);
-        if(!optionalCity.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No City found with id: " + id);
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(cityService.delete(id));
+        cityService.delete(id);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }

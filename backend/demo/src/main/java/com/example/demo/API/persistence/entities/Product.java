@@ -2,11 +2,13 @@ package com.example.demo.API.persistence.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+
 
 @Setter
 @Getter
@@ -24,19 +26,22 @@ public class Product {
     private String title;
 
     @JoinColumn(name = "categories_id")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ToString.Exclude
     private Category category;
 
     @JoinColumn(name = "characteristic_id")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ToString.Exclude
     private Characteristic characteristic;
 
 
     @JoinColumn(name = "city_id")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ToString.Exclude
     private City city;
 
     /*@JoinColumn(name = "image_id")

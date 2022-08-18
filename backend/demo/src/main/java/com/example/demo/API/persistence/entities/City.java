@@ -19,7 +19,7 @@ public class City {
     private Long id;
 
     @Column
-    private String title;
+    private String titleCity;
 
     @Column
     @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
@@ -28,9 +28,9 @@ public class City {
     public City() {
     }
 
-    public City(String title, Product product) {
-        this.title = title;
-        this.product = (Set<Product>) product;
+    public City(String titleCity/*, Product product*/) {
+        this.titleCity = titleCity;
+        //this.product = (Set<Product>) product;
     }
 
 }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class CharacteristicService {
     @Autowired
@@ -33,9 +32,8 @@ public class CharacteristicService {
     public Optional<Characteristic> update(Characteristic c, Long id) {
         if(characteristicRepository.findById(id).isPresent()){
             Characteristic modifiedC = characteristicRepository.findById(id).get();
-            modifiedC.setTitle(c.getTitle());
+            modifiedC.setTitleCharacteristic(c.getTitleCharacteristic());
             modifiedC.setProduct(c.getProduct());
-
 
 
             characteristicRepository.save(modifiedC);

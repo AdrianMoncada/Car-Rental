@@ -1,6 +1,5 @@
 package com.example.demo.API.controller;
 
-import com.example.demo.API.persistence.entities.Category;
 import com.example.demo.API.persistence.entities.Characteristic;
 import com.example.demo.API.service.CharacteristicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/characteristics")
 public class CharacteristicController {
@@ -33,7 +31,8 @@ public class CharacteristicController {
     //Post
     @PostMapping
     public ResponseEntity<?> createCharacteristic(@RequestBody Characteristic aCharacteristic){
-        return ResponseEntity.status(HttpStatus.CREATED).body(characteristicService.save(aCharacteristic));
+        characteristicService.save(aCharacteristic);
+        return ResponseEntity.ok((HttpStatus.OK));
     }
 
     //Update

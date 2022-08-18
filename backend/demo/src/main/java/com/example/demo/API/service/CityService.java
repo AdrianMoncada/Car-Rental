@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class CityService {
     @Autowired
@@ -33,9 +32,8 @@ public class CityService {
     public Optional<City> update(City c, Long id) {
         if(cityRepository.findById(id).isPresent()){
             City modifiedC = cityRepository.findById(id).get();
-            modifiedC.setTitle(c.getTitle());
+            modifiedC.setTitleCity(c.getTitleCity());
             modifiedC.setProduct(c.getProduct());
-
 
 
 

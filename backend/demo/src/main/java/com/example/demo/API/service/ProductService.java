@@ -1,6 +1,7 @@
 package com.example.demo.API.service;
 
 
+import com.example.demo.API.persistence.DTO.ProductDTO;
 import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -18,12 +20,34 @@ public class ProductService {
         return productRepository.save(p);
     }
 
-    public List<Product> getAll() {
+    /*public List<Product> getAll() {
         return productRepository.findAll();
+    }*/
+    public List<ProductDTO> getAllProductDTO(){
+        return productRepository.findAll()
+                .stream()
+                .map(this::convertDTOtoEntitie)
+                .collect(Collectors.toList());
+    }
+
+    private ProductDTO convertDTOtoEntitie(Product product){
+        ProductDTO productDTO = new ProductDTO();
+        productDTO.setIdProduct(product.getId());
+        productDTO.setTitle(product.getTitle());
+        productDTO.setCategory(product.getCategory());
+        productDTO.setCharacteristic(product.getCharacteristic());
+        productDTO.setCity(product.getCity());
+        return productDTO;
     }
 
     public Optional<Product> findById(Long id) {
         return productRepository.findById(id);
+    }
+    public List<ProductDTO> findBydDTO(Long id){
+        return productRepository.findById(id)
+                .stream()
+                .map(this::convertDTOtoEntitie)
+                .collect(Collectors.toList());
     }
 
     public String delete(Long id) {
@@ -46,5 +70,6 @@ public class ProductService {
             return null;
         }
     }
+
 
 }
