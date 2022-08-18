@@ -34,17 +34,13 @@ build website:
         - yarn install
         - yarn test
 
-.deploy to s3:
+deploy to s3:
     stage: deploy
     image: 
         name: amazon/aws-cli:2.4.11
         entrypoint: [""]
     script:
         - aws --version
-        - ls
-        - cd frontEnd
-        - cd carbooking
-        - ls
-        - aws s3 sync build s3://$AWS_S3_BUCKET
+        - aws s3 sync build s3://$AWS_S3_BUCKET --delete
 
 
