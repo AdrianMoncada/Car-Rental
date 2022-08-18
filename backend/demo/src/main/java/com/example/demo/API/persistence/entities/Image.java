@@ -10,7 +10,6 @@ import java.util.Set;
 
 @Setter
 @Getter
-@ToString
 @Entity
 @Table(name = "image")
 public class Image {
@@ -19,15 +18,15 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "image_sequence")
     private Long id;
 
-    @Column
+    @Column(name = "title")
     private String title;
 
-    @Column
+    @Column(name = "url")
     private String url;
 
-    /*@Column
+    @Column
     @OneToMany(mappedBy = "image", fetch = FetchType.LAZY)
-    private Set<Product> product = new HashSet<>();*/
+    private Set<Product> product = new HashSet<>();
 
     //Constructor Vacio
     public Image(){

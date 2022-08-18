@@ -21,45 +21,47 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
     private Long id;
 
-    @Column
+    @Column(name = "title")
     @NotNull
     private String title;
 
     @JoinColumn(name = "categories_id")
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ToString.Exclude
+    //@ToString.Exclude
     private Category category;
 
     @JoinColumn(name = "characteristic_id")
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ToString.Exclude
+    //@ToString.Exclude
     private Characteristic characteristic;
 
 
     @JoinColumn(name = "city_id")
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ToString.Exclude
+    //@ToString.Exclude
     private City city;
 
-    /*@JoinColumn(name = "image_id")
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "image_id")
+    @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Image image;*/
+    private Image image;
 
     //Constructor vacio
     public Product(){
     }
 
-    public Product(Long id, String title, City city, Characteristic characteristic , Category category) {
+    public Product(Long id, String title, Category category , Characteristic characteristic , City city, Image image) {
         this.id =id;
         this.title = title;
         this.category = category;
         this.characteristic = characteristic;
         this.city = city;
+        this.image = image;
     }
+
 
 
 }

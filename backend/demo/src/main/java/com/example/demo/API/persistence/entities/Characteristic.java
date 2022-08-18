@@ -1,6 +1,8 @@
 package com.example.demo.API.persistence.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,15 +26,23 @@ public class Characteristic {
 
     @Column
     @OneToMany(mappedBy = "characteristic", fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Product> product = new HashSet<>();
 
 
     public Characteristic() {
     }
 
-    public Characteristic(String titleCharacteristic /*, Product product*/) {
+    public Characteristic(String titleCharacteristic) {
         this.titleCharacteristic = titleCharacteristic;
-        //this.product = (Set<Product>) product;
+    }
+
+    @Override
+    public String toString() {
+        return "Characteristic{" +
+                "id=" + id +
+                ", titleCharacteristic='" + titleCharacteristic + '\'' +
+                '}';
     }
 
 }

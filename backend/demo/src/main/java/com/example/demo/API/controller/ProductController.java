@@ -1,8 +1,11 @@
 package com.example.demo.API.controller;
 
 
-import com.example.demo.API.persistence.DTO.ProductDTO;
+import com.example.demo.API.persistence.DTO.CityDto;
+import com.example.demo.API.persistence.DTO.ProductDto;
+import com.example.demo.API.persistence.entities.City;
 import com.example.demo.API.persistence.entities.Product;
+import com.example.demo.API.service.CityService;
 import com.example.demo.API.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,24 +25,34 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CityService cityService;
+
 
     //Get
     @GetMapping()
-    public List<ProductDTO> getAll() {
+    public List<ProductDto> getAll() {
         return productService.getAllProductDTO();
     }
 
     //Get(por ID)
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public Optional<Product> findById(@PathVariable Long id){
         return productService.findById(id);
-    }
+    }*/
 
     //GET POR ID DTO
-    @GetMapping("/DTO/{id}")
-    public List<ProductDTO> findByIdDTO(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public List<ProductDto> findByIdDTO(@PathVariable Long id){
         return productService.findBydDTO(id);
     }
+
+    //Get por Cuidad:
+    @GetMapping("cities/{id}")
+    public List<CityDto> getById(@PathVariable Long id){
+        return cityService.filterCityId(id);
+    }
+
 
 
 

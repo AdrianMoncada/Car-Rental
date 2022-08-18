@@ -1,7 +1,7 @@
 package com.example.demo.API.service;
 
 
-import com.example.demo.API.persistence.DTO.ProductDTO;
+import com.example.demo.API.persistence.DTO.ProductDto;
 import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,27 +23,29 @@ public class ProductService {
     /*public List<Product> getAll() {
         return productRepository.findAll();
     }*/
-    public List<ProductDTO> getAllProductDTO(){
+    public List<ProductDto> getAllProductDTO(){
         return productRepository.findAll()
                 .stream()
                 .map(this::convertDTOtoEntitie)
                 .collect(Collectors.toList());
     }
 
-    private ProductDTO convertDTOtoEntitie(Product product){
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setIdProduct(product.getId());
-        productDTO.setTitle(product.getTitle());
-        productDTO.setCategory(product.getCategory());
-        productDTO.setCharacteristic(product.getCharacteristic());
-        productDTO.setCity(product.getCity());
-        return productDTO;
+    private ProductDto convertDTOtoEntitie(Product product){
+        ProductDto productDto = new ProductDto();
+        productDto.setId(product.getId());
+        productDto.setTitle(product.getTitle());
+        productDto.setCategory(product.getCategory());
+        productDto.setCharacteristic(product.getCharacteristic());
+        productDto.setCity(product.getCity());
+        productDto.setImage(product.getImage());
+
+        return productDto;
     }
 
     public Optional<Product> findById(Long id) {
         return productRepository.findById(id);
     }
-    public List<ProductDTO> findBydDTO(Long id){
+    public List<ProductDto> findBydDTO(Long id){
         return productRepository.findById(id)
                 .stream()
                 .map(this::convertDTOtoEntitie)

@@ -1,15 +1,19 @@
 package com.example.demo.API.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Setter
 @Getter
 @Entity
+@EqualsAndHashCode(exclude = "product")
+@ToString(exclude = "product")
 @Table(name = "citys")
 public class City {
 
@@ -22,15 +26,21 @@ public class City {
     private String titleCity;
 
     @Column
-    @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Product> product = new HashSet<>();
 
     public City() {
     }
 
-    public City(String titleCity/*, Product product*/) {
+    public City(String titleCity) {
         this.titleCity = titleCity;
-        //this.product = (Set<Product>) product;
     }
+
+
+    public Collection<Product> getProducts() {
+        return product;
+    }
+
 
 }
