@@ -38,7 +38,7 @@ build website:
         - yarn install
         - yarn test
 
-.deploy to s3:
+deploy to s3:
     stage: deploy
     image: 
         name: amazon/aws-cli:2.4.11
@@ -47,7 +47,7 @@ build website:
         - aws --version
         - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
 
-deploy to s3:
+.deploy to s3:
     stage: deploy
     image: 
         name: amazon/aws-cli:2.4.11
@@ -59,7 +59,7 @@ deploy to s3:
         - echo $CI_COMMIT_REF_NAME
         - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
 
-pre-production test:
+.pre-production test:
     stage: post deploy
     image: curlimages/curl
     rules:
