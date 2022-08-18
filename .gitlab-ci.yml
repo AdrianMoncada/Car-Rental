@@ -42,6 +42,9 @@ deploy to s3:
     script:
         - aws --version
         - ls
+        - cd frontEnd
+        - cd carbooking
+        - ls
         - aws s3 sync build s3://$AWS_S3_BUCKET
 
 
