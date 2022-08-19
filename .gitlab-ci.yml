@@ -85,7 +85,7 @@ build:
         paths:
             - backend/demo/target/consoleappdemo-2.7.2.jar
 
-.deploy:
+deploy:
     stage: deploy
     image: alpine:latest
     before_script:
