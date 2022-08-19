@@ -83,7 +83,7 @@ build:
         paths:
             - backend/demo/target
 
-deploy:
+.deploy:
     stage: deploy
     image: alpine:3.11
     before_script:
