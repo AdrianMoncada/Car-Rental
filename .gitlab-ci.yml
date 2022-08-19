@@ -77,9 +77,10 @@ build:
         - ls
         - mvn clean install
         - ls
+        - ls -la $CI_PROJECT_DIR/report
     artifacts:
         expire_in: 1 week
         paths:
-            - backend/demo/target/consoleapp-2.7.2.jar
+            - backend/demo/target
 
 
