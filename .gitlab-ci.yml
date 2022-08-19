@@ -83,9 +83,9 @@ build:
         paths:
             - backend/demo/target
 
-.deploy:
+deploy:
     stage: deploy
-    image: alpine:3.11
+    image: alpine:latest
     before_script:
         - apk update && apk add openssh-client bash
         - mkdir -p ~/.ssh
