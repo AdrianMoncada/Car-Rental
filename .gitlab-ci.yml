@@ -78,6 +78,7 @@ build:
         - ls
         - mvn clean install
         - ls
+        - cd target
     artifacts:
         expire_in: 1 week
         paths:
