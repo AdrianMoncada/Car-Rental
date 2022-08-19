@@ -1,15 +1,16 @@
 stages:
-    - build
+    - build front
     - test
-    - deploy
+    - deploy front
     - post deploy
+    - build
 
 variables:
     FRONT_APP_URL: http://morgam-frontend.s3-website.us-east-2.amazonaws.com
 
-build website:
+.build website:
     image: node:16-alpine
-    stage: build
+    stage: build front
     script:
         - cd frontEnd
         - cd carbooking
@@ -38,8 +39,8 @@ build website:
         - yarn install
         - yarn test
 
-deploy to s3:
-    stage: deploy
+.deploy to s3:
+    stage: deploy front
     image: 
         name: amazon/aws-cli:2.4.11
         entrypoint: [""]
@@ -47,8 +48,8 @@ deploy to s3:
         - aws --version
         - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
 
-.deploy to s3:
-    stage: deploy
+.deploy to s3 2:
+    stage: deploy front
     image: 
         name: amazon/aws-cli:2.4.11
         entrypoint: [""]
@@ -66,5 +67,18 @@ deploy to s3:
         - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
     script:
         - curl $FRONT_APP_URL
+
+build:
+    stage: build
+    image:  maven:latest
+    script:
+        - cd backend
+        - cd demo
+        - ls
+        - mvn clean install
+    artifacts:
+        expire_in: 1 week
+        paths:
+            - backend/demo/target/consoleapp-2.7.2.jar
 
 
