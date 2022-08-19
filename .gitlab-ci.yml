@@ -81,7 +81,7 @@ build:
     artifacts:
         expire_in: 1 week
         paths:
-            - backend/demo/target/consoleapp-2.7.2.jar
+            - backend/demo/target/*.jar
 
 deploy:
     stage: deploy
