@@ -3,7 +3,7 @@ import  Header  from '../../components/header';
 import Banner from '../../components/component/banner/banner';
 import  Footer  from '../../components/footer';
 import List  from   '../../components/List';
-import CardCategories from '../../components/category/listCategories';
+import AllCategories from '../../components/category/AllCategories';
 import { Container } from './home.styles'
 
 
@@ -13,7 +13,7 @@ const Home = () =>{
       <Container>
          <Header/>
          <Banner/>
-         <CardCategories/>
+         <AllCategories/>
           
          <List/>
          <Footer/>
