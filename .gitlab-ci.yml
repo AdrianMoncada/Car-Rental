@@ -83,7 +83,7 @@ build:
     artifacts:
         expire_in: 1 week
         paths:
-            - backend/demo/target/consoleappdemo-2.7.2.jar
+            - backend/demo/target/consoleapp-2.7.2.jar
 
 deploy:
     stage: deploy
@@ -99,7 +99,7 @@ deploy:
     script:
         - echo "Deploying started..."
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop consoleapp.service"
-        - scp consoleappdemo-2.7.2.jar ubuntu@$DEPLOY_SERVER_IP:~/console-app/
+        - scp consoleapp-2.7.2.jar ubuntu@$DEPLOY_SERVER_IP:~/console-app/
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start consoleapp.service"
         - echo "Finished deploying the app."
 
