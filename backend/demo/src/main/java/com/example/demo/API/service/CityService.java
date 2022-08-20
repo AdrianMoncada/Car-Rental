@@ -1,9 +1,7 @@
 package com.example.demo.API.service;
 
 import com.example.demo.API.persistence.DTO.CityDto;
-import com.example.demo.API.persistence.DTO.ProductDto;
 import com.example.demo.API.persistence.entities.City;
-import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,8 +36,8 @@ public class CityService {
     private CityDto convertDTOtoEntitie(City city){
         CityDto cityDto = new CityDto();
         cityDto.setId(city.getId());
-        cityDto.setTitleCity(city.getTitleCity());
-        cityDto.setProducts((List<Product>) city.getProducts());
+        cityDto.setTitleCity(city.getName());
+        /*cityDto.setProducts((List<Product>) city.getProducts());*/
 
         return cityDto;
     }
@@ -60,8 +58,8 @@ public class CityService {
     public Optional<City> update(City c, Long id) {
         if(cityRepository.findById(id).isPresent()){
             City modifiedC = cityRepository.findById(id).get();
-            modifiedC.setTitleCity(c.getTitleCity());
-            modifiedC.setProduct(c.getProduct());
+            modifiedC.setName(c.getName());
+            /*modifiedC.setProduct(c.getProduct());*/
 
 
 

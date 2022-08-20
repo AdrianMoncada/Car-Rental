@@ -33,11 +33,11 @@ public class ProductService {
     private ProductDto convertDTOtoEntitie(Product product){
         ProductDto productDto = new ProductDto();
         productDto.setId(product.getId());
-        productDto.setTitle(product.getTitle());
+        productDto.setName(product.getName());
         productDto.setCategory(product.getCategory());
-        productDto.setCharacteristic(product.getCharacteristic());
+        /*productDto.setCharacteristic(product.getCharacteristics());*/
         productDto.setCity(product.getCity());
-        productDto.setImage(product.getImage());
+        /*productDto.setImage(product.getImages());*/
 
         return productDto;
     }
@@ -60,9 +60,9 @@ public class ProductService {
     public Optional<Product> update(Product p, Long id) {
         if(productRepository.findById(id).isPresent()){
             Product modifiedP = productRepository.findById(id).get();
-            modifiedP.setTitle(p.getTitle());
+            modifiedP.setName(p.getName());
             modifiedP.setCategory(p.getCategory());
-            modifiedP.setCharacteristic(p.getCharacteristic());
+            /*modifiedP.setCharacteristics(p.getCharacteristics());*/
             modifiedP.setCity(p.getCity());
             //modifiedP.setImage(p.getImage());
 

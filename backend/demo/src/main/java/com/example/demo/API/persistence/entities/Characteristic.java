@@ -2,7 +2,6 @@ package com.example.demo.API.persistence.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +12,7 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
-@Table(name = "characteristic")
+@Table(name = "characteristics")
 public class Characteristic {
 
     @Id
@@ -22,26 +21,22 @@ public class Characteristic {
     private Long id;
 
     @Column
-    private String titleCharacteristic;
+    private String name;
 
-    @Column
-    @OneToMany(mappedBy = "characteristic", fetch = FetchType.LAZY)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Set<Product> product = new HashSet<>();
 
 
     public Characteristic() {
     }
 
-    public Characteristic(String titleCharacteristic) {
-        this.titleCharacteristic = titleCharacteristic;
+    public Characteristic(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Characteristic{" +
                 "id=" + id +
-                ", titleCharacteristic='" + titleCharacteristic + '\'' +
+                ", titleCharacteristic='" + name + '\'' +
                 '}';
     }
 

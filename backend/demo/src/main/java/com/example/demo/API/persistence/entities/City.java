@@ -1,20 +1,18 @@
 package com.example.demo.API.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.*;
 
 @Setter
 @Getter
 @Entity
 @EqualsAndHashCode(exclude = "product")
 @ToString(exclude = "product")
-@Table(name = "citys")
+@Table(name = "cities")
 public class City {
 
     @Id
@@ -23,24 +21,24 @@ public class City {
     private Long id;
 
     @Column
-    private String titleCity;
+    private String name;
 
-    @Column
+    /*@Column
     @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Set<Product> product = new HashSet<>();
+    private Set<Product> product = new HashSet<>();*/
 
     public City() {
     }
 
-    public City(String titleCity) {
-        this.titleCity = titleCity;
+    public City(String name) {
+        this.name = name;
     }
 
 
-    public Collection<Product> getProducts() {
+    /*public Collection<Product> getProducts() {
         return product;
-    }
+    }*/
 
 
 }

@@ -14,16 +14,16 @@ import javax.persistence.*;
 @Getter
 @ToString
 @Entity
-@Table(name = "products", uniqueConstraints = {@UniqueConstraint(columnNames = {"title"})})
+@Table(name = "products", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
 public class Product {
     @Id
     @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
     private Long id;
 
-    @Column(name = "title")
+    @Column(name = "name")
     @NotNull
-    private String title;
+    private String name;
 
     @JoinColumn(name = "categories_id")
     @ManyToOne(fetch = FetchType.EAGER)
@@ -55,7 +55,7 @@ public class Product {
 
     public Product(Long id, String title, Category category , Characteristic characteristic , City city, Image image) {
         this.id =id;
-        this.title = title;
+        this.name = name;
         this.category = category;
         this.characteristic = characteristic;
         this.city = city;

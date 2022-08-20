@@ -1,7 +1,6 @@
 package com.example.demo.API.persistence.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,18 +19,16 @@ public class Category {
     private Long id;
 
     @Column
-    private String titleCategory;
+    private String name;
 
-    @Column
-    private String description;
 
     @Column
     private String urlImage;
 
-    @Column
+    /*@Column
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Set<Product> product = new HashSet<>();
+    private Set<Product> product = new HashSet<>();*/
 
 
     //Constructor vacio
@@ -39,9 +36,8 @@ public class Category {
     }
 
     //CONSTRUCTOR
-    public Category(String titleCategory, String description, String urlImage /*Product product*/) {
-        this.titleCategory = titleCategory;
-        this.description = description;
+    public Category(String name, String urlImage /*Product product*/) {
+        this.name = name;
         this.urlImage = urlImage;
         //this.product = (Set<Product>) product;
     }
@@ -51,8 +47,7 @@ public class Category {
     public String toString() {
         return getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
-                "titleCategory = " + titleCategory + ", " +
-                "description = " + description + ", " +
+                "titleCategory = " + name + ", " +
                 "urlImage = " + urlImage + ")";
     }
 }

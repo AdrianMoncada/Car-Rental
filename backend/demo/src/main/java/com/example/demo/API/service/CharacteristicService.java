@@ -32,8 +32,8 @@ public class CharacteristicService {
     public Optional<Characteristic> update(Characteristic c, Long id) {
         if(characteristicRepository.findById(id).isPresent()){
             Characteristic modifiedC = characteristicRepository.findById(id).get();
-            modifiedC.setTitleCharacteristic(c.getTitleCharacteristic());
-            modifiedC.setProduct(c.getProduct());
+            modifiedC.setName(c.getName());
+            /*modifiedC.setProduct(c.getProduct());*/
 
 
             characteristicRepository.save(modifiedC);
