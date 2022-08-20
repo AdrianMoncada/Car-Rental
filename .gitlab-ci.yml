@@ -100,6 +100,10 @@ deploy:
         - echo "Deploying started..."
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop consoleapp.service"
         - ls
+        - cd backend
+        - cd demo
+        - cd target
+        - ls
         - scp consoleapp-2.7.2.jar ubuntu@$DEPLOY_SERVER_IP:~/console-app/
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start consoleapp.service"
         - echo "Finished deploying the app."
