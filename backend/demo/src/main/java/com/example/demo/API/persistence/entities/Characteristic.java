@@ -23,13 +23,17 @@ public class Characteristic {
     @Column
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "product")
+    Product product;
 
 
     public Characteristic() {
     }
 
-    public Characteristic(String name) {
+    public Characteristic(String name, Product product) {
         this.name = name;
+        this.product = product;
     }
 
     @Override

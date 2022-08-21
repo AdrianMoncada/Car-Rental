@@ -1,14 +1,12 @@
 package com.example.demo.API.persistence.entities;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import javax.persistence.*;
-
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -16,6 +14,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "products", uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
 public class Product {
+
     @Id
     @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_sequence")
@@ -28,40 +27,27 @@ public class Product {
     @JoinColumn(name = "categories_id")
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    //@ToString.Exclude
     private Category category;
-
-    @JoinColumn(name = "characteristic_id")
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    //@ToString.Exclude
-    private Characteristic characteristic;
-
 
     @JoinColumn(name = "city_id")
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    //@ToString.Exclude
     private City city;
 
-    @JoinColumn(name = "image_id")
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Image image;
+    @OneToMany(mappedBy = "product")
+    private List<Image> images = new ArrayList<Image>();
+
+    @OneToMany(mappedBy = "product")
+    private List<Characteristic> characteristics = new ArrayList<Characteristic>();
 
     //Constructor vacio
     public Product(){
     }
 
-    public Product(Long id, String title, Category category , Characteristic characteristic , City city, Image image) {
+    public Product(Long id, String name, Category category , City city) {
         this.id =id;
         this.name = name;
         this.category = category;
-        this.characteristic = characteristic;
         this.city = city;
-        this.image = image;
     }
-
-
-
 }

@@ -1,12 +1,7 @@
 package com.example.demo.API.persistence.entities;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -25,21 +20,14 @@ public class Category {
     @Column
     private String urlImage;
 
-    /*@Column
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Set<Product> product = new HashSet<>();*/
-
-
     //Constructor vacio
     public Category(){
     }
 
     //CONSTRUCTOR
-    public Category(String name, String urlImage /*Product product*/) {
+    public Category(String name, String urlImage) {
         this.name = name;
         this.urlImage = urlImage;
-        //this.product = (Set<Product>) product;
     }
 
 

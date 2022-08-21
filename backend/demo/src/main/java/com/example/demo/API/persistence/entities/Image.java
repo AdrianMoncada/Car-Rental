@@ -1,11 +1,7 @@
 package com.example.demo.API.persistence.entities;
-
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -23,6 +19,9 @@ public class Image {
     @Column(name = "url")
     private String url;
 
+    @ManyToOne
+    @JoinColumn(name = "product")
+    Product product;
 
     //Constructor Vacio
     public Image(){
