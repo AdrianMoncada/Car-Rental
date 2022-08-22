@@ -1,0 +1,17 @@
+.next{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    left: 250px;
+    top: 150px;
+    cursor: pointer;
+}
+
+.prev{
+    color: red;
+    font-size: 20px;
+    position: relative;
+    bottom: 220px;
+    right: 220px;
+    cursor: pointer;
+}
