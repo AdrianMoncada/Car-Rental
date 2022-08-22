@@ -16,7 +16,7 @@ const HeaderSecond = () => {
       <Headers>
          <ContainerIcon>
             <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-            <p>Tus reglas</p>
+            <p>Tu camino, Tus reglas</p>
          </ContainerIcon>
          <ContainerBtn>
              <ButtonSign onClick={() => navigate("/signin")}>Iniciar sesion</ButtonSign>

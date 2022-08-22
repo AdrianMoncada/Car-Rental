@@ -83,7 +83,7 @@ export default function Register (){
             
             <TextLink>
                 <p> ¿Ya tienes una cuenta?</p>
-                <p> <Link to="/home/signin" style={{textDecoration: "none", color:"#FCA311"}}> ㅤEntra aquí </Link> </p>
+                <p> <Link to="/signin" style={{textDecoration: "none", color:"#FCA311"}}> ㅤEntra aquí </Link> </p>
             </TextLink>
            
            

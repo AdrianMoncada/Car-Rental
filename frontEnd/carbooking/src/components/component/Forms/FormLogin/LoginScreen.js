@@ -93,7 +93,7 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
 
       <TextLink>
       <p> ¿No te has registrado?</p>
-      <p> <Link to="/home/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>
+      <p> <Link to="/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>
 
       </TextLink>
       <LastParagraph>

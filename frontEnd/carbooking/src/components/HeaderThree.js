@@ -16,7 +16,7 @@ const HeaderThree = () => {
       <Headers>
          <ContainerIcon>
             <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-            <p>Tu camino</p>
+            <p>Tu camino, Tus reglas</p>
          </ContainerIcon>
          <ContainerBtn>
          <ButtonSign onClick={() => navigate("/signup")}>Crear cuenta</ButtonSign>
