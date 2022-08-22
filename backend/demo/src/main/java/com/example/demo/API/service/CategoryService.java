@@ -21,19 +21,19 @@ public class CategoryService {
 
     public Optional<Category> findById(Long id) {
         return repository.findById(id);
-    };
+    }
 
     public String delete(Long id) {
-            repository.deleteById(id);
-            return "ID " + id + " has been deleted.";
+        repository.deleteById(id);
+        return "Class with id: "+ id + " was deleted. ";
     }
 
     public Optional<Category> update(Category c, Long id) {
         if(repository.findById(id).isPresent()){
             Category modifiedC = repository.findById(id).get();
-            modifiedC.setTitle(c.getTitle());
-            modifiedC.setDescription(c.getDescription());
+            modifiedC.setName(c.getName());
             modifiedC.setUrlImage(c.getUrlImage());
+            /*modifiedC.setProduct(c.getProduct());*/
 
             repository.save(modifiedC);
             return findById(id);

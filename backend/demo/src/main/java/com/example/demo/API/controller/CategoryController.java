@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -12,18 +14,26 @@ import java.util.Optional;
 public class CategoryController {
 
     @Autowired
-    CategoryService service;
+    private CategoryService service;
 
-    //Get
-    @GetMapping
-    public ResponseEntity<?> getAllCategories() {
-        return ResponseEntity.status(HttpStatus.OK).body(service.getAll());
+    //Get(todos)
+    @GetMapping()
+    public List<Category> getAll() {
+        return service.getAll();
     }
+
+    //Get(por ID)
+    @GetMapping("/{id}")
+    public Optional<Category> getById(@PathVariable Long id){
+        return service.findById(id);
+    }
+
 
     //Post
     @PostMapping
-    public ResponseEntity<?> createCategory(@RequestBody Category aCategory){
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.save(aCategory));
+    public ResponseEntity<?> createClass(@RequestBody Category aCategory){
+        service.save(aCategory);
+        return ResponseEntity.ok((HttpStatus.OK));
     }
 
     //Update
@@ -36,14 +46,12 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(aCategory, id));
     }
 
+
     //Delete
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCategory(@PathVariable Long id){
-        Optional<Category> optionalCategory= service.findById(id);
-        if(!optionalCategory.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No Category found with id: " + id);
-        }
-        return ResponseEntity.status(HttpStatus.OK).body(service.delete(id));
+    public ResponseEntity<?> deleteClass(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 }
