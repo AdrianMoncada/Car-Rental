@@ -15,11 +15,11 @@ const HeaderThree = () => {
    return (
       <Headers>
          <ContainerIcon>
-            <Link to="/home"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-            <p>Tu camino, tus reglas</p>
+            <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
+            <p>Tu camino</p>
          </ContainerIcon>
          <ContainerBtn>
-         <ButtonSign onClick={() => navigate("/home/signup")}>Crear cuenta</ButtonSign>
+         <ButtonSign onClick={() => navigate("/signup")}>Crear cuenta</ButtonSign>
           </ContainerBtn>
       </Headers>
 

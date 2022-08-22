@@ -33,7 +33,7 @@ const AllCategories = () => {
                   <p>10 For rent</p>
                 </CantForRent>
               </Description>
-              <ViewMore onClick={() => navigate(`/home/filter/${item.id}`)}>Ver mas</ViewMore>
+              <ViewMore onClick={() => navigate(`/filter/${item.id}`)}>Ver mas</ViewMore>
             </ProductCard>
           ))}
       </CardsContainer>

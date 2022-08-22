@@ -15,11 +15,11 @@ const HeaderSecond = () => {
    return (
       <Headers>
          <ContainerIcon>
-            <Link to="/home"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-            <p>Tu camino, tus reglas</p>
+            <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
+            <p>Tus reglas</p>
          </ContainerIcon>
          <ContainerBtn>
-             <ButtonSign onClick={() => navigate("/home/signin")}>Iniciar sesion</ButtonSign>
+             <ButtonSign onClick={() => navigate("/signin")}>Iniciar sesion</ButtonSign>
           </ContainerBtn>
       </Headers>
 
