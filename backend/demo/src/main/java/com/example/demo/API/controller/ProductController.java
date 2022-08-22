@@ -27,6 +27,8 @@ public class ProductController {
 
 
     //Get
+
+    @CrossOrigin(origins = "http://morgam-frontend.s3-website.us-east-2.amazonaws.com")
     @GetMapping()
     public List<ProductDto> getAll() {
         return productService.getAllProductDTO();

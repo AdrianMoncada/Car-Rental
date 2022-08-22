@@ -17,6 +17,8 @@ public class CategoryController {
     private CategoryService service;
 
     //Get(todos)
+
+    @CrossOrigin(origins = "http://morgam-frontend.s3-website.us-east-2.amazonaws.com")
     @GetMapping()
     public List<Category> getAll() {
         return service.getAll();
