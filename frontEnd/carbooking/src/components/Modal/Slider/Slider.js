@@ -10,8 +10,19 @@ import sistema from "../../../img/imgCarousel/sistema.jpg";
 import parteAtras from "../../../img/imgCarousel/parteAtras.jpg";
 
 import { ContainerSlider, ImgOne, ImgTwo, ImgThree, ImgFour, } from "../../Modal/Slider/Slider.styles";
+import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
+import "../Slider/icons.css"
 
 const Carousel = () =>{
+
+    const NextArrow = ({ onClick }) => (
+        <FaArrowCircleRight className="next" onClick={onClick}> </FaArrowCircleRight>
+      );
+      const PreviousArrow = ({ onClick }) => (
+          <FaArrowCircleLeft className="prev" onClick={onClick}></FaArrowCircleLeft>
+      );
+
+    
 
     const settings = {
         dots: true,
@@ -22,8 +33,8 @@ const Carousel = () =>{
         initialSlide: 0,
         cssEase: "linear",
         pauseOnHover: true,
-        nextArrow: <div />,
-        prevArrow: <div />,
+        nextArrow: <PreviousArrow/>,
+        prevArrow: <NextArrow />,
         responsive: [
           {
             breakpoint: 1024,
