@@ -14,7 +14,7 @@ import {
        <Headers>
           <ContainerIcon>
              <Link to="/home"><Icon src="/per2.png" alt='morgamlogo' /></Link>
-             <p>Tu camino, tus reglas.</p>
+             <p>Tu camino, tus reglas ahora.</p>
           </ContainerIcon>
         
           <ContainerMenu>
