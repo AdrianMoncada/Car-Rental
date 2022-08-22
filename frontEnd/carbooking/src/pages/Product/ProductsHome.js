@@ -12,7 +12,7 @@ export default function ProductsHome(){
   
     useEffect(() => {
       const request = async () => {
-        const response = await fetch(" http://api-cors.ca-central-1.elasticbeanstalk.com/categories");
+        const response = await fetch("http://18.219.33.103:8080/products");
         const result = await response.json();
         setDataApi(result);}
         request();
@@ -27,9 +27,9 @@ export default function ProductsHome(){
              <Card>
                 <BoxOne> 
                     <MiniBoxOne> 
-                        <h3> {item.title} </h3> 
-                        <HInMiniBoxOne> {item.category} </HInMiniBoxOne>
-                        <HInMiniBoxOne> {item.location}</HInMiniBoxOne>
+                        <h3> {item.name} </h3> 
+                        <HInMiniBoxOne> {item.category.name} </HInMiniBoxOne>
+                        <HInMiniBoxOne> {item.city.name}</HInMiniBoxOne>
                         <Button onClick={() => navigate("product")} > Ver más </Button>
                        
 
@@ -37,13 +37,13 @@ export default function ProductsHome(){
 
                     <MiniBoxTwo>
                         <div> 
-                            <p> {item.description}</p>
+                            <p> {item.characteristics}</p>
                         </div>
                     </MiniBoxTwo>
                 </BoxOne>
 
                 <BoxTwo>
-                    <Image src={item.img} alt={item.title} /> 
+                    <Image src={item.images.url} alt={item.name} /> 
                 </BoxTwo>
             </Card>
           </Container>
