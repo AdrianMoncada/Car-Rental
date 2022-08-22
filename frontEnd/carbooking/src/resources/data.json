@@ -2,81 +2,82 @@
     {
      "id": "1", 
      "product":{
-        "img": "https://images.unsplash.com/photo-1600016325435-640472773c43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "img": "https://karlingo.a-code.ec/wp-content/uploads/2020/12/LOGAN-colores-BLANCO.png",
         "category": "Económico",
-        "title": "Mini Cooper",
+        "title": "Renault Logan Life",
         "location": "Ibagué",
-        "description": "El 'MINI One' incorpora un motor de 1.4 litros de cilindrada de inyección indirecta y 75 o 95 CV. Los 'MINI Cooper' y 'MINI Cooper S' poseen un 1.6 litros, el primero con inyección indirecta y 120 CV, y el segundo con inyección directa, turbocompresor y 184 CV."		
-        } 
-    }, 
-    {
-     "id": "2", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "category": "Deportivo",
-        "title": "Lamborghini Huracán EVO",
-        "location": "Bucaramanga",
-        "description": "El Lamborghini Huracán EVO es un superdeportivo de motor central que se posiciona en la gama de Lamborghini por debajo del Lamborghini Aventador. Su nombre 'Huracán' es en honor a un toro bravo que fue lidiado en la plaza de toros de Alicante en 1879 y que, durante el enfrentamiento, hirió de gravedad a varias personas."		
-        } 
-    }, 
-    {
-     "id": "3", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1605515298946-d062f2e9da53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1002&q=80",
-        "category": "Económico",
-        "title": "BMW Serie 8",
-        "location": "Cali",
-        "description": "El BMW Serie 8 es el coupé más lujoso y tecnológico de BMW. Su denominación hace referencia a uno de los emblemas históricos más importantes de BMW: fue escogida en los años ochenta, para designar al coupé más distinguido de su gama."		
-        } 
-    }, 
-    {
-     "id": "4", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1570829174962-38c53efc5e5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=863&q=80",
-        "category": "Deportivo",
-        "title": "Lamborghini",
-        "location": "Bogotá",
-        "description": "Cada detalle del Aventador encarna de la mejor manera posible el ADN de la Casa del Toro: una verdadera obra maestra de diseño que expresa dinamismo y potencia y que ha hecho del monocasco de carbono su punta de lanza. El interior combina tecnologías de altísimo nivel y equipamientos de lujo con materiales de calidad superior magistralmente elaborados."		
-        } 
-    }, 
-    {
-     "id": "5", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1536150693014-2ef8bff55514?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
-        "category": "Lujo",
-        "title": "Audi R8",
-        "location": "Medellín",
-        "description": "La versión de 620 CV se denomina Audi R8 V10 Performance quattro y se trata del modelo más potente de la gama R8, acelerando hasta los 100 kilómetros por hora en 3,1 segundos y logrando una velocidad máxima de 331 km/h."		
+        "description": "El Renault LOGAN está equipado de serie con 4 airbags (conductor, copiloto y laterales), frenos ABS, fijaciones ISOFIX® en los dos puestos laterales traseros."		
         } 
     },
+
     {
-     "id": "6", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1597685204565-110abf469a1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-        "category": "Minivan",
-        "title": "Minivan E4",
-        "location": "Barranquilla",
-        "description": "La minivan tradicional cuenta con asientos para siete pasajeros (incluido el conductor) y está construida para llevarlos cómodamente. Se comercializa entre las familias suburbanas y tiene un maletero o cajuela, tan grande como para acomodar el equipo de deportes de la familia entera y las montañas de alimentos que regularmente consumen."		
-        }  
-    }, 
+        "id": "2", 
+        "product":{
+           "img": "https://cloudflarestockimages.dealereprocess.com/resrc/images/stockphoto_asset-c_limit,f_auto,fl_lossy,w_auto/v1/svp/Pix_PNG1280/2020/20nissan/20nissanversasedansvsd3a/nissan_20versasedansvsd3a_angularfront",
+           "category": "Económico",
+           "title": "Nissa Versa",
+           "location": "Bogotá",
+           "description": "La tecnología del Nuevo Nissan Versa hace cada momento desde el volante más sencillo, seguro y disfrutable."	
+           }  
+    },
     {
-     "id": "7", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-        "category": "Deportivo",
-        "title": "Ferrari 458",
-        "location": "Tunja",
-        "description": "El Ferrari 458 Italia es un modelo realizado empleando la tecnología y la experiencia que atesora Ferrari en la Formula 1 con la colaboración de Michael Schumacher y que cuenta con un motor 4.5 V8 de Ferrari con 570 CV, el motor más eficiente que se haya empleado nunca en un cavallino rampante. Su versión más radical, el Ferrari 458 Speciale, alcanza los 605 CV. "		
-        } 
-    }, 
+        "id": "3", 
+        "product":{
+           "img": "https://rentacarcolombia.com.co/wp-content/uploads/2018/09/ford-focus.png",
+           "category": "Lujo",
+           "title": "Ford focus",
+           "location": "Cali",
+           "description": "Un frontal renovado que incluye un nuevo capó, un parachoques, rejillas y un llamativo grupo de faros LED con luces antiniebla integradas."	
+           }  
+    },
     {
-     "id": "8", 
-     "product":{
-        "img": "https://images.unsplash.com/photo-1613750590555-5ad35bd95a99?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
-        "category": "Minivan",
-        "title": "Minivan LWB 04",
-        "location": "Buenaventura",
-        "description": "Una Van que adopta la tecnología de chasis 3H f, panel frontal ultra resistente y vigas dobles que permiten una mayor protección para sus ocupantes. Interior completamente rediseñado con modernas sillas, ergonómicas y resistentes, perfectas para transportar con total confort a sus ocupantes. habitáculo dotado para 6 pasajeros más conductor."		
-        } 
-    } 
+        "id": "4", 
+        "product":{
+           "img": "https://secure-developments.com/commonwealth/argentina/gm_specs/uploads/byo-cruze-sedan-lt-cinza-satin-steel_1634661278_1643922088.png",
+           "category": "Lujo",
+           "title": "Chevrolet Cruze",
+           "location": "Cali",
+           "description": "Además de la potencia de su motor turbo, la seguridad más avanzada, todo su confort y la exclusiva tecnología WI-FI."	
+           }  
+    },
+    {
+        "id": "5", 
+        "product":{
+           "img": "https://www.motortrend.com/uploads/sites/10/2017/05/2018-porsche-911-carrera-coupe-angular-front.png",
+           "category": "Deportivo",
+           "title": "Porshe 911 ",
+           "location": "Pereira",
+           "description": "Es, quizás, uno de los carros deportivos más reconocidos del mercado. Su diseño e interior respiran deportividad gracias a una carrocería más aerodinámica y con más elementos en aluminio.ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ"	
+           }  
+    },
+    {
+        "id": "6", 
+        "product":{
+           "img": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/5b614db2-c11a-4539-ba3c-08c88d7b484a/6367d51d-b6f8-4ea6-b444-6af6ee7ba03c.png",
+           "category": "Deportivo",
+           "title": "Audi TT Coupé RS",
+           "location": "Medellín",
+           "description": "Es, quizás, uno de los carros deportivos más reconocidos del mercado. Una carrocería más aerodinámica y con más elementos en aluminio."	
+           }  
+    },
+    {
+        "id": "7", 
+        "product":{
+           "img": "https://www.chevrolet.com.co/content/dam/chevrolet/south-america/colombia/espanol/index/posventa/cambio-de-embrague/2022-cambio-de-embrague-nameplates-10.png?imwidth=960",
+           "category": "Minivan",
+           "title": "Minivan n300",
+           "location": "Cartagena",
+           "description": "Con un excelente espacio interno, capacidad de hasta 7 personas y excelentes acabados más conductor, y excelente acabamiento, posee un motor 1.2L de 81hp que provee potencia en la medida y con mucha economía."	
+           }  
+    },
+    {
+        "id": "8", 
+        "product":{
+           "img": "https://static.content.images.tms.aws.toyota.com/tlc/2021/21kia/21kiasedonalxmv3t/kia_21sedonalxmv3t_angularfront_silkysilver.png",
+           "category": "Minivan",
+           "title": "Kia Sedona",
+           "location": "Tuluá",
+           "description": "En términos de estilo, el Sedona ofrece algo para los compradores que deseen conducir una SUV. Su nariz roma y la línea distintiva del capó ayudan a darle un perfil menos parecido a una van."
+           }  
+    }
 ]

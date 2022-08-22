@@ -1,7 +1,11 @@
 .App {
-  text-align: center;
+  border: 5px solid yellow;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  overflow: hidden;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

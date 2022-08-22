@@ -2,7 +2,8 @@ import React from 'react';
 import LoginScreens from '../../components/component/Forms/FormLogin/LoginScreen';
 import Footer from '../../components/footer';
 
-import HeaderSecond from '../../components/hearderSecond';
+import HeaderThree from '../../components/HeaderThree';
+
 import { Headers, Footers, Body} from './login.styles';
 
 export default function Login (){
@@ -10,7 +11,7 @@ export default function Login (){
     return(
       <Body>
         <Headers> 
-          <HeaderSecond/>
+          <HeaderThree/>
         </Headers>
         <LoginScreens />
         <Footers>

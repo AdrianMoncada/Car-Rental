@@ -10,7 +10,7 @@ import {
 
 
 
-const HeaderSecond = () => {
+const HeaderThree = () => {
    const navigate = useNavigate();
    return (
       <Headers>
@@ -19,11 +19,11 @@ const HeaderSecond = () => {
             <p>Tu camino, tus reglas</p>
          </ContainerIcon>
          <ContainerBtn>
-             <ButtonSign onClick={() => navigate("/home/signin")}>Iniciar sesion</ButtonSign>
+         <ButtonSign onClick={() => navigate("/home/signup")}>Crear cuenta</ButtonSign>
           </ContainerBtn>
       </Headers>
 
    )
 }
 
-export default HeaderSecond
+export default HeaderThree

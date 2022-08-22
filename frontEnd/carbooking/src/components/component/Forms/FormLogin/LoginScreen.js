@@ -1,10 +1,19 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   ErrorMessage,
   Form,
   Inputs,
   LastParagraph,
+  Title,
+  OneDiv,
+  TwoDiv,
+  ThreeDiv,
+  H6,
+  InputsContainer,
+  TextLink,
+  ContainerForm,
 } from "../../../../pages/Login/login.styles";
 
 function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
@@ -43,16 +52,22 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
   };
 
   return (
-    <Form action="" onSubmit={onSubmit}>
-      <h1> Iniciar Sesión </h1>
+    <ContainerForm>
+    <Form action="" onSubmit={onSubmit} autocomplete="off" >
 
-      {!primerCarga && !formularioValido && (
-        <ErrorMessage>
-          Por favor vuelva a intentarlo, sus credenciales son inválidas
-        </ErrorMessage>
-      )}
+      <OneDiv>
+      <Title> Iniciar Sesión </Title>
 
-      <h3> E-mail </h3>
+          {!primerCarga && !formularioValido && (
+            <ErrorMessage>
+                Por favor vuelva a intentarlo, sus credenciales son inválidas
+            </ErrorMessage>
+)}
+      </OneDiv>
+      
+      <TwoDiv>
+      <InputsContainer>
+      <H6> E-mail </H6>
       <Inputs
         type="email"
         placeholder="Correo Electrónico"
@@ -61,7 +76,7 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
         onChange={(e) => cambiarCorreo(e.target.value)}
       />
 
-      <h3> Contraseña </h3>
+      <H6> Contraseña </H6>
       <Inputs
         type="password"
         placeholder="Contraseña"
@@ -69,18 +84,24 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
         value={password}
         onChange={(e) => cambiarPassword(e.target.value)}
       />
+      </InputsContainer>
+      </TwoDiv>
 
-      <br></br>
-
+      <ThreeDiv>
       <Button type="submit"> Iniciar sesión </Button>
+      </ThreeDiv>
 
-      <p> ¿No te has registrado?  Entra aquí </p>
+      <TextLink>
+      <p> ¿No te has registrado?</p>
+      <p> <Link to="/home/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>
 
+      </TextLink>
       <LastParagraph>
         Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y
         Condiciones
       </LastParagraph>
     </Form>
+    </ContainerForm>
   );
 }
 

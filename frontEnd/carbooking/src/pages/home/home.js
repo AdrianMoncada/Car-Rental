@@ -2,7 +2,7 @@ import React from 'react';
 import  Header  from '../../components/header';
 import Banner from '../../components/component/banner/banner';
 import  Footer  from '../../components/footer';
-import List  from   '../../components/List';
+import ProductsHome from '../Product/ProductsHome';
 import CardCategories from '../../components/category/listCategories';
 import { Container } from './home.styles'
 
@@ -14,8 +14,7 @@ const Home = () =>{
          <Header/>
          <Banner/>
          <CardCategories/>
-          
-         <List/>
+          <ProductsHome/>
          <Footer/>
  
       </Container>

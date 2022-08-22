@@ -3,6 +3,7 @@ import HeaderSecond from '../../components/hearderSecond';
 
 import Footer from '../../components/footer';
 import { Link} from "react-router-dom";
+
 import {Form, 
         Button,
         Inputs,
@@ -10,7 +11,12 @@ import {Form,
         LastParagraph,
         InputsContainer,
         TextLink,
-        Body
+        Body,
+        OneDiv,
+        TwoDiv,
+        ThreeDiv,
+        Title,
+        H6
     } from './Register.styles';
 import { Headers, Footers } from '../Login/login.styles';
 
@@ -23,65 +29,74 @@ export default function Register (){
             <Headers>
                 <HeaderSecond/>
             </Headers>
-        <Form >
+            <Form >
+            <OneDiv>
+                <Title> Registro </Title>
 
-            <h1> Registro </h1>
+                <CenteredText> Por favor, complete este formulario para crear una cuenta.</CenteredText>
+            </OneDiv>
 
-            <CenteredText> Por favor, complete este formulario para crear una cuenta.</CenteredText>
+            <TwoDiv>
+                    <InputsContainer>
+                    <H6> Nombre </H6>
+                    <Inputs 
+                    placeholder='Nombre'
+                    type="text"
+                    
+                    />
+
+                    <H6> Apellido </H6>
+                    <Inputs 
+                    label= 'Apellido'
+                    name= 'Apellido'
+                    placeholder='Apellido'
+                    type="text"
+                    
+                    />
+                    <H6> E-mail </H6>
+                    <Inputs
+                        placeholder='Correo electronico'
+                        type="email"
+                    />
+
+                    <H6> Contraseña </H6>
+                    <Inputs 
+                        
+                        placeholder='Contraseña'
+                        type="password"
+                    />
+
+
+                    <H6> Confirmar Contraseña </H6>
+                    <Inputs 
+                        
+                        placeholder='Confirmar Contraseña'
+                        type="password"
+                    />
+                    </InputsContainer>    
+            </TwoDiv>
             
-            <InputsContainer>
-            <h6> Nombre </h6>
-            <Inputs 
-            placeholder='Nombre'
-            type="text"
+            <ThreeDiv>
+                <Button type="submit"> Registrarse </Button>
+            </ThreeDiv>
             
-            />
-
-            <h6> Apellido </h6>
-            <Inputs 
-            placeholder='Apellido'
-            type="text"
             
-            />
-            <h6> E-mail </h6>
-            <Inputs
-                placeholder='Correo electronico'
-                type="email"
-            />
-
-            <h6> Contraseña </h6>
-            <Inputs 
-                
-                placeholder='Contraseña'
-                type="password"
-            />
-
-
-            <h6> Confirmar Contraseña </h6>
-            <Inputs 
-                
-                placeholder='Confirmar Contraseña'
-                type="password"
-            />
-            </InputsContainer>
-
-            <br></br>
-            <Button type="submit"> Registrarse </Button>
-            
-
             <TextLink>
                 <p> ¿Ya tienes una cuenta?</p>
-                <p> <Link to="/signin"> Entra aquí </Link> </p>
-
+                <p> <Link to="/home/signin" style={{textDecoration: "none", color:"#FCA311"}}> ㅤEntra aquí </Link> </p>
             </TextLink>
            
            
-            <LastParagraph>Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y Condiciones</LastParagraph>
+            <LastParagraph>Al hacer clic en el botón Registrar, acepta nuestros Términos y Condiciones</LastParagraph>
         </Form>
+
             <Footers>
                 <Footer/>               
             </Footers>
+
         </Body>
+
+        
 
     );
 

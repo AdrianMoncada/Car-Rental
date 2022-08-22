@@ -6,7 +6,7 @@ const Footer = () =>{
     return (
          <Footers>
              <AuthRigth>
-             <p>©2022 Digital Booking</p> 
+             <p>©2022 Morgam Rent</p> 
              </AuthRigth>
             
              <SocialMediaContainer>

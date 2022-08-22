@@ -4,13 +4,15 @@ import styled from "styled-components";
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  background-image: url("https://images.pexels.com/photos/566061/pexels-photo-566061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2https://d2hucwwplm5rxi.cloudfront.net/wp-content/uploads/2021/08/30123956/Tips-for-Road-Trip-Cover-30-08-1.jpg");
-  
   width: 100%;
   height:500px;
+  background-image: url(https://images.unsplash.com/photo-1520560387605-de260bb65250?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: space-between;
-  place-content: center;
+  align-items: center;
   margin-top: -20px;
+  overflow: hidden;
   padding-top : 14px;
 
   @media (max-width: 667px) {
@@ -29,13 +31,16 @@ export const ProductCard = styled.div`
  height:270px;
  background-color:hsla(0,0%,100%,.3);
  margin-right:20px;
+ margin-left: 20px;
  margin-top:70px;
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
  cursor:pointer;
+ color: #fff;
  :hover{
-  webkit-transform:scale(1.2);transform:scale(1.2);
+  webkit-transform:scale(1.2);
+  transform:scale(1.1);
  }
 @media (max-width: 667px) {
   margin-bottom:40px;
@@ -71,7 +76,6 @@ export const Title = styled.div`
   display:none;
   width: 800px;
   height:60px;
-  
 
   @media (max-width: 667px) {
     display: flex;
@@ -96,11 +100,11 @@ justify-content: flex-start
 `;
 export const CantForRent = styled.div`
 height: 32px;
-color: #31363F;
 opacity: 0.9;
 margin-left:5px;
 display:flex;
 justify-content: flex-start
+color: #fff;
 `;
 
 

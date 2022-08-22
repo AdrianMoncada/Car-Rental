@@ -11,7 +11,7 @@ const ciudades = [
   },
   {
     id: 3,
-    name: "Medellin",
+    name: "Medellin", 
     value: "medellin",
   },
   {
