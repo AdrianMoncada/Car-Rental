@@ -22,7 +22,6 @@ public class Image {
 
     @ManyToOne
     @JoinColumn(name = "product")
-    @JsonIgnore
     Product product;
 
     //Constructor Vacio

@@ -43,7 +43,6 @@ public class Product {
 
 
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    @JsonIgnore
     private Set<Image> images = new HashSet<>();
 
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
