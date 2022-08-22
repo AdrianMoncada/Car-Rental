@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState} from "react";
 import ciudades from "../helpers/ciudades";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -18,6 +18,10 @@ const Banner = () => {
   const handleCheckOutDate = (date) => {
     setCheckOutDate(date);
   };
+
+
+
+
 
   return (
     <div>

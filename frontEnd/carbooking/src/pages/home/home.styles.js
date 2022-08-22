@@ -1,27 +1,33 @@
 import styled from "styled-components";
 
+const Orange = "#FCA311";
+const PetrolBlue = "#14213D";
+const LightGray = "#E5E5E5";
+const FontFamily = "'Quicksand', sans-serif;";
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;
 
   min-height: 100vh;
-  background: #808B96;
+  background: ${LightGray};
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+
 `;
 
 export const Headers = styled.header`
   display: flex;
   width: 100%;
-  height: 100px;
+  height: 60px;
   position: sticky;
   top: 0px;
   color:white;
-  background: #212F3C;
+  background: ${PetrolBlue};
   opacity: 0.96;
   justify-content: space-between;
   position: sticky;   
@@ -36,9 +42,9 @@ export const ContainerIcon = styled.div`
 
   margin-top:30px;
   padding-right:40px;
-  width:290px;
+  width: 290px;
   margin-left:40px;
-  margin-top 10px;
+  margin-top 0px;
 
   @media (max-width: 237px) {
     display: none;
@@ -46,7 +52,7 @@ export const ContainerIcon = styled.div`
 `;
 
 export const Icon = styled.img`
-  height:70px;
+  height:50px;
  
 `;
 
@@ -80,23 +86,31 @@ export const text = styled.p`
 export const ContainerBtn = styled.div`
   display: flex;
   justify-content:space-between;
-  margin-top:30px;
-  padding-right:40px;
+  align-items: center;
   width:400px;
+  height: 100%;
   @media (max-width: 667px) {
   display: none;
   }
 `;
 
 export const ButtonSign = styled.button`
-  border-radius:5px ;
-  background-color: white;
+  border-radius: 9px ;
+  background-color: ${Orange};
   width: 206px;
   height: 40px;
-  color:#F0572D;
-  border: 1px solid #F0572D;
+  font-size: 16px;
+  font-family: ${FontFamily};
+  font-weight: bold;
+  color: ${PetrolBlue};
+  border: 2px solid ${Orange};
   margin-right:10px;
   cursor: pointer;
+
+  :hover{
+    color: ${Orange};
+    background-color: ${PetrolBlue};
+  }
 `;
 export const ContainerMenu = styled.div`
   display: none;
@@ -119,24 +133,33 @@ export const Menu = styled.img`
 export const Footers = styled.footer `
   display:flex;
   justify-content: space-between;
-  bottom: 0px;
-  background: #212F3C;
+  align-items: center;
+  background:${PetrolBlue};
   opacity: 0.96;
   color:white;
   padding: 24px;
-  width: 100%;
-  height: 100px;
- 
+  width:100%;
+  height: 30px;
+  overflow: hidden;
 `;
 
 export const AuthRigth = styled.div`
+
   display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:200px;
+  height: 58px;
+  padding-top: 15px;
+  padding-right:40px;
+
 
   @media (max-width: 667px) {
     display: flex-start;
    }
 `;
 export const SocialMediaContainer = styled.div`
+
   display:flex;
   justify-content: space-between;
   align-items: center;

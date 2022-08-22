@@ -6,7 +6,11 @@ const Footer = () =>{
     return (
          <Footers>
              <AuthRigth>
+<<<<<<< HEAD
              <p>©2022 Morgam</p> 
+=======
+             <p>©2022 Morgam Rent</p> 
+>>>>>>> dev-Dayana-galeriaDeProducto
              </AuthRigth>
             
              <SocialMediaContainer>
