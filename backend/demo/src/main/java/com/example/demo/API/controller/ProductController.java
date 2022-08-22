@@ -1,9 +1,6 @@
 package com.example.demo.API.controller;
-
-
 import com.example.demo.API.persistence.DTO.CityDto;
 import com.example.demo.API.persistence.DTO.ProductDto;
-import com.example.demo.API.persistence.entities.City;
 import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.service.CityService;
 import com.example.demo.API.service.ProductService;
@@ -68,11 +65,23 @@ public class ProductController {
             return null;
         }
     }*/
-    @PostMapping
+/*    @PostMapping
     public ResponseEntity<?> createProduct(@Validated @RequestBody Product aProduct){
         Product createProduct = productService.save(aProduct);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createProduct.getId()).toUri();
         return ResponseEntity.created(location).body(createProduct);
+    }*/
+
+    @PostMapping
+    public ResponseEntity<String> createProduct(@RequestBody Product p) {
+        ResponseEntity<String> response = null;
+
+        if(productService.save(p) != null) {
+            response = ResponseEntity.ok("Patient created.");
+        } else {
+            response = ResponseEntity.internalServerError().body("Oops");
+        }
+        return response;
     }
 
     //Update

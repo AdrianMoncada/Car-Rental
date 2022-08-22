@@ -1,12 +1,9 @@
 package com.example.demo.API.service;
-
-
 import com.example.demo.API.persistence.DTO.ProductDto;
 import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -20,9 +17,6 @@ public class ProductService {
         return productRepository.save(p);
     }
 
-    /*public List<Product> getAll() {
-        return productRepository.findAll();
-    }*/
     public List<ProductDto> getAllProductDTO(){
         return productRepository.findAll()
                 .stream()
@@ -72,6 +66,5 @@ public class ProductService {
             return null;
         }
     }
-
 
 }

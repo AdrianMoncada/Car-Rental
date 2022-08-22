@@ -24,6 +24,10 @@ public class Product {
     @NotNull
     private String name;
 
+    @Column(name = "description")
+    @NotNull
+    private String description;
+
     @JoinColumn(name = "categories_id")
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
