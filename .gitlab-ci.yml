@@ -21,7 +21,7 @@ build website:
         paths:
             - frontEnd/carbooking/build
 
-.test website:
+test website:
     image: node:16-alpine
     stage: test
     script:
@@ -31,7 +31,7 @@ build website:
         - sleep 10
         - curl http://localhost:3000
 
-.unit test:
+unit test:
     image: node:16-alpine
     stage: test
     script:
