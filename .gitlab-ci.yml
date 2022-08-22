@@ -1,0 +1,111 @@
+stages:
+    - build front
+    - test
+    - deploy front
+    - post deploy
+    - build
+    - deploy
+
+variables:
+    FRONT_APP_URL: http://morgam-frontend.s3-website.us-east-2.amazonaws.com
+
+.build website:
+    image: node:16-alpine
+    stage: build front
+    script:
+        - cd frontEnd
+        - cd carbooking
+        - yarn install
+        - yarn build
+    artifacts:
+        paths:
+            - frontEnd/carbooking/build
+
+.test website:
+    image: node:16-alpine
+    stage: test
+    script:
+        - yarn global add serve
+        - apk add curl
+        - serve -s build &
+        - sleep 10
+        - curl http://localhost:3000
+
+.unit test:
+    image: node:16-alpine
+    stage: test
+    script:
+        - cd frontEnd
+        - cd carbooking
+        - yarn install
+        - yarn test
+
+.deploy to s3:
+    stage: deploy front
+    image: 
+        name: amazon/aws-cli:2.4.11
+        entrypoint: [""]
+    script:
+        - aws --version
+        - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
+
+.deploy to s3 2:
+    stage: deploy front
+    image: 
+        name: amazon/aws-cli:2.4.11
+        entrypoint: [""]
+    rules:
+        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    script:
+        - aws --version
+        - echo $CI_COMMIT_REF_NAME
+        - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
+
+.pre-production test:
+    stage: post deploy
+    image: curlimages/curl
+    rules:
+        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    script:
+        - curl $FRONT_APP_URL
+
+build:
+    stage: build
+    image:  maven:latest
+    script:
+        - cd backend
+        - cd demo
+        - ls
+        - mvn clean install
+        - ls
+        - cd target
+        - ls
+    artifacts:
+        expire_in: 1 week
+        paths:
+            - backend/demo/target/consoleapp-2.7.2.jar
+
+deploy:
+    stage: deploy
+    image: alpine:3.11
+    before_script:
+        - apk update && apk add openssh-client bash
+        - mkdir -p ~/.ssh
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+        - touch ~/.ssh/config
+        - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+        - ssh-keyscan -H $DEPLOY_SERVER_IP >> ~/.ssh/known_hosts
+    script:
+        - echo "Deploying started..."
+        - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop consoleapp.service"
+        - ls
+        - cd backend
+        - cd demo
+        - cd target
+        - ls
+        - scp consoleapp-2.7.2.jar ubuntu@$DEPLOY_SERVER_IP:~/console-app/
+        - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start consoleapp.service"
+        - echo "Finished deploying the app."
+
+
