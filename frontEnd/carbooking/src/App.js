@@ -10,17 +10,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
-        <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Login />} />
-        <Route path="/signup" element={<Register />}/>
-=======
+
         <Route path="/home" element={<Home />} />
         <Route path="/home/signin" element={<Login />} />
         <Route path="/home/signup" element={<Register />}/>
         <Route path="/home/product" element={<ProductDetails/>} />
         
->>>>>>> dev-Dayana-galeriaDeProducto
+
       </Routes>
     </BrowserRouter>
   );
