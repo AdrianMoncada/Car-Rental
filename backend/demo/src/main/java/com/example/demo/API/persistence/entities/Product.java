@@ -1,4 +1,5 @@
 package com.example.demo.API.persistence.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -6,7 +7,9 @@ import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -38,20 +41,23 @@ public class Product {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private City city;
 
-    @OneToMany(mappedBy = "product")
-    private List<Image> images = new ArrayList<Image>();
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<Image> images = new HashSet<>();
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Characteristic> characteristics = new ArrayList<Characteristic>();
 
     //Constructor vacio
     public Product(){
     }
 
-    public Product(Long id, String name, Category category , City city) {
+    public Product(Long id, String name, Category category , City city, List<Characteristic> characteristics) {
         this.id =id;
         this.name = name;
         this.category = category;
         this.city = city;
+        this.characteristics = characteristics;
     }
 }

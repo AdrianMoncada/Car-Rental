@@ -7,6 +7,7 @@ import com.example.demo.API.persistence.entities.Image;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Data
 @Getter
@@ -17,7 +18,7 @@ public class ProductDto implements Serializable {
     private Long id;
     private String name;
     private Category category;
-    private Characteristic characteristic;
+    private Set<Characteristic> characteristics;
     private City city;
-    private Image image;
+    private Set<Image> images;
 }
