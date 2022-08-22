@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 //contenedor de todas las cartas
 export const CardsContainer = styled.div`
   display: flex;
@@ -33,7 +32,7 @@ export const ProductCard = styled.div`
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
- cursor:pointer;
+
  :hover{
   webkit-transform:scale(1.2);transform:scale(1.2);
  }
@@ -102,5 +101,18 @@ margin-left:5px;
 display:flex;
 justify-content: flex-start
 `;
+export const H1 = styled.h1`
+  text-align: left;
+  color: black;
+  font-size: 30px;
+  margin: 30px auto;
+`;
 
+export const ViewMore = styled.button`
+
+cursor:pointer;
+background-color: transparent;
+font-size:small;
+font:bold;
+`
 
