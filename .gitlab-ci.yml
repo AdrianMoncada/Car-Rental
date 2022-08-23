@@ -3,8 +3,8 @@ stages:
     - test
     - deploy front
     - post deploy
-    - build
-    - deploy
+    - build API
+    - deploy API
 
 variables:
     FRONT_APP_URL: http://morgam-frontend.s3-website.us-east-2.amazonaws.com
@@ -45,21 +45,12 @@ deploy to s3:
     image: 
         name: amazon/aws-cli:2.4.11
         entrypoint: [""]
+    rules:
+        - if: CI_COMMIT_REF_NAME == develop
     script:
         - aws --version
         - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
 
-.deploy to s3 2:
-    stage: deploy front
-    image: 
-        name: amazon/aws-cli:2.4.11
-        entrypoint: [""]
-    rules:
-        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-    script:
-        - aws --version
-        - echo $CI_COMMIT_REF_NAME
-        - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete
 
 .pre-production test:
     stage: post deploy
@@ -70,7 +61,7 @@ deploy to s3:
         - curl $FRONT_APP_URL
 
 build:
-    stage: build
+    stage: build API
     image:  maven:latest
     script:
         - cd backend
@@ -86,8 +77,10 @@ build:
             - backend/demo/target/consoleapp-2.7.2.jar
 
 deploy:
-    stage: deploy
+    stage: deploy API
     image: alpine:3.11
+    rules:
+        - if: CI_COMMIT_REF_NAME == develop
     before_script:
         - apk update && apk add openssh-client bash
         - mkdir -p ~/.ssh
