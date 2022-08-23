@@ -111,35 +111,7 @@ export const Galery = styled.div`
     padding-left: 150px;
     gap:10px;
 `
-export const PhotoOne = styled.div`
-    grid-area: 2 / 1 / 4 / 3; 
-    width: 100%;
-    height: 100%;
-    border-radius: 5rem;
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
 
-`
-export const PhotoTwo = styled.div`
-    grid-area: 2 / 3 / 3 / 4;
-    width: 100%;
-    height: 200px;
-    border-radius: 2rem;
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
-`
-export const PhotoThree = styled.div`
-    grid-area: 2 / 4 / 3 / 5;
-    width: 100%;
-    height: 200px;
-    border-radius: 2rem;
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
-`
-export const PhotoFour = styled.div`
-    grid-area: 3 / 3 / 4 / 4;
-    width: 100%;
-    height: 200px;
-    border-radius: 2rem;
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
-`
 export const PhotoFive = styled.div`
     display: flex;
     flex-direction: column;
@@ -199,4 +171,13 @@ background:gray;
 width: 100%;
 height: 150px;
 
+`
+
+export const Image = styled.div`
+    width: ${props=> props.width};
+    height: ${props => props.heigth};
+    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
+    grid-area: ${props => props.area}; 
+    border-radius: ${props => props.border};
+    
 `

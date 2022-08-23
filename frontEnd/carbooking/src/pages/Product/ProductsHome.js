@@ -2,14 +2,9 @@ import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import { Container, Card, BoxOne, BoxTwo, Image, MiniBoxOne, HInMiniBoxOne, MiniBoxTwo, Button} from "./ProductsHome.styles";
 
-export default function ProductsHome(){
-    
-
-
+const ProductsHome =() =>{
     const [dataApi, setDataApi] = useState(null);
     const navigate = useNavigate();
-  
-  
     useEffect(() => {
       const request = async () => {
         const response = await fetch("http://18.219.33.103:8080/products");
@@ -17,12 +12,11 @@ export default function ProductsHome(){
         setDataApi(result);}
         request();
       }, []);
-  
-  
-    
     return(
         <>
-        {dataApi && dataApi.map((item) => (
+        {
+        dataApi && 
+        dataApi.map(item => 
           <Container key={item.id}>
              <Card>
                 <BoxOne> 
@@ -30,7 +24,7 @@ export default function ProductsHome(){
                         <h3> {item.name} </h3> 
                         <HInMiniBoxOne> {item.category.name} </HInMiniBoxOne>
                         <HInMiniBoxOne> {item.city.name}</HInMiniBoxOne>
-                        <Button onClick={() => navigate("product")} > Ver más </Button>
+                        <Button onClick={() => navigate(`/product/${item.id}`)} > Ver más </Button>
                        
 
                     </MiniBoxOne>
@@ -47,7 +41,9 @@ export default function ProductsHome(){
                 </BoxTwo>
             </Card>
           </Container>
-        ))}
+        )
+        }
       </>
     );
-}
+};
+export default ProductsHome;
