@@ -2,6 +2,18 @@ import { React, useState} from "react";
 import ciudades from "../helpers/ciudades";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { FaCalendarAlt, FaSearchLocation} from 'react-icons/fa';
+
+// Estilos 
+import { BrowserContainer, 
+         SelectContainer,
+         Select,
+         CheckInContainer,
+         CheckOutContainer,
+         Button,
+         ButtonContainer       
+        } from "./banner.styles";
+import "../banner/banner.css";
 
 const Banner = () => {
   // define check-in and check-out state
@@ -24,37 +36,41 @@ const Banner = () => {
 
 
   return (
-    <div>
-      <h1>Alquila tu vehiculo</h1>
-      <div>
-        <div>
-          <select>
+    <BrowserContainer>
+      <h4>Alquila tu vehiculo</h4>
+      
+        <SelectContainer>
+        <FaSearchLocation className="locationIcon"/>
+          <Select>
             {ciudades.map((ciudad) => {
               return <option value={ciudad.value}>{ciudad.name}</option>;
             })}
-          </select>
-        </div>
-        <div>
-          <label>Check-in</label>
-          <DatePicker
+          </Select>
+        </SelectContainer>
+        <CheckInContainer>
+          <FaCalendarAlt className="iconCheck"/>
+          <DatePicker className="checkIn"
+            placeholderText="Fecha de recogida"
             selected={checkInDate}
             minDate={new Date()}
             onChange={handleCheckInDate}
           />
-        </div>
-        <div>
-          <label>Check-out</label>
+        </CheckInContainer>
+        <CheckOutContainer>
+        <FaCalendarAlt className="iconCheck"/>
           <DatePicker
+            className="checkOut"
+            placeholderText="Fecha de entrega"
             selected={checkOutDate}
             minDate={checkInDate}
             onChange={handleCheckOutDate}
           />
-        </div>
-        <div>
-            <button>Buscar</button>
-        </div>
-      </div>
-    </div>
+        </CheckOutContainer>
+        <ButtonContainer>
+          <Button> Buscar </Button>
+        </ButtonContainer>
+     
+    </BrowserContainer>
   );
 };
 

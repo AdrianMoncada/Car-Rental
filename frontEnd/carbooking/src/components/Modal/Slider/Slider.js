@@ -33,8 +33,8 @@ const Carousel = () =>{
         initialSlide: 0,
         cssEase: "linear",
         pauseOnHover: true,
-        nextArrow: <PreviousArrow/>,
-        prevArrow: <NextArrow />,
+        nextArrow: <NextArrow/>,
+        prevArrow: <PreviousArrow/>,
         responsive: [
           {
             breakpoint: 1024,

@@ -15,6 +15,7 @@ input#abrir-cerrar {
     visibility:hidden;
     position: absolute;
     top: -9999px;
+    
 }
 
 
@@ -26,6 +27,9 @@ label[for="abrir-cerrar"] {
     display:inline-block;
     width:65%;
 
+    margin-left:-5px;
+    position: relative;
+    bottom: 30px;
 }
 
 .cerrar {
@@ -43,7 +47,9 @@ input#abrir-cerrar:checked ~ #sidebar {
 }
 
 input#abrir-cerrar:checked + label[for="abrir-cerrar"], input#abrir-cerrar:checked ~ #contenido {
-    margin-left:-20px;
+    margin-left:-5px;
+    position: relative;
+    bottom: 30px;
     transition: margin-left .4s;
 }
 
@@ -110,6 +116,7 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"] .abrir {
     margin-bottom: 20px;
     border-radius: 15px;
     width: 150px;
+    z-index: 0;
     
 }
 
