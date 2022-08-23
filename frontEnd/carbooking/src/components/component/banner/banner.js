@@ -1,8 +1,8 @@
-import { React, useState} from "react";
+import { React, useState } from "react";
 import ciudades from "../helpers/ciudades";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { FaCalendarAlt, FaSearchLocation} from 'react-icons/fa';
+import { FaCalendarAlt} from 'react-icons/fa';
 
 // Estilos 
 import { BrowserContainer, 
@@ -11,11 +11,11 @@ import { BrowserContainer,
          CheckInContainer,
          CheckOutContainer,
          Button,
-         ButtonContainer       
+         ButtonContainer
         } from "./banner.styles";
 import "../banner/banner.css";
 
-const Banner = () => {
+const Banner = ({setCity}) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
@@ -32,7 +32,10 @@ const Banner = () => {
   };
 
 
-
+  const [cityValue, setCityValue] = useState("");
+  const search = () => {
+    setCity(cityValue);
+  }
 
 
   return (
@@ -40,10 +43,10 @@ const Banner = () => {
       <h4>Alquila tu vehiculo</h4>
       
         <SelectContainer>
-        <FaSearchLocation className="locationIcon"/>
-          <Select>
+
+          <Select onChange={e => { setCityValue(e.target.value); }}>
             {ciudades.map((ciudad) => {
-              return <option value={ciudad.value}>{ciudad.name}</option>;
+              return <option value={ciudad.name}>{ciudad.value}</option>;
             })}
           </Select>
         </SelectContainer>
@@ -67,7 +70,7 @@ const Banner = () => {
           />
         </CheckOutContainer>
         <ButtonContainer>
-          <Button> Buscar </Button>
+            <Button onClick={search}>Buscar</Button>
         </ButtonContainer>
      
     </BrowserContainer>

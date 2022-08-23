@@ -1,23 +1,33 @@
 const ciudades = [
   {
+    id: 0,
+    name: "",
+    value: "Selecciona la ciudad",
+  },
+  {
     id: 1,
     name: "Bogotá",
-    value: "bogota",
+    value: "Bogotá",
   },
   {
     id: 2,
     name: "Cali",
-    value: "cali",
+    value: "Cali",
   },
   {
     id: 3,
-    name: "Medellin", 
-    value: "medellin",
+    name: "Medellín",
+    value: "Medellín",
   },
   {
     id: 4,
     name: "Manizales",
-    value: "manizales",
+    value: "Manizales",
+  },
+  {
+    id: 5,
+    name: "Buenos Aires",
+    value: "Buenos Aires",
   },
 ];
 
