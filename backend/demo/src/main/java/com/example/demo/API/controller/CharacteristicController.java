@@ -16,12 +16,14 @@ public class CharacteristicController {
     private CharacteristicService characteristicService;
 
     //Get(todos)
+    @CrossOrigin
     @GetMapping()
     public List<Characteristic> getAll() {
         return characteristicService.getAll();
     }
 
     //Get(por ID)
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Characteristic> getById(@PathVariable Long id){
         return characteristicService.findById(id);

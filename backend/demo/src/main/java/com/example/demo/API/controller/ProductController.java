@@ -28,7 +28,7 @@ public class ProductController {
 
     //Get
 
-    @CrossOrigin(origins = "http://morgam-frontend.s3-website.us-east-2.amazonaws.com")
+    @CrossOrigin
     @GetMapping()
     public List<ProductDto> getAll() {
         return productService.getAllProductDTO();
@@ -41,12 +41,14 @@ public class ProductController {
     }*/
 
     //GET POR ID DTO
+    @CrossOrigin
     @GetMapping("/{id}")
     public List<ProductDto> findByIdDTO(@PathVariable Long id){
         return productService.findBydDTO(id);
     }
 
     //Get por Cuidad:
+    @CrossOrigin
     @GetMapping("cities/{id}")
     public List<CityDto> getById(@PathVariable Long id){
         return cityService.filterCityId(id);

@@ -18,13 +18,14 @@ public class CategoryController {
 
     //Get(todos)
 
-    @CrossOrigin(origins = "http://morgam-frontend.s3-website.us-east-2.amazonaws.com")
+    @CrossOrigin
     @GetMapping()
     public List<Category> getAll() {
         return service.getAll();
     }
 
     //Get(por ID)
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Category> getById(@PathVariable Long id){
         return service.findById(id);

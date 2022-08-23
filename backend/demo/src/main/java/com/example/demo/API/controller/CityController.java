@@ -16,12 +16,14 @@ public class CityController {
     private CityService cityService;
 
     //Get(todos)
+    @CrossOrigin
     @GetMapping()
     public List<City> getAll() {
         return cityService.getAll();
     }
 
     //Get(por ID)
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<City> getById(@PathVariable Long id){
         return cityService.findById(id);
