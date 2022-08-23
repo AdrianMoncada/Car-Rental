@@ -1,0 +1,40 @@
+/* Estilos del icono en el select*/
+.locationIcon{
+    z-index: 1;
+    position: relative;
+    left: 30px;
+    bottom: 3px;
+}
+
+
+/* Estilos del Check In*/
+.checkIn{
+    border: 2px solid #FCA311;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 200px;
+    cursor: pointer;
+}
+
+/* Estilos del icono en CheckIn y CheckOut*/
+.iconCheck{
+    color: #14213D;
+    position: relative;
+    top:8px;
+    left: 25px;
+    z-index: 1;
+
+    
+}
+
+
+.checkOut{
+    border: 2px solid #FCA311;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 200px;
+    cursor: pointer;
+}
+

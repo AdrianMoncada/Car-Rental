@@ -1,17 +1,41 @@
+:root {
+    --colorPetrolBlue: #14213D;
+  }
+
 .next{
-    color: red;
-    font-size: 20px;
+    color: var(--colorPetrolBlue);
+    font-size: 30px;
     position: relative;
+    bottom: 160px;
     left: 250px;
-    top: 150px;
     cursor: pointer;
 }
 
 .prev{
-    color: red;
-    font-size: 20px;
+    color: var(--colorPetrolBlue);
+    font-size: 30px;
     position: relative;
-    bottom: 220px;
-    right: 220px;
+    top: 190px;
+    right: 250px;
     cursor: pointer;
+}
+
+
+@media  (max-width: 650px) {
+
+     .next{
+        font-size: 15px;
+        position: relative;
+        bottom: 256px;
+        left: 115px;
+     }
+
+
+      .prev{
+        font-size: 15px;
+        position: relative;
+        top: -5px;
+        left: 80px;
+      }
+        
 }

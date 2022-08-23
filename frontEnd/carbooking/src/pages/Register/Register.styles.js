@@ -127,7 +127,7 @@ export const Button = styled.button`
     padding: 0.7rem 2.3rem;
     border-radius: 0.2rem;
     background-color: #fff;
-    border: 2px solid #17293A;
+    border: 2px solid ${PetrolBlue};
     color: ${Orange};
     font-size: 1rem;
     font-weight: 600;
