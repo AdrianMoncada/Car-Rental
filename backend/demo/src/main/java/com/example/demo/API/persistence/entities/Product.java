@@ -27,10 +27,6 @@ public class Product {
     @NotNull
     private String name;
 
-    @Column(name = "description")
-    @NotNull
-    private String description;
-
     @JoinColumn(name = "categories_id")
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -45,18 +41,18 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Characteristic> characteristics = new ArrayList<Characteristic>();
+    /*@OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Characteristic> characteristics = new ArrayList<Characteristic>();*/
 
     //Constructor vacio
     public Product(){
     }
 
-    public Product(Long id, String name, Category category , City city, List<Characteristic> characteristics) {
+    public Product(Long id, String name, Category category , City city/*, List<Characteristic> characteristics*/) {
         this.id =id;
         this.name = name;
         this.category = category;
         this.city = city;
-        this.characteristics = characteristics;
+        /*this.characteristics = characteristics;*/
     }
 }

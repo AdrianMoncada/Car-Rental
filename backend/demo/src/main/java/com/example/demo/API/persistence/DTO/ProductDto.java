@@ -18,7 +18,7 @@ public class ProductDto implements Serializable {
     private Long id;
     private String name;
     private Category category;
-    private Set<Characteristic> characteristics;
+    /*private Set<Characteristic> characteristics;*/
     private City city;
     private Set<Image> images;
 }
