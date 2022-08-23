@@ -1,5 +1,6 @@
 package com.example.demo.API.persistence.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -29,15 +30,15 @@ public class Product {
 
     @JoinColumn(name = "categories_id")
     @ManyToOne(fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    /*@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)*/
     private Category category;
 
     @JoinColumn(name = "city_id")
     @ManyToOne(fetch = FetchType.EAGER)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    /*@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)*/
     private City city;
 
-
+    @JsonManagedReference
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 

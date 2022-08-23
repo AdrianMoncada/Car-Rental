@@ -1,4 +1,5 @@
 package com.example.demo.API.persistence.entities;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +21,8 @@ public class Image {
     @Column(name = "url")
     private String url;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
     Product product;
 
