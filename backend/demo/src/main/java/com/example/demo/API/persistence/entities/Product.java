@@ -46,9 +46,9 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 
-    @JsonManagedReference
+    /*@JsonManagedReference
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private Set<Characteristic> characteristics = new HashSet<>();
+    private Set<Characteristic> characteristics = new HashSet<>();*/
 
 
     //Constructor vacio

@@ -32,7 +32,7 @@ public class ProductService {
         productDto.setCity(product.getCity());
         productDto.setImages(product.getImages());
         productDto.setDescription(product.getDescription());
-        productDto.setCharacteristics(product.getCharacteristics());
+        /*productDto.setCharacteristics(product.getCharacteristics());*/
 
         return productDto;
     }
