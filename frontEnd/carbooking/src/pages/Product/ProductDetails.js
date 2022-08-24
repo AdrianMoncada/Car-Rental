@@ -41,17 +41,17 @@ const ProductDetails = () => {
     request();
   }, [id]);
 
-console.log('====================================');
+
 console.log(dataProduct);
-console.log('====================================');
+
   return (
     <div>
       {
         dataProduct &&
-        dataProduct.map(product =>(
+        dataProduct?.map(product =>(
 
           <Container>
-          <Header />
+          {/* <Header /> */}
           
           <Main>
            
@@ -74,26 +74,10 @@ console.log('====================================');
           </Ubication>
   
           <Galery>
-          <Image 
-          area="2 / 1 / 4 / 3 "
-          width = "100%"
-          heigth ="100%"
-          border="5rem"></Image>
-          <Image 
-          area="2 / 3 / 3 / 4"
-          width = "100%"
-          heigth ="200px"
-          border="2rem"></Image>
-          <Image 
-          area="2 / 4 / 3 / 5"
-          width = "100%"
-          heigth ="200px"
-          border="2rem"></Image>
-          <Image 
-          area="3 / 3 / 4 / 4"
-          width = "100%"
-          heigth ="200px"
-          border="2rem"></Image>
+          <Image  area="2 / 1 / 4 / 3 "heigth ="100%"  border="5rem"></Image>
+          <Image  area="2 / 3 / 3 / 4" heigth ="200px" border="2rem"></Image>
+          <Image  area="2 / 4 / 3 / 5" heigth ="200px" border="2rem"></Image>
+          <Image  area="3 / 3 / 4 / 4" heigth ="200px" border="2rem"></Image>
   
          
             <PhotoFive>

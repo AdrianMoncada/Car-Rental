@@ -174,7 +174,7 @@ height: 150px;
 `
 
 export const Image = styled.div`
-    width: ${props=> props.width};
+    width: 100%;
     height: ${props => props.heigth};
     background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
     grid-area: ${props => props.area}; 
