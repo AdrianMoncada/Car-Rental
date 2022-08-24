@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useParams} from 'react-router-dom'
-import Header from "../../components/header";
+// import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
@@ -26,6 +26,7 @@ import {
   PhotoFive,
   VerMas,Image,
 } from "../Product/ProductDetails.Styles";
+import Reserva from "./CalendarioReservas/Reserva";
 
 const ProductDetails = () => {
   const [modalState, setModalState] = useState(false);
@@ -114,6 +115,7 @@ console.log(dataProduct);
               No fumar dentro del vehiculo
             </Text>
           </BlockPolicies>
+          <Reserva/>
           <Footer />
         </Container>
             
