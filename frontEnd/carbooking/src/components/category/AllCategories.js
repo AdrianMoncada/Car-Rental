@@ -9,7 +9,7 @@ const AllCategories = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const request = async () => {
-      const response = await fetch(" http://18.219.33.103:8080/categories");
+      const response = await fetch("http://18.219.33.103:8080/categories");
       const result = await response.json();
       setDataApi(result);
     }
