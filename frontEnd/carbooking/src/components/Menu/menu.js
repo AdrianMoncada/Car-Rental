@@ -3,7 +3,7 @@ import './menustyles.css';
 
 import { useNavigate } from 'react-router-dom';
 
-const Menum = () => {
+const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
     const navigate = useNavigate();
   return (
       <div>
@@ -15,7 +15,26 @@ const Menum = () => {
          <div id="sidebar" class="sidebar">
          <ul class="menu">
          <li ><button class = "primero" onClick={() => navigate("signup")}>Crear cuenta</button></li>
-         <li><button class = "primero" onClick={() => navigate("signin")}>Iniciar sesion</button></li>
+         {usuario.acceso ? (
+          <>
+            Bienvenido {usuario.nombre}
+            <li><button class = "primero"
+              onClick={() => {
+                setUsuario((user) => {
+                  return {
+                    ...user,
+                    acceso: false,
+                  };
+                });
+                cerrarModal();
+              }}
+            >
+              Cerrar
+            </button></li>
+          </>
+        ) : (
+         <li><button class = "primero" onClick={() => mostrarModal()}>Iniciar sesion</button></li>
+         )}
          
        
          </ul>
@@ -24,7 +43,6 @@ const Menum = () => {
          </div>
          </div>
       </div>
-    
   )
 }
 export default Menum
