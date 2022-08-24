@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Header from "../../components/header";
-import Banner from "../../components/component/banner/banner";
+import Banner from "../../components/banner/banner";
 import Footer from "../../components/footer";
 
 import AllCategories from "../../components/category/AllCategories";

@@ -14,7 +14,7 @@ import {
   InputsContainer,
   TextLink,
   ContainerForm,
-} from "../../../../pages/Login/login.styles";
+} from "./login.styles";
 
 function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
   const [correo, cambiarCorreo] = useState("");

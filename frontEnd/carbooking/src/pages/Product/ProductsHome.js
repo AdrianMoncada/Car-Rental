@@ -21,7 +21,7 @@ export default function ProductsHome({city}){
     //  const productsRandom = dataApi
     //   .map(value => ({ value, sort: Math.random() }))
     //   .sort((a, b) => a.sort - b.sort)
-    //   .map(({ value }) => value)
+    //  ip .map(({ value }) => value)
 
     
     return(

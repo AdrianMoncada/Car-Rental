@@ -1,5 +1,5 @@
-import { React, useState } from "react";
-import ciudades from "../helpers/ciudades";
+import { React, useState, useEffect } from "react";
+// import ciudades from "../helpers/ciudades";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt} from 'react-icons/fa';
@@ -13,7 +13,7 @@ import { BrowserContainer,
          Button,
          ButtonContainer
         } from "./banner.styles";
-import "../banner/banner.css";
+import "./banner.css";
 
 const Banner = ({setCity}) => {
   // define check-in and check-out state
@@ -31,6 +31,19 @@ const Banner = ({setCity}) => {
     setCheckOutDate(date);
   };
 
+  // Cities API
+  const [dataApi, setDataApi] = useState(null);
+
+  useEffect(() => {
+    const request = async () => {
+      const response = await fetch("http://18.219.33.103:8080/cities");
+      const result = await response.json();
+      setDataApi(result);
+    }
+    request();
+  }, []);
+
+
 
   const [cityValue, setCityValue] = useState("");
   const search = () => {
@@ -45,8 +58,8 @@ const Banner = ({setCity}) => {
         <SelectContainer>
 
           <Select onChange={e => { setCityValue(e.target.value); }}>
-            {ciudades.map((ciudad) => {
-              return <option value={ciudad.name}>{ciudad.value}</option>;
+            {dataApi && dataApi.map((ciudad) => {
+              return <option value={ciudad.name}>{ciudad.name}</option>;
             })}
           </Select>
         </SelectContainer>
