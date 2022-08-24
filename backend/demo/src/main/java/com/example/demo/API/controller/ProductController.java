@@ -81,7 +81,7 @@ public class ProductController {
         ResponseEntity<String> response = null;
 
         if(productService.save(p) != null) {
-            response = ResponseEntity.ok("Patient created.");
+            response = ResponseEntity.ok("Product created.");
         } else {
             response = ResponseEntity.internalServerError().body("Oops");
         }

@@ -1,6 +1,7 @@
 package com.example.demo.API.persistence.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +24,8 @@ public class Characteristic {
     @Column
     private String name;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
     Product product;
 

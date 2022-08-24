@@ -30,8 +30,9 @@ public class Image {
     public Image(){
     }
 
-    public Image(String name, String url) {
+    public Image(String name, String url, Product product) {
         this.name = name;
         this.url = url;
+        this.product = product;
     }
 }
