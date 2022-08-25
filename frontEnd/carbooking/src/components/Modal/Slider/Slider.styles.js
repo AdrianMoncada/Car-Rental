@@ -6,7 +6,6 @@ export const ContainerSlider = styled.div`
     width: 370px;
 
     @media (max-width: 670px) {
-        border: 1px solid black;
         width: 100%;
         height: 100%; 
     }
@@ -50,3 +49,6 @@ export const ImgFour = styled.img`
 
 ` 
 
+export const Parrafo = styled.p`
+    color: black; 
+`

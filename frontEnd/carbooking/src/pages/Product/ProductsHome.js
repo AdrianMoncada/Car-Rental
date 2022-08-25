@@ -16,17 +16,13 @@ export default function ProductsHome({city}){
         request();
       }, []);
 
-  
-    // Ciudades aleatorias 
-    //  const productsRandom = dataApi
-    //   .map(value => ({ value, sort: Math.random() }))
-    //   .sort((a, b) => a.sort - b.sort)
-    //   .map(({ value }) => value)
-
-    
+      const productsRandom = dataApi?.map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value)
+   
     return(
       <>
-      {dataApi && dataApi.map(item => {
+      {productsRandom && productsRandom.map(item => {
               return city === "" || city === item.city.name ? 
               <Container  key={item.id}>
               <Card>

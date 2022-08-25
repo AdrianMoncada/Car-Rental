@@ -24,8 +24,9 @@ import {
   Galery,
   VerMas,
   Image,
+  IconUbication
 } from "../Product/ProductDetails.Styles";
-import { FaCar, FaDesktop, FaWifi, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCar, FaDesktop, FaWifi} from "react-icons/fa";
 import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
 
@@ -70,7 +71,7 @@ const ProductDetails = () => {
               <InfoUbication>
   
                 <p>
-                  El vehiculo se encuentra en: <FaMapMarkerAlt/> {product.city.name}
+                  Ubicación: {product.city.name}  <IconUbication> <span class="ubication"></span></IconUbication>
                 </p>
               </InfoUbication>
               <Qualification>
@@ -133,12 +134,12 @@ const ProductDetails = () => {
             </Galery>
 
             <BlockDescription>
-              <h2>descripcion del producto</h2>
+              <h2>Descripción del producto</h2>
 
               <Text>{product.description}</Text>
             </BlockDescription>
             <BlockCaracteristics>
-              <h2>caracterisitcas del producto</h2>
+              <h2>Caracterísitcas del producto</h2>
               <div style={{display: 'flex', justifyContent: 'space-between', width:"90%", paddingTop: "15px"}}>
                 <FaCar style={{ color:"#FCA311", fontSize: "50px" }}/>
                 <FaDesktop style={{ color:"#FCA311", fontSize: "50px" }}/>
@@ -148,9 +149,9 @@ const ProductDetails = () => {
               </div>
             </BlockCaracteristics>
             <BlockPolicies>
-              <h2>politicas</h2>
+              <h2>Políticas</h2>
               <Text>
-                <ul style={{ listStyle: "none" }}>
+                <ul>
                   <li>
                     Las multas o cantidades asimiladas por infracciones de
                     tráfico o infracciones de leyes durante el período de

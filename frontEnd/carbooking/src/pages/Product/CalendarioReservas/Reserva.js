@@ -1,32 +1,17 @@
 import React from "react";
 import CalendarioReserva from "../../../pages/Product/CalendarioReservas/CalendarioReserva";
-//import Header from "../../../components/header";
-//import HeaderSecond from "../../components/hearderSecond";
-//import Footer from '../../components/footer';
-// import NombreVehiculo from "../../../pages/Product/CalendarioReservas/NombreVehiculo";
 
 export default function Reserva() {
   return (
     <>
-      <header>
-      </header>
-      <body>
-        <section>
-            <div className="tablasDeInformacion">
-                <div className="completarDatos">
+            <div style={{width:"98%", padding: "15px", backgroundColor: "#F5B041", borderRadius: "20px", opacity: "0.97", color: "#FFFFFF",}}>
                     <div>
                     <h2>Seleccioná tu fecha de reserva</h2>
-
-                    <CalendarioReserva />
+                    <CalendarioReserva/>
                     <h2>Agregar tus fechas de viaje para optener precios exactos</h2>
-                    <button>Iniciar reserva</button>
+                    <button style={{backgroundColor:"#14213D", borderRadius: "8px", color: "#fff", width: "120px", height: "50px", border: "1px solid #14213D" }}>Iniciar reserva</button>
                     </div>
-                </div>
             </div> 
-        </section>
-      </body>
-      <footer>
-      </footer>
     </>
   );
 }

@@ -29,8 +29,8 @@ const Home = () => {
   return (
     <Container>
       <Header usuario={user} mostrarModal={handleShow} setUsuario={setUser} cerrarModal={handleClose} />
-      <Banner setCity={setCity}/>
       <AllCategories category= {category} setCategory={setCategory}/>
+      <Banner setCity={setCity}/>
       <ProductsHome city={city}  />
       <Footer />
       <Login mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />

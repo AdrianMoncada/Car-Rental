@@ -35,7 +35,7 @@ const CalendarioReserva = () => {
 
   return (
     <>
-      <Container fluid className="datePickerContainer">
+      <Container>
         <Row>
           <Col>
             <Media query="(max-width:460px)">

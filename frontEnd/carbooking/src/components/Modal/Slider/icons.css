@@ -4,19 +4,21 @@
 
 .next{
     color: var(--colorPetrolBlue);
+    display: flex;
     font-size: 30px;
-    position: relative;
-    bottom: 120px;
-    left: 250px;
+    position: absolute;
+    bottom: 88px;
+    left: 400px;
     cursor: pointer;
 }
 
 .prev{
     color: var(--colorPetrolBlue);
+    display: flex;
     font-size: 30px;
-    position: relative;
-    top: 190px;
-    right: 250px;
+    position: absolute;
+    top: 199px;
+    right: 400px;
     cursor: pointer;
 }
 
@@ -24,18 +26,12 @@
 @media  (max-width: 650px) {
 
      .next{
-        font-size: 15px;
-        position: relative;
-        bottom: 256px;
-        left: 115px;
+        display: none;
      }
 
 
       .prev{
-        font-size: 15px;
-        position: relative;
-        top: -5px;
-        left: 80px;
+        display: none;
       }
         
 }

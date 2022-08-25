@@ -1,21 +1,25 @@
 import styled from "styled-components";
+
+
+const Orange = "#FCA311";
+const PetrolBlue = "#14213D";
 //contenedor de todas las cartas
 export const CardsContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:500px;
-  background-image: url(https://images.unsplash.com/photo-1520560387605-de260bb65250?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+  height: 350px;
+  background-color:#FCA311;
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: space-between;
   align-items: center;
   margin-top: -20px;
-  overflow: hidden;
   padding-top : 14px;
 
   @media (max-width: 667px) {
     flex-direction: column;
+    width:100%;
     height: 100%;
     justify-content: center;
     align-items: center;
@@ -28,19 +32,15 @@ export const CardsContainer = styled.div`
 export const ProductCard = styled.div`
  width: 350px;
  height:270px;
- background-color:hsla(0,0%,100%,.3);
+ background-color:white;
  margin-right:20px;
  margin-left: 20px;
- margin-top:70px;
  border-radius: 20px;
  box-shadow: 0px 5px 5px 0px #6A6B67;
  overflow: hidden;
-<<<<<<< HEAD:frontEnd/carbooking/src/components/category/AllCategories.styled.js
-
-=======
  cursor:pointer;
- color: #fff;
->>>>>>> dev-Dayana-galeriaDeProducto:frontEnd/carbooking/src/components/category/cardCategory.style.js
+ color: #000;
+ object-fit: cover;
  :hover{
   webkit-transform:scale(1.2);
   transform:scale(1.1);
@@ -48,16 +48,17 @@ export const ProductCard = styled.div`
 @media (max-width: 667px) {
   margin-bottom:40px;
   margin-top:20px;
-  margin-left:30px;
+  margin-left:5px;
+  margin-right:10px;
   width: 90%;
-  height: 100%;
+  height: 50%;
   }
 `;
 
 export const ProductCardImg = styled.img`
-  width: 300px;
-  height: 180px;
-  object-fit: cover;
+  width: 220px;
+  height: 150px;
+  overflow: hidden;
  
   @media (max-width: 667px) {
     width: 100%;
@@ -118,9 +119,24 @@ export const H1 = styled.h1`
 
 export const ViewMore = styled.button`
 
-cursor:pointer;
-background-color: transparent;
-font-size:small;
-font:bold;
+background-color:  #14213D;
+color:  white;
+border-radius: 9px;
+position: relative;
+
+left: 65px;
+border: 2px solid ${PetrolBlue};
+:hover{
+  background-color:  ${Orange};
+  transition: background .5s 0s ease;
+  color: white;}
+
+
+  @media (max-width: 667px) {
+   display: flex;
+   position: relative;
+   left: 215px;
+   bottom: 10px;
+    }
 `
 

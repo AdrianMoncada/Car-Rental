@@ -13,6 +13,10 @@ export const BrowserContainer = styled.div`
     margin: 20px;
     justify-content: space-around;
     align-items: center;
+    border-radius: 5px;
+    background-color:#34495E;
+    color: #fff;
+    padding: 2%;
 
     @media (max-width: 667px) {
         display: flex;

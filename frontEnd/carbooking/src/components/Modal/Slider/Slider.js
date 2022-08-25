@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { ContainerSlider, ImgOne, ImgTwo, ImgThree, ImgFour, } from "../../Modal/Slider/Slider.styles";
+import { ContainerSlider, ImgOne, ImgTwo, ImgThree, ImgFour, Parrafo } from "../../Modal/Slider/Slider.styles";
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
 import "../Slider/icons.css"
 
@@ -121,18 +121,23 @@ const Carousel = () =>{
          <Slider {...settings}>
          <div>
            <ImgOne src={imagenesCarrusel.images[0].url} alt="IMAGENONE" />
+           <Parrafo > 1 de 5 </Parrafo>
          </div>
          <div>
            <ImgTwo src={imagenesCarrusel.images[1].url} alt="IMAGETWO" />
+           <Parrafo> 2 de 5 </Parrafo>
          </div>
          <div>
            <ImgThree src={imagenesCarrusel.images[2].url} alt="IMAGETHREE" />
+           <Parrafo> 3 de 5 </Parrafo>
          </div>
          <div>
            <ImgFour src={imagenesCarrusel.images[3].url} alt="IMAGEFOUR" />
+           <Parrafo> 4 de 5 </Parrafo>
          </div>
          <div>
            <ImgFour src={imagenesCarrusel.images[4].url} alt="IMAGEFOUR" />
+           <Parrafo> 5 de 5 </Parrafo>
          </div>
          </Slider> ))}
         
