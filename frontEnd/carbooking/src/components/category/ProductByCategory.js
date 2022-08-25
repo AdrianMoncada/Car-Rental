@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { FaCar, FaDesktop, FaWifi, FaRegHeart } from 'react-icons/fa';
-import { Cards, Image, Button, Information, ButtonContainer, ImageContainer, HeartContainer, IconContainer } from './ProductByCategory.styled'
+import { Cards, Image, Information, ImageContainer, HeartContainer, IconContainer } from './ProductByCategory.styled'
 
 
 const ProductByCategory = ({setCategory}) => {

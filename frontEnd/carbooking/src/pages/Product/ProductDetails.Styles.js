@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Orange = "#FCA311";
-const PetrolBlue = "#14213D";
 const LightGrey = "#E5E5E5";
 
 
