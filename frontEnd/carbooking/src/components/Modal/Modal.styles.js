@@ -25,7 +25,6 @@ export const ModalContainer = styled.div`
     border-radius: 5px;
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding: 20px;
-    border: 5px solid blue; 
 
 
     @media (max-width: 650px) {

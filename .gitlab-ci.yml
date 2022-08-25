@@ -31,7 +31,7 @@ test website:
         - sleep 10
         - curl http://localhost:3000
 
-unit test:
+.unit test:
     image: node:16-alpine
     stage: test
     script:
@@ -90,7 +90,7 @@ deploy:
         - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
         - ssh-keyscan -H $DEPLOY_SERVER_IP >> ~/.ssh/known_hosts
     script:
-        - echo "Deploying started..."
+        - echo "Deploying started!"
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop consoleapp.service"
         - ls
         - cd backend

@@ -17,7 +17,7 @@ export default function ProductsHome({city}){
       }, []);
 
   
-      // Ciudades aleatorias 
+    // Ciudades aleatorias 
     //  const productsRandom = dataApi
     //   .map(value => ({ value, sort: Math.random() }))
     //   .sort((a, b) => a.sort - b.sort)
@@ -47,7 +47,7 @@ export default function ProductsHome({city}){
               </BoxOne>
 
               <BoxTwo>
-                  <Image src={item.images.url} alt={item.name} /> 
+                  <Image src={item.images[0].url} alt={item.name} /> 
               </BoxTwo>
           </Card>
           </Container>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Header from "../../components/header";
-import Banner from "../../components/component/banner/banner";
+import Banner from "../../components/banner/banner";
 import Footer from "../../components/footer";
 
 import AllCategories from "../../components/category/AllCategories";
@@ -14,7 +14,7 @@ const Home = () => {
 
   const [show, setShow] = useState(false);
   const [user, setUser] = useState({
-    nombre: "Administrador",
+    nombre: "Jacobo",
     correo: "admin@carbooking.com",
     password: "123456",
     acceso: false,
@@ -24,13 +24,14 @@ const Home = () => {
   const handleShow = () => setShow(true);
 
   const [city, setCity] = useState("");
+  const [category, setCategory] = useState("");
 
   return (
     <Container>
       <Header usuario={user} mostrarModal={handleShow} setUsuario={setUser} cerrarModal={handleClose} />
       <Banner setCity={setCity}/>
-      <AllCategories />
-      <ProductsHome city={city}/>
+      <AllCategories category= {category} setCategory={setCategory}/>
+      <ProductsHome city={city}  />
       <Footer />
       <Login mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
     </Container>
