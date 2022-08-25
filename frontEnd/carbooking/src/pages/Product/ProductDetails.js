@@ -25,7 +25,6 @@ import {
   VerMas,
   Image,
   IconUbication,
-  ImagenVerMas
 } from "../Product/ProductDetails.Styles";
 import { FaCar, FaDesktop, FaWifi, FaStar} from "react-icons/fa";
 import { GiCarDoor, GiGps } from "react-icons/gi";
