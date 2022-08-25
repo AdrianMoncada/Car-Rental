@@ -30,13 +30,9 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
-    margin-bottom: 150px;
-
     margin-left: 10px;
     margin-right: 10px;
     overflow: hidden;
-
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .15);
@@ -44,7 +40,7 @@ export const Form = styled.form`
     backdrop-filter: blur(3px);
 
     @media (min-width: 670px) {
-        width: 60%;
+        width: 100%;
         z-index: 0;
     }
 `
