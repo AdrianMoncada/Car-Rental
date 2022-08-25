@@ -4,7 +4,7 @@ import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import es from "date-fns/locale/es";
 import "react-datepicker/dist/react-datepicker.css";
 import { Container, Row, Col } from "react-bootstrap";
-import FechaRangoContextProvider from "../../../components/Context/FechaRangoContextProvider";
+import FechaRangoContextProvider from "../../../Context/FechaRangoContextProvider";
 
 import { useParams } from "react-router-dom";
 // import axiosConnection from "../helpers/axiosConnection";

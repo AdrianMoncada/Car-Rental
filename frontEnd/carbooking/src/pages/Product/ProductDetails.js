@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useParams} from 'react-router-dom'
-// import Header from "../../components/header";
+import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
@@ -52,7 +52,7 @@ console.log('====================================');
         dataProduct.map(product =>(
 
           <Container>
-          {/* <Header /> */}
+         <Header /> 
           
           <Main>
            

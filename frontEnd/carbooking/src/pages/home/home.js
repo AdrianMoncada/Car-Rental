@@ -14,7 +14,7 @@ const Home = () => {
 
   const [show, setShow] = useState(false);
   const [user, setUser] = useState({
-    nombre: "Administrador",
+    nombre: "Jacobo",
     correo: "admin@carbooking.com",
     password: "123456",
     acceso: false,

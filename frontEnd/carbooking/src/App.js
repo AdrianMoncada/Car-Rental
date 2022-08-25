@@ -6,9 +6,15 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ProductDetails from './pages/Product/ProductDetails';
 import Error from './components/Error/Error';
+import AppContext from './Context/AppContext';
+import useInitialState from './hooks/useInitialState';
 
 function App() {
+
+  const initialState = useInitialState();
+
   return (
+    <AppContext.Provider value={initialState}>
     <BrowserRouter>
       <Routes>
 
@@ -21,6 +27,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 

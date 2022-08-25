@@ -15,7 +15,7 @@ const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
          <div id="sidebar" class="sidebar">
          <ul class="menu">
          <li ><button class = "primero" onClick={() => navigate("signup")}>Crear cuenta</button></li>
-         {usuario.acceso ? (
+         {usuario?.acceso ? (
           <>
             Bienvenido {usuario.nombre}
             <li><button class = "primero"
