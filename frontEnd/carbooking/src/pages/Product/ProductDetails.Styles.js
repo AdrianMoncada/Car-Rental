@@ -16,6 +16,13 @@ export const Container = styled.div`
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+
 `;
 //Styles for nav bar with title and arrow
 export const Main = styled.nav`
@@ -27,6 +34,11 @@ export const Main = styled.nav`
   height: 120px;
   border-radius: 20px;
   opacity: 0.97;
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
 `;
 
 export const InfoProduct = styled.div`
@@ -66,6 +78,15 @@ export const Ubication = styled.div`
   padding: 24px;
   width: 98%;
   height: 150px;
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 180px;
+  }
+
+
 `;
 
 export const InfoUbication = styled.div`
@@ -147,9 +168,11 @@ export const Qualification = styled.div`
   color: black;
   justify-content: space-between;
   align-items: center;
-  width: 200px;
+  width: 300px;
   height: 58px;
   padding-right: 40px;
+  color: ${Blue};
+  font-size: 20px;
 
   @media (max-width: 667px) {
     display: none;
@@ -173,6 +196,16 @@ export const Galery = styled.div`
   background-color: #fff;
   padding-left: 150px;
   gap: 10px;
+
+
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 700px;
+  }
+
 `;
 
 export const Image = styled.div`
@@ -188,23 +221,33 @@ export const Image = styled.div`
     overflow: hidden;
     border-radius: ${(props) => props.border};
   }
-`;
-export const PhotoFive = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100%;
-  height: 200px;
-  border-radius: 2rem;
-  overflow: hidden;
+  
+  @media (max-width: 670px) {
 
-  .imagenApi {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: ${(props) => props.border};
   }
+
+`;
+export const ImagenVerMas = styled.div`
+width: 100%;
+height: ${(props) => props.heigth};
+grid-area: ${(props) => props.area};
+border-radius: ${(props) => props.border};
+color: transparent;
+border: 2px solid ${Blue};
+.imagenApi {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: ${(props) => props.border};
+}
+
+@media (max-width: 670px) {
+  width: 260px;
+  height: 30%;
+  position: relative;
+  top: 100px;
+  right: 80px;
+}
 `;
 
 export const VerMas = styled.button`
@@ -217,6 +260,11 @@ export const VerMas = styled.button`
   position: relative;
   left: 35px;
   bottom: 50px;
+
+  @media (max-width: 670px) {
+    // position: relative;
+    // bottom: 120px;
+    // left: 80px;
 `;
 
 //styles for block description
@@ -232,6 +280,14 @@ export const BlockDescription = styled.div`
   height: 150px;
   background: ${OrangeTwo};
   opacity: 0.97;
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 150%;
+  }
+
 `;
 export const Text = styled.p`
   text-align: left;
@@ -244,6 +300,13 @@ export const BlockCaracteristics = styled.div`
   padding-left: 20px;
   width: 100%;
   height: 150px;
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
 `;
 //styles for block policies
 export const BlockPolicies = styled.div`
@@ -259,5 +322,12 @@ export const BlockPolicies = styled.div`
   background-color: ${Blue};
   opacity: 0.97;
   color: #fff;
+
+  @media (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+  }
 
 `;

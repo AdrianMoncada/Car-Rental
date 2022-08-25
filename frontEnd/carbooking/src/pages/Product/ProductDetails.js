@@ -24,9 +24,10 @@ import {
   Galery,
   VerMas,
   Image,
-  IconUbication
+  IconUbication,
+  ImagenVerMas
 } from "../Product/ProductDetails.Styles";
-import { FaCar, FaDesktop, FaWifi} from "react-icons/fa";
+import { FaCar, FaDesktop, FaWifi, FaStar} from "react-icons/fa";
 import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
 
@@ -74,8 +75,12 @@ const ProductDetails = () => {
                   Ubicación: {product.city.name}  <IconUbication> <span class="ubication"></span></IconUbication>
                 </p>
               </InfoUbication>
-              <Qualification>
-                <p>muy bueno con 5 estrellas egm-tnzk-ess </p>
+
+              <Qualification>  
+                <p> Calificación: <FaStar/>
+                <FaStar/>
+                <FaStar/>
+                <FaStar/> </p> 
               </Qualification>
             </Ubication>
 
