@@ -17,11 +17,11 @@ export default function ProductsHome({city}){
       }, []);
 
   
-      // Ciudades aleatorias 
+    // Ciudades aleatorias 
     //  const productsRandom = dataApi
     //   .map(value => ({ value, sort: Math.random() }))
     //   .sort((a, b) => a.sort - b.sort)
-    //  ip .map(({ value }) => value)
+    //   .map(({ value }) => value)
 
     
     return(

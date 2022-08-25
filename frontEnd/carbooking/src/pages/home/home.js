@@ -24,13 +24,14 @@ const Home = () => {
   const handleShow = () => setShow(true);
 
   const [city, setCity] = useState("");
+  const [category, setCategory] = useState("");
 
   return (
     <Container>
       <Header usuario={user} mostrarModal={handleShow} setUsuario={setUser} cerrarModal={handleClose} />
       <Banner setCity={setCity}/>
-      <AllCategories />
-      <ProductsHome city={city}/>
+      <AllCategories category= {category} setCategory={setCategory}/>
+      <ProductsHome city={city}  />
       <Footer />
       <Login mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
     </Container>

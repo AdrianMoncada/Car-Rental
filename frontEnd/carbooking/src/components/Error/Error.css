@@ -42,7 +42,7 @@
     }
   }
 
-  h3{
+  .mensajeError{
     display: flex;
     position: absolute;
     top: 400px;

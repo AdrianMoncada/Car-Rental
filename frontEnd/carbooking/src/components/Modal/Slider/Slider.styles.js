@@ -8,8 +8,7 @@ export const ContainerSlider = styled.div`
     @media (max-width: 670px) {
         border: 1px solid black;
         width: 100%;
-        height: 100%;
-        
+        height: 100%; 
     }
 
 
@@ -47,7 +46,6 @@ export const ImgFour = styled.img`
     
     width: 100%;
     position: relative;
-    bottom:50px;
 
 
 ` 

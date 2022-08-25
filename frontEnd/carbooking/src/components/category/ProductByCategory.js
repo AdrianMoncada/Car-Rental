@@ -4,43 +4,43 @@ import { FaCar, FaDesktop, FaWifi, FaRegHeart } from 'react-icons/fa';
 import { Cards, Image, Button, Information, ButtonContainer, ImageContainer, HeartContainer, IconContainer } from './ProductByCategory.styled'
 
 
-const ProductByCategory = () => {
+const ProductByCategory = ({setCategory}) => {
 
     const { id } = useParams();
-    const [dataProduct, setDataUser] = useState(null);
+    const [dataCategory, setDataCategory] = useState(null);
     useEffect(() => {
         const request = async () => {
-            const response = await fetch(`http://api-cors.ca-central-1.elasticbeanstalk.com/categories${id}`);
+            const response = await fetch("http://18.219.33.103:8080/categories");
             const result = await response.json();
-            setDataUser(result);
+            setDataCategory(result);
         }
         request();
     }, [id]);
+
+
+
     return (
         <>
          <Cards>
-                {dataApi &&
-                 dataApi.map((product) => (
+                {dataCategory &&
+                 dataCategory.map((category) => (
                         <>
                           <ImageContainer>
-                              <Image src={img} alt="Img"/>
+                              <Image src={category.img} alt="Img"/>
                           </ImageContainer>
                           <Information>
                                <HeartContainer>
                                     <FaRegHeart style= {{fontSize: '30px'}}/> 
                                </HeartContainer>
-                               <h3>{category}</h3>
-                               <h2>{title}</h2>
+                               <h3>{category.name}</h3>
+                               <h2>{category.name}</h2>
                                <IconContainer>
                                     <FaCar /> 
                                     <FaDesktop/> 
                                     <FaWifi/> 
                                </IconContainer>
-                               <p>{location}</p>
-                               <p>{description}</p>
-                               <ButtonContainer>
-                                 <Button> Ver más </Button>
-                               </ButtonContainer>
+                               {/* <p>{location}</p>
+                               <p>{description}</p> */}
                           </Information>
                         </>
                      ))

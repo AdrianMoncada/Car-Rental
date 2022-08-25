@@ -7,7 +7,7 @@ const Error = () => {
         <div class="loader"> 
         <FaSearch style={{ color:"#FCA311", fontSize: "100px" }}/> 
         </div>
-        <h3 className=''> Página no encontrada </h3>
+        <h3 className='mensajeError'> Página no encontrada </h3>
     </div>
   )
 }

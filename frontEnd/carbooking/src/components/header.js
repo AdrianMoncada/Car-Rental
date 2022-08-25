@@ -26,10 +26,8 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
   return (
     <Headers>
       <ContainerIcon>
-        <Link to="">
-          <Icon src="/per2.png" alt="morgamlogo" />
-        </Link>
-        <p>Tu camino, tus reglas ahora.</p>
+        <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
+        <p>Tu camino, tus reglas.</p>
       </ContainerIcon>
 
       <ContainerMenu>

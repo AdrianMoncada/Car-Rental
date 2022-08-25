@@ -1,11 +1,15 @@
 import styled from 'styled-components'
 
+const Orange = "#FCA311";
+const PetrolBlue = "#14213D";
+const LightGrey = "#E5E5E5";
+
+
 export const Container = styled.div`
 width: 100%;
 height: 100%;
-
 min-height: 100vh;
-background: #e9ebee;
+background: ${LightGrey};
 display: flex;
 justify-content: center;
 text-align: center;
@@ -18,8 +22,7 @@ export const Main = styled.nav`
   display:flex;
   margin-top:-10px;
   justify-content: space-between;
-  background-color: #F0572D;
-  color:white;
+  background: #219ebc;
   padding: 24px;
   width: 100%;
   height: 150px;
@@ -30,11 +33,10 @@ export const InfoProduct = styled.div`
   display:column;
   justify-content: center;
   align-items: center;
-  background:yellow;
   color:black;
   width:30%;
   height: 100px;
-  margin-top:-20px;
+  margin-top:10px;
   @media (max-width: 667px) {
     display: flex-start;
    }
@@ -42,7 +44,6 @@ export const InfoProduct = styled.div`
 
 export const IconArrow= styled.div`
   display:flex;
-  background:yellow;
   color:black;
   justify-content: space-between;
   align-items: center;
@@ -58,10 +59,9 @@ export const IconArrow= styled.div`
 
 export const Ubication = styled.div `
   display:flex;
-  margin-top:15px;
+  margin-top:-15px;
   justify-content: space-between;
-  background-color: green;
-  color:white;
+  background: #a8dadc;
   padding: 24px;
   width: 100%;
   height: 150px;
@@ -71,18 +71,16 @@ export const InfoUbication = styled.div`
   display:column;
   justify-content: center;
   align-items: center;
-  background:yellow;
   color:black;
   width:30%;
   height: 100px;
-  margin-top:-20px;
+  margin-top:30px;
   @media (max-width: 667px) {
     display: flex-start;
    }
 `
 export const Qualification= styled.div`
   display:flex;
-  background:yellow;
   color:black;
   justify-content: space-between;
   align-items: center;
@@ -104,34 +102,55 @@ export const Galery = styled.div`
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     place-items: center;
-    background-color: red;
-    margin: 35px;
+    background-color: ${Orange};
     width: 100%;
     height: 500px;
     padding-left: 150px;
     gap:10px;
 `
 
+export const Image = styled.div`
+    width: 100%;
+    height: ${props => props.heigth};
+    grid-area: ${props => props.area}; 
+    border-radius: ${props => props.border};  
+    color: transparent;   
+    .imagenApi{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: ${props => props.border}; 
+    }
+
+`
 export const PhotoFive = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    grid-area: 3 / 4 / 4 / 5;
     width: 100%;
     height: 200px;
     border-radius: 2rem;
     overflow: hidden;
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
+
+    .imagenApi{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: ${props => props.border}; 
+    }
+
 `
 
 export const VerMas = styled.button`
+    width: 70px;
+    height: 50px;
     background-color: transparent;
     border: none;
-    color: white;
+    color: #000;
     position: relative;
-    right: 15px;
-    bottom: 10px;
+    left: 35px;
+    bottom: 50px;
 `
     
 
@@ -142,7 +161,6 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding-left:20px;
-background:red;
 width: 100%;
 height: 150px;
 
@@ -156,7 +174,6 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding-left:20px;
-background:brown;
 width: 100%;
 height: 150px;
 
@@ -167,17 +184,8 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding-left:20px;
-background:gray;
 width: 100%;
-height: 150px;
+height: 250px;
 
 `
 
-export const Image = styled.div`
-    width: 100%;
-    height: ${props => props.heigth};
-    background-image: url(https://images.unsplash.com/photo-1572089789747-71c98f3e2213?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);
-    grid-area: ${props => props.area}; 
-    border-radius: ${props => props.border};
-    
-`

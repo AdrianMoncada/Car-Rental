@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from "react";
-import { useParams} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
-
-
+import { FaChevronCircleLeft } from "react-icons/fa";
 
 //Import for carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -23,9 +22,11 @@ import {
   BlockPolicies,
   Text,
   Galery,
-  PhotoFive,
-  VerMas,Image,
+  VerMas,
+  Image,
 } from "../Product/ProductDetails.Styles";
+import { FaCar, FaDesktop, FaWifi, FaMapMarkerAlt } from "react-icons/fa";
+import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
 
 const ProductDetails = () => {
@@ -38,90 +39,153 @@ const ProductDetails = () => {
       const response = await fetch(`http://18.219.33.103:8080/products/${id}`);
       const result = await response.json();
       setDataProduct(result);
-    }
+    };
     request();
   }, [id]);
 
-
-console.log(dataProduct);
+  console.log(dataProduct);
 
   return (
     <div>
-      {
-        dataProduct &&
-        dataProduct?.map(product =>(
-
+      {dataProduct &&
+        dataProduct?.map((product) => (
           <Container>
-         <Header /> 
-          
-          <Main>
-           
-            <InfoProduct>
-              <h2>{product.category.name}</h2>
-              <p>{product.name}</p>
-            </InfoProduct>
-            <IconArrow>
-              <p>esto es una flecha</p>
-            </IconArrow>
-          </Main>
-  
-          <Ubication>
-            <InfoUbication>
-              <p>El vehiculo se encuentra en la ciudad de {product.city.name}</p>
-            </InfoUbication>
-            <Qualification>
-              <p>muy bueno con 5 estrellas egm-tnzk-ess </p>
-            </Qualification>
-          </Ubication>
-  
-          <Galery>
-          <Image  area="2 / 1 / 4 / 3 "heigth ="100%"  border="5rem"></Image>
-          <Image  area="2 / 3 / 3 / 4" heigth ="200px" border="2rem"></Image>
-          <Image  area="2 / 4 / 3 / 5" heigth ="200px" border="2rem"></Image>
-          <Image  area="3 / 3 / 4 / 4" heigth ="200px" border="2rem"></Image>
-  
-         
-            <PhotoFive>
-              <VerMas onClick={() => setModalState(!modalState)}>
-                {" "}
-                Ver más{" "}
-              </VerMas>
-              <Modal view={modalState} changeView={setModalState}>
-               <Carousel> </Carousel>
-              </Modal>
-            </PhotoFive>
-          </Galery>
-  
-          <BlockDescription>
-            <h2>descripcion del producto</h2>
-  
-            <Text>
-              El 'MINI One' incorpora un motor de 1.4 litros de cilindrada de
-              inyección indirecta y 75 o 95 CV. Los 'MINI Cooper' y 'MINI Cooper
-              S' poseen un 1.6 litros, el primero con Diana Ramos15:31 inyección
-              indirecta y 120 CV, y el segundo con inyección directa,
-              turbocompresor y 184 CV.
-            </Text>
-          </BlockDescription>
-          <BlockCaracteristics>
-            <h2>caracterisitcas del producto</h2>
-            <Text>El auto cuenta con aire acondicionado</Text>
-          </BlockCaracteristics>
-          <BlockPolicies>
-            <h2>politicas</h2>
-            <Text>
-              No subir mascotas al auto salvo que sea en un porta mascotas
-              <br></br>
-              No fumar dentro del vehiculo
-            </Text>
-          </BlockPolicies>
-          <Reserva/>
-          <Footer />
-        </Container>
-            
-          ))}
-     
+            <Header />
 
+            <Main>
+              <InfoProduct>
+                <h2>{product.category.name}</h2>
+                <h4>{product.name}</h4>
+              </InfoProduct>
+              <IconArrow>
+                <Link to="/">
+                  <FaChevronCircleLeft
+                    style={{ color: "#FCA311", fontSize: "50px" }}
+                  />
+                </Link>
+              </IconArrow>
+            </Main>
+
+            <Ubication>
+              <InfoUbication>
+  
+                <p>
+                  El vehiculo se encuentra en: <FaMapMarkerAlt/> {product.city.name}
+                </p>
+              </InfoUbication>
+              <Qualification>
+                <p>muy bueno con 5 estrellas egm-tnzk-ess </p>
+              </Qualification>
+            </Ubication>
+
+            <Galery>
+              <Image area="2 / 1 / 4 / 3 " heigth="100%" border="5rem">
+
+                <img
+                  border="5rem"
+                  className="imagenApi"
+                  src={product.images[0].url}
+                  alt=""
+                />
+              </Image>
+              <Image area="2 / 3 / 3 / 4" heigth="200px" border="2rem">
+               
+                <img
+                  border="2rem"
+                  className="imagenApi"
+                  src={product.images[1].url}
+                  alt=""
+                />
+              </Image>
+              <Image area="2 / 4 / 3 / 5" heigth="200px" border="2rem">
+                
+                <img
+                  border="2rem"
+                  className="imagenApi"
+                  src={product.images[2].url}
+                  alt=""
+                />
+              </Image>
+              <Image area="3 / 3 / 4 / 4" heigth="200px" border="2rem">
+                {" "}
+                <img
+                  border="2rem"
+                  className="imagenApi"
+                  src={product.images[3].url}
+                  alt=""
+                />
+              </Image>
+
+              <Image area="3 / 4 / 4 / 5" heigth="200px" border="2rem">
+                <img
+                  border="2rem"
+                  className="imagenApi"
+                  src={product.images[4].url}
+                  alt=""
+                />
+                <VerMas onClick={() => setModalState(!modalState)}>
+                  Ver más
+                </VerMas>
+                <Modal view={modalState} changeView={setModalState}>
+                  <Carousel> </Carousel>
+                </Modal>
+              </Image>
+            </Galery>
+
+            <BlockDescription>
+              <h2>descripcion del producto</h2>
+
+              <Text>{product.description}</Text>
+            </BlockDescription>
+            <BlockCaracteristics>
+              <h2>caracterisitcas del producto</h2>
+              <div style={{display: 'flex', justifyContent: 'space-between', width:"90%", paddingTop: "15px"}}>
+                <FaCar style={{ color:"#FCA311", fontSize: "50px" }}/>
+                <FaDesktop style={{ color:"#FCA311", fontSize: "50px" }}/>
+                <FaWifi style={{ color:"#FCA311", fontSize: "50px" }}/>
+                <GiCarDoor style={{ color:"#FCA311", fontSize: "50px" }}/>
+                <GiGps style={{ color:"#FCA311", fontSize: "50px" }}/>
+              </div>
+            </BlockCaracteristics>
+            <BlockPolicies>
+              <h2>politicas</h2>
+              <Text>
+                <ul style={{ listStyle: "none" }}>
+                  <li>
+                    Las multas o cantidades asimiladas por infracciones de
+                    tráfico o infracciones de leyes durante el período de
+                    alquiler son responsabilidad de los conductores del
+                    vehículo.
+                  </li>
+                  <li>
+                    Conservar el vehículo en buen estado y no exponerlo
+                    potenciales riesgos.
+                  </li>
+                  <li>
+                    No realizar actividades con fines de subarriendo del
+                    vehículo, ni transportar personas o mercancías que infrinjan
+                    la Ley.
+                  </li>
+                  <li>
+                    No participar en competiciones o carreras deportivas,
+                    oficiales o no.
+                  </li>
+                  <li>
+                    No conducir bajo la influencia de bebidas alcohólicas,
+                    drogas, otras sustancia.
+                  </li>
+                  <li>
+                    Cerrar correctamente el vehículo, estacionar en lugar apto,
+                    adecuado y seguro cuando no está siendo utilizado, así como
+                    conservar y mantener la documentación de este dentro.
+                  </li>
+                </ul>
+              </Text>
+            </BlockPolicies>
+            <Reserva />
+            <Footer />
+          </Container>
+        ))}
     </div>
   );
 };

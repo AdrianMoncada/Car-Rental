@@ -1,13 +1,8 @@
-import React from "react";
-
+import React, { useState, useEffect }from "react";
+import { useParams} from 'react-router-dom'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import adelante from "../../../img/imgCarousel/adelante.jpg";
-import asientos from "../../../img/imgCarousel/asientos.jpg";
-import sistema from "../../../img/imgCarousel/sistema.jpg";
-import parteAtras from "../../../img/imgCarousel/parteAtras.jpg";
 
 import { ContainerSlider, ImgOne, ImgTwo, ImgThree, ImgFour, } from "../../Modal/Slider/Slider.styles";
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
@@ -21,6 +16,18 @@ const Carousel = () =>{
       const PreviousArrow = ({ onClick }) => (
           <FaArrowCircleLeft className="prev" onClick={onClick}></FaArrowCircleLeft>
       );
+
+      const { id } = useParams();
+      const [imagenesProducto, setImagenesProducto] = useState(null);
+
+      useEffect(() => {
+        const request = async () => {
+          const response = await fetch(`http://18.219.33.103:8080/products/${id}`);
+          const result = await response.json();
+          setImagenesProducto(result);
+        }
+        request();
+      }, [id]);
 
     
 
@@ -107,24 +114,29 @@ const Carousel = () =>{
       };
 
     return(
-
+        
+       
         <ContainerSlider>
-            <Slider {...settings}>
-        <div>
-          <ImgOne src={adelante} alt="IMAGENONE" />
-        </div>
-        <div>
-          <ImgTwo src={asientos} alt="IMAGETWO" />
-          <p className="legend">Legend 2</p>
-        </div>
-        <div>
-          <ImgThree src={sistema} alt="IMAGETHREE" />
-          <p className="legend">Legend 3</p>
-        </div>
-        <div>
-          <ImgFour src={parteAtras} alt="IMAGEFOUR" />
-        </div>
-        </Slider>
+         {imagenesProducto && imagenesProducto.map(imagenesCarrusel  => (
+         <Slider {...settings}>
+         <div>
+           <ImgOne src={imagenesCarrusel.images[0].url} alt="IMAGENONE" />
+         </div>
+         <div>
+           <ImgTwo src={imagenesCarrusel.images[1].url} alt="IMAGETWO" />
+         </div>
+         <div>
+           <ImgThree src={imagenesCarrusel.images[2].url} alt="IMAGETHREE" />
+         </div>
+         <div>
+           <ImgFour src={imagenesCarrusel.images[3].url} alt="IMAGEFOUR" />
+         </div>
+         <div>
+           <ImgFour src={imagenesCarrusel.images[4].url} alt="IMAGEFOUR" />
+         </div>
+         </Slider> ))}
+        
+            
     </ContainerSlider>
 
     );
