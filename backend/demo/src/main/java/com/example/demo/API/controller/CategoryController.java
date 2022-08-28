@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -16,30 +15,24 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
 
-    //Get(todos)
-
     @CrossOrigin
     @GetMapping()
     public List<Category> getAll() {
         return service.getAll();
     }
 
-    //Get(por ID)
     @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Category> getById(@PathVariable Long id){
         return service.findById(id);
     }
 
-
-    //Post
     @PostMapping
     public ResponseEntity<?> createClass(@RequestBody Category aCategory){
         service.save(aCategory);
         return ResponseEntity.ok((HttpStatus.OK));
     }
 
-    //Update
     @PutMapping("/{id}")
     public ResponseEntity<?> updateCategory(@RequestBody Category aCategory, @PathVariable Long id){
         Optional<Category> optionalCategory= service.findById(id);
@@ -49,8 +42,6 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.OK).body(service.update(aCategory, id));
     }
 
-
-    //Delete
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteClass(@PathVariable Long id){
         service.delete(id);

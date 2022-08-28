@@ -1,8 +1,6 @@
 package com.example.demo.API.persistence.DTO;
-
 import com.example.demo.API.persistence.entities.Product;
 import lombok.*;
-
 import java.io.Serializable;
 import java.util.List;
 

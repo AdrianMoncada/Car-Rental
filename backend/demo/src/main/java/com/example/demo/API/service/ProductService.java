@@ -4,8 +4,7 @@ import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,7 +31,7 @@ public class ProductService {
         productDto.setCity(product.getCity());
         productDto.setImages(product.getImages());
         productDto.setDescription(product.getDescription());
-        /*productDto.setCharacteristics(product.getCharacteristics());*/
+        productDto.setCharacteristics(product.getCharacteristics());
 
         return productDto;
     }
@@ -57,10 +56,7 @@ public class ProductService {
             Product modifiedP = productRepository.findById(id).get();
             modifiedP.setName(p.getName());
             modifiedP.setCategory(p.getCategory());
-            /*modifiedP.setCharacteristics(p.getCharacteristics());*/
             modifiedP.setCity(p.getCity());
-            //modifiedP.setImage(p.getImage());
-
             productRepository.save(modifiedP);
             return findById(id);
         } else {

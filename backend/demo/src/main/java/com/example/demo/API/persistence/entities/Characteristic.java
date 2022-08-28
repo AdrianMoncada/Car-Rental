@@ -1,11 +1,7 @@
 package com.example.demo.API.persistence.entities;
-
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,37 +9,27 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "characteristics")
 public class Characteristic {
 
     @Id
     @SequenceGenerator(name = "image_sequence", sequenceName = "image_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "image_sequence")
+    @Column(name="id")
     private Long id;
 
     @Column
     private String name;
 
-    @JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "product")
-    Product product;
-
-
-    public Characteristic() {
-    }
-
-    public Characteristic(String name, Product product) {
-        this.name = name;
-        this.product = product;
-    }
-
-    @Override
-    public String toString() {
-        return "Characteristic{" +
-                "id=" + id +
-                ", titleCharacteristic='" + name + '\'' +
-                '}';
-    }
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "characteristics")
+    @JsonIgnore
+    private Set<Product> products = new HashSet<>();
 
 }

@@ -9,9 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,56 +22,23 @@ public class ProductController {
     @Autowired
     private CityService cityService;
 
-
-    //Get
-
     @CrossOrigin
     @GetMapping()
     public List<ProductDto> getAll() {
         return productService.getAllProductDTO();
     }
 
-    //Get(por ID)
-    /*@GetMapping("/{id}")
-    public Optional<Product> findById(@PathVariable Long id){
-        return productService.findById(id);
-    }*/
-
-    //GET POR ID DTO
     @CrossOrigin
     @GetMapping("/{id}")
     public List<ProductDto> findByIdDTO(@PathVariable Long id){
         return productService.findBydDTO(id);
     }
 
-    //Get por Cuidad:
     @CrossOrigin
     @GetMapping("cities/{id}")
     public List<CityDto> getById(@PathVariable Long id){
         return cityService.filterCityId(id);
     }
-
-
-
-
-    //Post
-    /*@PostMapping
-    public ResponseEntity<HttpStatus> createProduct(@RequestBody Product aProduct){
-        try {
-            productService.save(aProduct);
-            System.out.println("OK Mio");
-            return ResponseEntity.ok(HttpStatus.CREATED);
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }*/
-/*    @PostMapping
-    public ResponseEntity<?> createProduct(@Validated @RequestBody Product aProduct){
-        Product createProduct = productService.save(aProduct);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(createProduct.getId()).toUri();
-        return ResponseEntity.created(location).body(createProduct);
-    }*/
 
     @PostMapping
     public ResponseEntity<String> createProduct(@RequestBody Product p) {
@@ -88,7 +52,6 @@ public class ProductController {
         return response;
     }
 
-    //Update
     @PutMapping("/{id}")
     public ResponseEntity<?> updateProduct(@Validated @RequestBody Product aProduct, @PathVariable Long id){
         Optional<Product> optionalProduct= productService.findById(id);
@@ -98,8 +61,6 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productService.update(aProduct, id));
     }
 
-
-    //Delete
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id){
         Optional<Product> optionalProduct= productService.findById(id);

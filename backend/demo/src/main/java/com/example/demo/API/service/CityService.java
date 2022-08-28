@@ -1,13 +1,10 @@
 package com.example.demo.API.service;
-
 import com.example.demo.API.persistence.DTO.CityDto;
 import com.example.demo.API.persistence.entities.City;
 import com.example.demo.API.persistence.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -59,9 +56,6 @@ public class CityService {
         if(cityRepository.findById(id).isPresent()){
             City modifiedC = cityRepository.findById(id).get();
             modifiedC.setName(c.getName());
-            /*modifiedC.setProduct(c.getProduct());*/
-
-
 
             cityRepository.save(modifiedC);
             return findById(id);

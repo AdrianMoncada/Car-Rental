@@ -3,8 +3,7 @@ import com.example.demo.API.persistence.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.API.persistence.entities.Category;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class CategoryService {
@@ -33,7 +32,6 @@ public class CategoryService {
             Category modifiedC = repository.findById(id).get();
             modifiedC.setName(c.getName());
             modifiedC.setUrlImage(c.getUrlImage());
-            /*modifiedC.setProduct(c.getProduct());*/
 
             repository.save(modifiedC);
             return findById(id);

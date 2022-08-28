@@ -1,13 +1,13 @@
 package com.example.demo.API.persistence.entities;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import javax.persistence.*;
 
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "images")
 public class Image {
     @Id
@@ -26,13 +26,4 @@ public class Image {
     @JoinColumn(name = "product")
     Product product;
 
-    //Constructor Vacio
-    public Image(){
-    }
-
-    public Image(String name, String url, Product product) {
-        this.name = name;
-        this.url = url;
-        this.product = product;
-    }
 }

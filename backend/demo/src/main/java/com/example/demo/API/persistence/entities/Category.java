@@ -1,11 +1,12 @@
 package com.example.demo.API.persistence.entities;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import javax.persistence.*;
 
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "categories")
 public class Category {
     @Id
@@ -20,22 +21,4 @@ public class Category {
     @Column
     private String urlImage;
 
-    //Constructor vacio
-    public Category(){
-    }
-
-    //CONSTRUCTOR
-    public Category(String name, String urlImage) {
-        this.name = name;
-        this.urlImage = urlImage;
-    }
-
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "id = " + id + ", " +
-                "titleCategory = " + name + ", " +
-                "urlImage = " + urlImage + ")";
-    }
 }
