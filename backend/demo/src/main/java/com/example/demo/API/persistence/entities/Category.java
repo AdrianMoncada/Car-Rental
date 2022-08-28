@@ -21,4 +21,8 @@ public class Category {
     @Column
     private String urlImage;
 
+    public Category(String name, String urlImage) {
+        this.name = name;
+        this.urlImage = urlImage;
+    }
 }

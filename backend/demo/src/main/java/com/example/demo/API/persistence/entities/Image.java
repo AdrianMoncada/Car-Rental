@@ -26,4 +26,9 @@ public class Image {
     @JoinColumn(name = "product")
     Product product;
 
+    public Image(String name, String url, Product product) {
+        this.name = name;
+        this.url = url;
+        this.product = product;
+    }
 }

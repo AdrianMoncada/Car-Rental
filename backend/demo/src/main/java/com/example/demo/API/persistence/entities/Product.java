@@ -52,4 +52,10 @@ public class Product {
     @JsonInclude
     private Set<Characteristic> characteristics = new HashSet<>();
 
+    public Product(String name, Category category, City city, String description) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.city = city;
+    }
 }

@@ -18,4 +18,7 @@ public class City {
     @Column
     private String name;
 
+    public City(String name) {
+        this.name = name;
+    }
 }

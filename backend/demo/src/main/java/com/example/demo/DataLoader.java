@@ -22,7 +22,7 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-/*            cityRepository.save(new City("Buenos Aires"));
+            cityRepository.save(new City("Buenos Aires"));
             cityRepository.save(new City("Córdoba"));
             cityRepository.save(new City("Medellín"));
             cityRepository.save(new City("Bogotá"));
@@ -32,7 +32,7 @@ public class DataLoader implements ApplicationRunner {
             categoryRepository.save(new Category("Camionetas", "https://morgam-images.s3.us-east-2.amazonaws.com/categories/camioneta-chevrolet-tracker.png"));
             categoryRepository.save(new Category("De lujo", "https://morgam-images.s3.us-east-2.amazonaws.com/categories/de-lujo-ford-focus.png"));
 
-            *//*CHEVROLET SPARK*//*
+            /*CHEVROLET SPARK*/
             productRepository.save(new Product("Chevrolet Spark", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(1L), "Vehículo compacto, es una alternativa urbana ideal para desplazarse con agilidad dentro de la ciudad."));
 
             imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-spark-00.jpg", productRepository.getReferenceById(1L)));
@@ -42,12 +42,12 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("chevrolet-spark-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-spark-04.jpg", productRepository.getReferenceById(1L)));
             imageRepository.save(new Image("chevrolet-spark-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-spark-05.jpg", productRepository.getReferenceById(1L)));
 
-            *//*characteristicRepository.save(new Characteristic("Caja Manual", productRepository.getReferenceById(1L)));
+            /*characteristicRepository.save(new Characteristic("Caja Manual", productRepository.getReferenceById(1L)));
             characteristicRepository.save(new Characteristic("4 Puertas", productRepository.getReferenceById(1L)));
             characteristicRepository.save(new Characteristic("Aire Acondicionado", productRepository.getReferenceById(1L)));
-            characteristicRepository.save(new Characteristic("5 Asientos", productRepository.getReferenceById(1L)));*//*
+            characteristicRepository.save(new Characteristic("5 Asientos", productRepository.getReferenceById(1L)));*/
 
-            *//*HYUNDAI TUCSON*//*
+            /*HYUNDAI TUCSON*/
             productRepository.save(new Product("Hyundai Tucson", categoryRepository.getReferenceById(2L), cityRepository.getReferenceById(1L), "SUV compacto todoterreno, con capacidad para 7 personas. Ideal para viajar."));
 
             imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-00.jpg", productRepository.getReferenceById(2L)));
@@ -57,12 +57,8 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("hyundai-tucson-00", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-04.jpg", productRepository.getReferenceById(2L)));
             imageRepository.save(new Image("hyundai-tucson-00", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-05.jpg", productRepository.getReferenceById(2L)));
 
-            *//*characteristicRepository.save(new Characteristic("Caja Manual", productRepository.getReferenceById(2L)));
-            characteristicRepository.save(new Characteristic("4 Puertas", productRepository.getReferenceById(2L)));
-            characteristicRepository.save(new Characteristic("Aire Acondicionado", productRepository.getReferenceById(2L)));
-            characteristicRepository.save(new Characteristic("5 Asientos", productRepository.getReferenceById(2L)));*//*
 
-            *//*Ford Focus*//*
+            /*Ford Focus*/
             productRepository.save(new Product("Ford Focus", categoryRepository.getReferenceById(4L), cityRepository.getReferenceById(2L), "Vehiculo compacto, con todas las comodidades en su interior."));
 
             imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/ford-focus-00.jpg", productRepository.getReferenceById(3L)));
@@ -72,12 +68,7 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("ford-focus-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/ford-focus-04.jpg", productRepository.getReferenceById(3L)));
             imageRepository.save(new Image("ford-focus-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/ford-focus-05.jpg", productRepository.getReferenceById(3L)));
 
-            *//*characteristicRepository.save(new Characteristic("Caja Manual", productRepository.getReferenceById(3L)));
-            characteristicRepository.save(new Characteristic("4 Puertas", productRepository.getReferenceById(3L)));
-            characteristicRepository.save(new Characteristic("Aire Acondicionado", productRepository.getReferenceById(3L)));
-            characteristicRepository.save(new Characteristic("5 Asientos", productRepository.getReferenceById(3L)));*//*
-
-            *//*Jeep Cherokee*//*
+            /*Jeep Cherokee*/
             productRepository.save(new Product("Jeep Cherokee", categoryRepository.getReferenceById(3L), cityRepository.getReferenceById(2L), "SUV de tamaño medio, con amplitud en su interior para que todos sus ocupantes viajen con comodidad."));
 
             imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/jeep-cherokee-00.jpg", productRepository.getReferenceById(4L)));
@@ -87,7 +78,7 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("jeep-cherokee-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/jeep-cherokee-04.jpg", productRepository.getReferenceById(4L)));
             imageRepository.save(new Image("jeep-cherokee-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/jeep-cherokee-05.jpg", productRepository.getReferenceById(4L)));
 
-            *//*Kia Picanto - kia-picanto*//*
+            /*Kia Picanto - kia-picanto*/
         productRepository.save(new Product("Kia Picanto", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(3L), "Vehículo compacto comodo para circular en la ciudad."));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/kia-picanto-00.jpg", productRepository.getReferenceById(5L)));
@@ -97,7 +88,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("kia-picanto-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/kia-picanto-04.jpg", productRepository.getReferenceById(5L)));
         imageRepository.save(new Image("kia-picanto-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/kia-picanto-005.jpg", productRepository.getReferenceById(5L)));
 
-            *//*Chevrolet Captiva - chevrolet-captiva*//*
+            /*Chevrolet Captiva - chevrolet-captiva*/
         productRepository.save(new Product("Chevrolet Captiva", categoryRepository.getReferenceById(2L), cityRepository.getReferenceById(3L), "SUV todoterreno, amplia en su interior para viajar con todo el conford."));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-captiva-00.jpg", productRepository.getReferenceById(6L)));
@@ -107,7 +98,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-captiva-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-captiva-04.jpg", productRepository.getReferenceById(6L)));
         imageRepository.save(new Image("chevrolet-captiva-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-captiva-05.jpg", productRepository.getReferenceById(6L)));
 
-        *//*Chevrolet Tracker - chevrolet-tracker*//*
+        /*Chevrolet Tracker - chevrolet-tracker*/
         productRepository.save(new Product("Chevrolet Tracker", categoryRepository.getReferenceById(3L), cityRepository.getReferenceById(4L),"Vehículo con amplio espacio interior, ideal para viajes."));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-tracker-00.jpg", productRepository.getReferenceById(7L)));
@@ -117,7 +108,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-tracker-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-tracker-04.jpg", productRepository.getReferenceById(7L)));
         imageRepository.save(new Image("chevrolet-tracker-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-tracker-05.jpg", productRepository.getReferenceById(7L)));
 
-        *//*Chevrolet Cruze - chevrolet-cruze*//*
+        /*Chevrolet Cruze - chevrolet-cruze*/
         productRepository.save(new Product("Chevrolet Cruze", categoryRepository.getReferenceById(4L), cityRepository.getReferenceById(4L), "Un vehículo ágil y moderno."));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-cruze-00.jpg", productRepository.getReferenceById(8L)));
@@ -127,7 +118,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-cruze-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-cruze-04.jpg", productRepository.getReferenceById(8L)));
         imageRepository.save(new Image("chevrolet-cruze-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-cruze-05.jpg", productRepository.getReferenceById(8L)));
 
-        *//*Chevrolet Sail - chevrolet-sail*//*
+        /*Chevrolet Sail - chevrolet-sail*/
         productRepository.save(new Product("Chevrolet Sail", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(4L), "Description Sail"));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-sail-00.jpg", productRepository.getReferenceById(9L)));
@@ -137,7 +128,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-sail-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-sail-04.jpg", productRepository.getReferenceById(9L)));
         imageRepository.save(new Image("chevrolet-sail-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-sail-05.jpg", productRepository.getReferenceById(9L)));
 
-        *//*Chevrolet Onix - chevrolet-onix*//*
+        /*Chevrolet Onix - chevrolet-onix*/
         productRepository.save(new Product("Chevrolet Onix", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(3L), "Description Onix"));
 
         imageRepository.save(new Image("main-image", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-onix-00.jpg", productRepository.getReferenceById(10L)));
@@ -147,7 +138,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-onix-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-onix-04.jpg", productRepository.getReferenceById(10L)));
         imageRepository.save(new Image("chevrolet-onix-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-onix-05.jpg", productRepository.getReferenceById(10L)));
 
-        *//*FIAT Argo - fiat-argo*//*
+        /*FIAT Argo - fiat-argo*/
 
         productRepository.save(new Product("Fiat Argo", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(2L), "Description Argo"));
 
@@ -158,7 +149,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("fiat-argo-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/fiat-argo-04.jpg", productRepository.getReferenceById(11L)));
         imageRepository.save(new Image("fiat-argo-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/fiat-argo-05.jpg", productRepository.getReferenceById(11L)));
 
-        *//*Chevrolet Camaro - chevrolet-camaro*//*
+        /*Chevrolet Camaro - chevrolet-camaro*/
 
         productRepository.save(new Product("Chevrolet Camaro", categoryRepository.getReferenceById(4L), cityRepository.getReferenceById(1L), "Description Camaro"));
 
@@ -169,7 +160,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-camaro-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-camaro-04.jpg", productRepository.getReferenceById(12L)));
         imageRepository.save(new Image("chevrolet-camaro-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-camaro-05.jpg", productRepository.getReferenceById(12L)));
 
-        *//*Chevrolet Malibu - chevrolet-malibu*//*
+        /*Chevrolet Malibu - chevrolet-malibu*/
 
         productRepository.save(new Product("Chevrolet Malibu", categoryRepository.getReferenceById(1L), cityRepository.getReferenceById(1L), "Description Malibu"));
 
@@ -178,7 +169,7 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-malibu-02", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-02.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-03", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-03.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-04.jpg", productRepository.getReferenceById(13L)));
-        imageRepository.save(new Image("chevrolet-malibu-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-05.jpg", productRepository.getReferenceById(13L)));*/
+        imageRepository.save(new Image("chevrolet-malibu-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-05.jpg", productRepository.getReferenceById(13L)));
 
 
 
