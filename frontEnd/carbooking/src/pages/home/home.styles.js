@@ -5,6 +5,17 @@ const PetrolBlue = "#14213D";
 const LightGray = "#E5E5E5";
 const FontFamily = "'Quicksand', sans-serif;";
 
+
+export const ContainerAll = styled.div`
+ width: 90%;
+ display: flex;
+ overflow: hidden;
+ padding-left: 100px;
+ flex-flow: row wrap;
+
+`
+
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;

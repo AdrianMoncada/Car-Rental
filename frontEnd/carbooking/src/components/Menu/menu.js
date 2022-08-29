@@ -1,10 +1,10 @@
 import React from 'react'
 import './menustyles.css';
 
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
-    const navigate = useNavigate();
+const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario, handleShowRegister}) => {
+    // const navigate = useNavigate();
   return (
       <div>
          <input type="checkbox" id="abrir-cerrar" name="abrir-cerrar" value=""/>
@@ -14,7 +14,7 @@ const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
          </label>
          <div id="sidebar" class="sidebar">
          <ul class="menu">
-         <li ><button class = "primero" onClick={() => navigate("signup")}>Crear cuenta</button></li>
+         <li ><button class = "primero" onClick={() => handleShowRegister()}>Crear cuenta</button></li>
          {usuario?.acceso ? (
           <>
             Bienvenido {usuario.nombre}

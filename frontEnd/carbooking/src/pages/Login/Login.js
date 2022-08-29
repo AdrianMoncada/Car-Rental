@@ -9,7 +9,7 @@ export default function Login ({mostrar, cerrarModal, usuario, cambiarUsuario}){
       <Modal.Header closeButton>
         <Modal.Title> Iniciar Sesión  </Modal.Title>
       </Modal.Header>
-      <Modal.Body><LoginScreens usuario={usuario} cambiarUsuario={cambiarUsuario} cerrarModal={cerrarModal} /></Modal.Body>
+      <Modal.Body><LoginScreens usuario={usuario} cambiarUsuario={cambiarUsuario} cerrarModal={cerrarModal}  /></Modal.Body>
     </Modal>
   );
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import {
   Button,
   ErrorMessage,
@@ -14,9 +14,10 @@ import {
   InputsContainer,
   TextLink,
   ContainerForm,
+  ButtonRegister
 } from "./login.styles";
 
-function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
+function LoginScreens({ usuario, cambiarUsuario, cerrarModal}) {
   const [correo, cambiarCorreo] = useState("");
   const [password, cambiarPassword] = useState("");
   const [primerCarga, cambiarPrimerCarga] = useState(true);
@@ -50,6 +51,8 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
 
     cambiarFormularioValido(formValido);
   };
+
+
 
   return (
     <ContainerForm>
@@ -93,7 +96,10 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
 
       <TextLink>
       <p> ¿No te has registrado?</p>
-      <p> <Link to="/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>
+      <ButtonRegister>
+        Entra aquí
+      </ButtonRegister>
+      {/* <p> <Link to="/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>*/}
 
       </TextLink>
       <LastParagraph>

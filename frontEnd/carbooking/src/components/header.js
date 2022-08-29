@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 
 import Menum from "./Menu/menu";
@@ -11,11 +11,16 @@ import {
   ContainerIcon,
   ContainerMenu,
 } from "../pages/home/home.styles";
+import ModalRegister from "../pages/Register/ModalRegister";
 
-const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
-  const navigate = useNavigate();
+const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, }) => {
 
- 
+   // Logica Modal Register
+    const [showModalRegister, setShowModalRegister] = useState(false);
+    const handleCloseRegister = () => setShowModalRegister(false);
+    const handleShowRegister = () => setShowModalRegister(true);
+    // Cierra logica modal register 
+
 
   const handleClick = () => {
     setUsuario({ ...usuario, acceso: false });
@@ -24,6 +29,7 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
   };
 
   return (
+    <>
     <Headers>
       <ContainerIcon>
         <Link to="/"><Icon src="/per2.png" alt='morgamlogo' /></Link>
@@ -36,6 +42,7 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
           mostrarModal={mostrarModal}
           setUsuario={setUsuario}
           cerrarModal={cerrarModal}
+          handleShowRegister={handleShowRegister}
         />
       </ContainerMenu>
 
@@ -53,12 +60,16 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario }) => {
           </>
         ) : (
           <>
-          <ButtonSign onClick={() => navigate("signup")}>Crear cuenta</ButtonSign>
+          <ButtonSign onClick={() => {handleShowRegister()}}>Crear cuenta</ButtonSign>
           <ButtonSign onClick={() => mostrarModal()}>Iniciar sesion</ButtonSign>
           </>
         )}
       </ContainerBtn>
     </Headers>
+    {/*Importación del ModalRegister */}
+    <ModalRegister showModalRegister={showModalRegister} handleCloseModalRegister={handleCloseRegister}>
+    </ModalRegister>
+    </>
   );
 };
 

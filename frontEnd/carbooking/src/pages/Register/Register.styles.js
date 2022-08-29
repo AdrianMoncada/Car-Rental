@@ -16,9 +16,6 @@ export const Body = styled.body`
     color: ${PetrolBlue};
     gap: 20px;
     flex-wrap: wrap;
-    background: url(https://mlspltulmwun.i.optimole.com/nub0i-4-CsPYCKUz/w:1000/h:668/q:mauto/https://blog.gonhergo.com/wp-content/uploads/2021/08/salir-a-carretera-gonhergo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
 `
 export const OneDiv = styled.div`
     display: flex;
@@ -33,8 +30,13 @@ export const Title =  styled.h2`
 `
 
 export const H6 = styled.h6`
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: ${Orange};
     position: relative;
-    top: 10px;
+    top: 5px;
 `
 
 export const TwoDiv = styled.div`
@@ -57,12 +59,12 @@ export const ThreeDiv = styled.div`
     top: 25px;
     width: 100%;
 `
-export const Form = styled.form`
+export const PrincipalForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     margin-left: 10px;
     margin-right: 10px;
@@ -77,6 +79,7 @@ export const Form = styled.form`
     @media (min-width: 670px) {
         width: 60%;
         z-index: 0;
+        width: 90%;
     }
 `
 export const CenteredText = styled.p`
@@ -87,17 +90,24 @@ export const CenteredText = styled.p`
 `
 
 export const InputsContainer = styled.div`
-    width: 75%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+
     color: ${Orange};
+    line-height: 1.5;
+    background-color: red;
+
+    
 
     @media (min-width: 667px) {
-        width:40%;
+        width:60%;
     }
 
 `
 
 
-export const Inputs = styled.input`
+export const Input = styled.input`
     width: 97%;
     height: 30px;
     border: none;
@@ -157,6 +167,19 @@ export const TextLink = styled.p`
     position: relative;
     top: 32px;
     font-weight: bold;
+`
+
+export const ButtonLogin = styled.button`
+background-color: transparent;
+color: ${PetrolBlue}; 
+font-weight: 500;
+border: none;
+position: relative;
+bottom: 8px;
+
+ :hover{
+    color: ${Orange};
+ }
 `
 
 export const LastParagraph = styled.p`

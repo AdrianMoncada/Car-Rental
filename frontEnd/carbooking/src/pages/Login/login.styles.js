@@ -151,6 +151,20 @@ export const TextLink = styled.p`
     top: 32px;
     font-weight: 500;
 `
+
+export const ButtonRegister = styled.button`
+background-color: transparent;
+color: ${PetrolBlue}; 
+font-weight: 500;
+border: none;
+position: relative;
+bottom: 8px;
+
+ :hover{
+    color: ${Orange};
+ }
+`
+
 export const ParagraphLink = styled.p`
     text-decoration: none;
 
