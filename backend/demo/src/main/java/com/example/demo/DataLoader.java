@@ -1,4 +1,5 @@
 package com.example.demo;
+import com.example.demo.API.controller.CharacteristicController;
 import com.example.demo.API.persistence.entities.*;
 import com.example.demo.API.persistence.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,18 @@ public class DataLoader implements ApplicationRunner {
     private ProductRepository productRepository;
     private ImageRepository imageRepository;
 
+    private CharacteristicController characteristicController;
+
+    private CharacteristicRepository characteristicRepository;
+
     @Autowired
-    public DataLoader(CityRepository cityRepository, CategoryRepository categoryRepository, ProductRepository productRepository, ImageRepository imageRepository) {
+    public DataLoader(CityRepository cityRepository, CategoryRepository categoryRepository, ProductRepository productRepository, ImageRepository imageRepository, CharacteristicRepository characteristicRepository, CharacteristicController characteristicController) {
         this.cityRepository = cityRepository;
         this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;
         this.imageRepository = imageRepository;
+        this.characteristicRepository = characteristicRepository;
+        this.characteristicController = characteristicController;
     }
 
     public void run(ApplicationArguments args) {
@@ -42,10 +49,11 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("chevrolet-spark-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-spark-04.jpg", productRepository.getReferenceById(1L)));
             imageRepository.save(new Image("chevrolet-spark-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-spark-05.jpg", productRepository.getReferenceById(1L)));
 
-            /*characteristicRepository.save(new Characteristic("Caja Manual", productRepository.getReferenceById(1L)));
-            characteristicRepository.save(new Characteristic("4 Puertas", productRepository.getReferenceById(1L)));
-            characteristicRepository.save(new Characteristic("Aire Acondicionado", productRepository.getReferenceById(1L)));
-            characteristicRepository.save(new Characteristic("5 Asientos", productRepository.getReferenceById(1L)));*/
+            characteristicRepository.save(new Characteristic("Caja Manual"));
+            characteristicRepository.save(new Characteristic("Caja Automática"));
+            characteristicRepository.save(new Characteristic("4 Puertas"));
+            characteristicRepository.save(new Characteristic("Aire Acondicionado"));
+            characteristicRepository.save(new Characteristic("5 Asientos"));
 
             /*HYUNDAI TUCSON*/
             productRepository.save(new Product("Hyundai Tucson", categoryRepository.getReferenceById(2L), cityRepository.getReferenceById(1L), "SUV compacto todoterreno, con capacidad para 7 personas. Ideal para viajar."));
@@ -56,6 +64,8 @@ public class DataLoader implements ApplicationRunner {
             imageRepository.save(new Image("hyundai-tucson-00", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-03.jpg", productRepository.getReferenceById(2L)));
             imageRepository.save(new Image("hyundai-tucson-00", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-04.jpg", productRepository.getReferenceById(2L)));
             imageRepository.save(new Image("hyundai-tucson-00", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/hyundai-tucson-05.jpg", productRepository.getReferenceById(2L)));
+
+
 
 
             /*Ford Focus*/
@@ -170,7 +180,6 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-malibu-03", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-03.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-04.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-05.jpg", productRepository.getReferenceById(13L)));
-
 
 
 

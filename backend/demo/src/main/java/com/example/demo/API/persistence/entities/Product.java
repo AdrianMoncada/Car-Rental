@@ -58,4 +58,17 @@ public class Product {
         this.category = category;
         this.city = city;
     }
+
+    public Product(String name, String description, Category category, City city, Set<Characteristic> characteristics) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.city = city;
+        this.characteristics = characteristics;
+    }
+
+    public void addCharacteristic(Characteristic characteristic){
+        this.characteristics.add(characteristic);
+        characteristic.getProducts().add(this);
+    }
 }

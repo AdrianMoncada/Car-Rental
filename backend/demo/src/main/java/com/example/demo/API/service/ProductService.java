@@ -13,6 +13,8 @@ public class ProductService {
     ProductRepository productRepository;
 
     public Product save(Product p) {
+        /*System.out.println("caracteristicas: " + p.getCharacteristics());*/
+
         return productRepository.save(p);
     }
 

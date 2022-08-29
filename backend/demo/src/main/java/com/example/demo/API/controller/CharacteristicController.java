@@ -1,5 +1,8 @@
 package com.example.demo.API.controller;
+import com.example.demo.API.Exceptions.ResourceNotFoundException;
 import com.example.demo.API.persistence.entities.Characteristic;
+import com.example.demo.API.persistence.repository.CharacteristicRepository;
+import com.example.demo.API.persistence.repository.ProductRepository;
 import com.example.demo.API.service.CharacteristicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +16,12 @@ import java.util.Optional;
 public class CharacteristicController {
     @Autowired
     private CharacteristicService characteristicService;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private CharacteristicRepository characteristicRepository;
 
     @CrossOrigin
     @GetMapping()
@@ -30,6 +39,24 @@ public class CharacteristicController {
     public ResponseEntity<?> createCharacteristic(@RequestBody Characteristic aCharacteristic){
         characteristicService.save(aCharacteristic);
         return ResponseEntity.ok((HttpStatus.OK));
+    }
+
+    @PostMapping("/{productId}")
+    public ResponseEntity<Characteristic> addCharacteristic(@PathVariable(value = "productId") Long productId, @RequestBody Characteristic characteristicRequest) {
+        Characteristic characteristic = productRepository.findById(productId).map(product -> {
+            long characteristicId = characteristicRequest.getId();
+
+            if (characteristicId != 0L) {
+                Characteristic _characteristic = characteristicRepository.findById(characteristicId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Not found characteristic with id = " + characteristicId));
+                product.addCharacteristic(_characteristic);
+                productRepository.save(product);
+                return _characteristic;
+            }
+            product.addCharacteristic(characteristicRequest);
+            return characteristicRepository.save(characteristicRequest);
+        }).orElseThrow(() -> new ResourceNotFoundException("Not found Product with id = " + productId));
+        return new ResponseEntity<>(characteristic, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

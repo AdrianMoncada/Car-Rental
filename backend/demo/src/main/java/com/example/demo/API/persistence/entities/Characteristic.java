@@ -32,4 +32,11 @@ public class Characteristic {
     @JsonIgnore
     private Set<Product> products = new HashSet<>();
 
+    public Characteristic(String name) {
+        this.name = name;
+    }
+
+    public Characteristic(Long id) {
+        this.id = id;
+    }
 }
