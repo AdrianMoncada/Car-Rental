@@ -3,7 +3,6 @@ import React from 'react';
 import {useFormik} from "formik"; 
 import * as Yup from "yup"; 
 import {Form} from "semantic-ui-react"; 
-import './register.css';
 
 import {PrincipalForm, 
         Button,
