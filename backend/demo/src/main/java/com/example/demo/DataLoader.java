@@ -180,7 +180,6 @@ public class DataLoader implements ApplicationRunner {
         imageRepository.save(new Image("chevrolet-malibu-03", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-03.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-04", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-04.jpg", productRepository.getReferenceById(13L)));
         imageRepository.save(new Image("chevrolet-malibu-05", "https://morgam-images.s3.us-east-2.amazonaws.com/cars/chevrolet-malibu-05.jpg", productRepository.getReferenceById(13L)));
-
 */
 
     }

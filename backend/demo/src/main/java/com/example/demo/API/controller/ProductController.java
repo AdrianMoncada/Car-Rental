@@ -35,10 +35,22 @@ public class ProductController {
     }
 
     @CrossOrigin
+    @GetMapping("categories/{id}")
+    public List<Product> findByCategoryId(@PathVariable Long id){
+        return productService.findByCategoryId(id);
+    }
+
+    @CrossOrigin
     @GetMapping("cities/{id}")
+    public List<Product> findByCityId(@PathVariable Long id){
+        return productService.findByCityId(id);
+    }
+
+/*    @CrossOrigin
+    @GetMapping("/{id}")
     public List<CityDto> getById(@PathVariable Long id){
         return cityService.filterCityId(id);
-    }
+    }*/
 
     @PostMapping
     public ResponseEntity<String> createProduct(@RequestBody Product p) {

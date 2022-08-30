@@ -53,6 +53,14 @@ public class ProductService {
         return "Product with id: "+ id + " was deleted. ";
     }
 
+    public List<Product> findByCategoryId(Long id) {
+        return productRepository.findByCategoryId(id);
+    }
+
+    public List<Product> findByCityId(Long id) {
+        return productRepository.findByCityId(id);
+    }
+
     public Optional<Product> update(Product p, Long id) {
         if(productRepository.findById(id).isPresent()){
             Product modifiedP = productRepository.findById(id).get();
@@ -65,5 +73,7 @@ public class ProductService {
             return null;
         }
     }
+
+
 
 }
