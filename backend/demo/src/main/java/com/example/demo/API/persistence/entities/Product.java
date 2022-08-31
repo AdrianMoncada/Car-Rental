@@ -1,4 +1,5 @@
 package com.example.demo.API.persistence.entities;
+import com.example.demo.userAPI.persistance.entities.Reservation;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sun.istack.NotNull;
@@ -40,6 +41,10 @@ public class Product {
     @JsonManagedReference
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    private Set<Reservation> reservations = new HashSet<>();
 
     @Column(name = "main_image")
     @NotNull
