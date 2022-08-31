@@ -20,4 +20,5 @@ public class ProductDto implements Serializable {
     private City city;
     private Set<Image> images;
     private Set<Characteristic> characteristics;
+    private String mainImage;
 }

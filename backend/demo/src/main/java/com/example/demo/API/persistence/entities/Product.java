@@ -41,6 +41,10 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 
+    @Column(name = "main_image")
+    @NotNull
+    private String mainImage;
+
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
@@ -52,11 +56,12 @@ public class Product {
     @JsonInclude
     private Set<Characteristic> characteristics = new HashSet<>();
 
-    public Product(String name, Category category, City city, String description) {
+    public Product(String name, Category category, City city, String description, String mainImage) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.city = city;
+        this.mainImage = mainImage;
     }
 
     public Product(String name, String description, Category category, City city, Set<Characteristic> characteristics) {

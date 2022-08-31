@@ -34,6 +34,7 @@ public class ProductService {
         productDto.setImages(product.getImages());
         productDto.setDescription(product.getDescription());
         productDto.setCharacteristics(product.getCharacteristics());
+        productDto.setMainImage(product.getMainImage());
 
         return productDto;
     }
