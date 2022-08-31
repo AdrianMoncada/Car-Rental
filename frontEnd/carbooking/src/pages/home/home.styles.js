@@ -13,6 +13,14 @@ export const ContainerAll = styled.div`
  padding-left: 100px;
  flex-flow: row wrap;
 
+ @media (max-width: 900px) {
+  padding-left: 0px;
+ }
+
+ @media (max-width: 670px) {
+  padding-left: 0px;
+ }
+
 `
 
 

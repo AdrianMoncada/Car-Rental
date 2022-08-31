@@ -25,6 +25,14 @@ export const CardsContainer = styled.div`
     align-items: center;
     }
 
+    @media (max-width: 700px) {
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    }
+
 `;
 
 //contenedor de cada carro
@@ -48,21 +56,33 @@ export const ProductCard = styled.div`
 @media (max-width: 667px) {
   margin-bottom:40px;
   margin-top:20px;
-  margin-left:5px;
-  margin-right:10px;
-  width: 90%;
+  width: 80%;
   height: 50%;
+
+  :hover{
+    webkit-transform:scale(1);
+  transform:scale(1);
+   }
+
   }
+
+  @media (max-width: 700px) {
+    margin:40px;
+    width: 80%;
+    height: 50%;
+   }
+  
+
 `;
 
 export const ProductCardImg = styled.img`
-  width: 220px;
-  height: 150px;
+  width: 100%;
+  height: 55%;
   overflow: hidden;
  
   @media (max-width: 667px) {
     width: 100%;
-    height: 300px;
+    height: 55%;
   
     }
 
@@ -122,9 +142,9 @@ export const ViewMore = styled.button`
 background-color:  #14213D;
 color:  white;
 border-radius: 9px;
-position: relative;
+width: 90%;
+margin: 15px;
 
-left: 65px;
 border: 2px solid ${PetrolBlue};
 :hover{
   background-color:  ${Orange};
@@ -132,11 +152,5 @@ border: 2px solid ${PetrolBlue};
   color: white;}
 
 
-  @media (max-width: 667px) {
-   display: flex;
-   position: relative;
-   left: 215px;
-   bottom: 10px;
-    }
 `
 

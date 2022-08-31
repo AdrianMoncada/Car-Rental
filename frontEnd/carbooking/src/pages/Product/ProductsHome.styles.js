@@ -6,7 +6,7 @@ const FontFamily = "'Quicksand', sans-serif;";
 
 export const Container = styled.div`
     display: flex;
-    margin 50px;
+    margin 45px;
     height: 100%; 
     justify-content: space-around;
     flex-wrap: wrap; 
