@@ -1,9 +1,7 @@
 package com.example.demo.userAPI.persistance.entities;
 import com.example.demo.API.persistence.entities.Product;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -12,6 +10,8 @@ import java.sql.Date;
 @Setter
 @ToString
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "reservations")
 public class Reservation {
     @Id

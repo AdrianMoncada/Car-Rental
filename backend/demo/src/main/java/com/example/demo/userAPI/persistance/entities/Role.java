@@ -1,8 +1,6 @@
 package com.example.demo.userAPI.persistance.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -10,6 +8,8 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "roles")
 public class Role {
 
