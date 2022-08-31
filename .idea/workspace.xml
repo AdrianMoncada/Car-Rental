@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fc5fd3-1444-40b7-93aa-0731cad45986" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/demo/src/main/API/categoria/controller/controller.odt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/demo/src/main/API/categoria/persistence/entities/entities.odt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/demo/src/main/API/categoria/persistence/repository/repository.ods" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/demo/src/main/API/categoria/service/service.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +11,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Cqg0QQDMfRnJupcgvl77VJrZQ4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -25,7 +25,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/adrianmoncada/CertifiedTechDeveloper/grupo-04/backend/demo"
+    "last_opened_file_path": "C:/Users/mateo/Desktop/carrera/b4/clone3/grupo-04",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
