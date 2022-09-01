@@ -2,7 +2,8 @@ import React from "react";
 // {/*Se hace la importación de Button y  Modal de Bootstrap*/}
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Register from "./Register";
+// import Register from "./Register";
+import RegisterFormik from "./RegisterFormik";
 
 const ModalRegister = ({showModalRegister, handleCloseModalRegister}) => {
 
@@ -10,11 +11,11 @@ const ModalRegister = ({showModalRegister, handleCloseModalRegister}) => {
   return (
     <Modal show={showModalRegister} onHide={handleCloseModalRegister}>
       <Modal.Header closeButton>
-        <Modal.Title>Registro</Modal.Title>
+        <Modal.Title></Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {/*Componente REGISTRO */}
-        <Register/>    
+        <RegisterFormik/>    
         </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleCloseModalRegister}>

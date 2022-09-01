@@ -7,7 +7,7 @@ export default function Login ({mostrar, cerrarModal, usuario, cambiarUsuario}){
   return(
     <Modal show={mostrar} onHide={cerrarModal}>
       <Modal.Header closeButton>
-        <Modal.Title> Iniciar Sesión  </Modal.Title>
+        <Modal.Title>  </Modal.Title>
       </Modal.Header>
       <Modal.Body><LoginScreens usuario={usuario} cambiarUsuario={cambiarUsuario} cerrarModal={cerrarModal}  /></Modal.Body>
     </Modal>
