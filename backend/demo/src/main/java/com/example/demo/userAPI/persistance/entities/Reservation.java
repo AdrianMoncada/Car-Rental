@@ -25,21 +25,21 @@ public class Reservation {
 
     private Date endDate;
 
-    @JsonBackReference
+    @JsonBackReference(value="product-reservation")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
     Product product;
 
-    @JsonBackReference
+    @JsonBackReference(value="user-reservation")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "user")
     User user;
 
-    public Reservation(Date startHour, Date startDate, Date endDate, Product product, User user) {
+    public Reservation(Date startHour, Date startDate, Date endDate,User user) {
         this.startHour = startHour;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.product = product;
+
         this.user = user;
     }
 }

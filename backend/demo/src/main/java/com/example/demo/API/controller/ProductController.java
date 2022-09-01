@@ -46,12 +46,6 @@ public class ProductController {
         return productService.findByCityId(id);
     }
 
-/*    @CrossOrigin
-    @GetMapping("/{id}")
-    public List<CityDto> getById(@PathVariable Long id){
-        return cityService.filterCityId(id);
-    }*/
-
     @PostMapping
     public ResponseEntity<String> createProduct(@RequestBody Product p) {
         ResponseEntity<String> response = null;

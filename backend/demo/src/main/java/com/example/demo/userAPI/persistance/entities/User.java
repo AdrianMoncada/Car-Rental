@@ -27,7 +27,7 @@ public class User {
 
     private String password;
 
-    @JsonManagedReference
+    @JsonManagedReference(value="user-reservation")
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<Reservation> reservations = new HashSet<>();
 
@@ -39,7 +39,7 @@ public class User {
     @ManyToOne(fetch = FetchType.EAGER)
     private Role role;
 
-    public User(String firstName, String lastName, String email, String password, City city, Role role) {
+    public User(String firstName, String lastName, String email, String password, Role role, City city) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -47,4 +47,5 @@ public class User {
         this.city = city;
         this.role = role;
     }
+
 }

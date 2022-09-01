@@ -5,7 +5,6 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -16,6 +15,10 @@ public class UserService {
 
     public User save(User u){
         return repository.save(u);
+    }
+
+    public boolean exist(String email){
+        return repository.existsByEmail(email);
     }
 
     public String delete(Long id){
