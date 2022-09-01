@@ -72,7 +72,7 @@ const RegisterFormik = () => {
         onSubmit: (valores, {resetForm}) => {
             formik.resetForm();
             console.log(valores);
-            // postData(valores);
+            postData(valores);
 
 
             const settings = {
