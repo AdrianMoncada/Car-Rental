@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -22,25 +23,25 @@ public class ProductController {
     @Autowired
     private CityService cityService;
 
-    @CrossOrigin
+    /*@CrossOrigin*/
     @GetMapping()
     public List<ProductDto> getAll() {
         return productService.getAllProductDTO();
     }
 
-    @CrossOrigin
+    /*@CrossOrigin*/
     @GetMapping("/{id}")
     public List<ProductDto> findByIdDTO(@PathVariable Long id){
         return productService.findBydDTO(id);
     }
 
-    @CrossOrigin
+    /*@CrossOrigin*/
     @GetMapping("categories/{id}")
     public List<Product> findByCategoryId(@PathVariable Long id){
         return productService.findByCategoryId(id);
     }
 
-    @CrossOrigin
+    /*@CrossOrigin*/
     @GetMapping("cities/{id}")
     public List<Product> findByCityId(@PathVariable Long id){
         return productService.findByCityId(id);
