@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 //import { Formik } from 'formik';
 import {useFormik} from "formik"; 
 import * as Yup from "yup"; 
+import axios from 'axios';
 
 import SuccessMessageModal from '../../components/SuccessMessageModal/SuccessMessageModal';
 import Login from '../Login/Login';
@@ -27,31 +28,72 @@ import {PrincipalForm,
 
 const RegisterFormik = () => {
 
-    
+
+    async function postData(valores) {
+        try{
+            const response = await axios({
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: 'http://18.219.33.103:8080/users',
+                data: JSON.stringify(valores)
+                });
+                return response
+                } catch(e){
+                    console.log(e);
+                }
+                        
+
+    }
+
  
     const formik = useFormik({
 
         initialValues:{
-            nombre: "",
-            apellido: "",
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
-            repeatPassword: "",
+            // repeatPassword: "",
+            city: "",
     
         },
 
         validationSchema: Yup.object({
-            nombre: Yup.string().min(2, 'El nombre debe tener más de 3 caracteres ').max(50, 'Demasiado largo').required('El nombre es obligatorio'),
-            apellido: Yup.string().min(2, 'El nombre debe tener más de 3 caracteres ').max(50, 'Demasiado largo').required("El apellido es obligatorio"),
+            firstName: Yup.string().min(2, 'El nombre debe tener más de 3 caracteres ').max(50, 'Demasiado largo').required('El nombre es obligatorio'),
+            lastName: Yup.string().min(2, 'El nombre debe tener más de 3 caracteres ').max(50, 'Demasiado largo').required("El apellido es obligatorio"),
             email: Yup.string().email("No es un correo valido").required("El correo es obligatorio"),
-            password: Yup.string().min(4, "Debe contener 4 digitos o más").max(50).required("La contraseña es obligatoria").oneOf([Yup.ref("repeatPassword")], "Las contraseñas no coinciden"),
-            repeatPassword: Yup.string().min(4, "Debe contener  4 digitos o más").max(50).required("La confirmación es obligatoria").oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
+            password: Yup.string().min(4, "Debe contener 4 digitos o más").max(50).required("La contraseña es obligatoria")//.oneOf([Yup.ref("repeatPassword")], "Las contraseñas no coinciden"),
+            // repeatPassword: Yup.string().min(4, "Debe contener  4 digitos o más").max(50).required("La confirmación es obligatoria").oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
         }),
 
-        onSubmit: (formData, {resetForm}) => {
-
+        onSubmit: (valores, {resetForm}) => {
             formik.resetForm();
-            console.log(formData);
+            console.log(valores);
+            // postData(valores);
+
+
+            const settings = {
+                method: "POST",
+                body: JSON.stringify(valores),
+                headers: {
+                    "content-type": "application/json",
+                    "Accept": "application/json"
+                }
+            }
+        
+            fetch("http://18.219.33.103:8080/users", settings)
+           .then(function(response) {
+                return response.json();
+           })
+           .then(function(data) {
+                console.log(data);
+           })
+           .catch(function(error) {
+                console.error(error);
+           });
             cambiarFormularioEnviada(true);
             setTimeout(()=> cambiarFormularioEnviada(false), 2500);
         }
@@ -90,30 +132,30 @@ const RegisterFormik = () => {
             <TwoDiv>
                     <InputsContainer>
                         <H6> Nombre </H6>
-                        <label htlmFor="nombre"></label>
+                        <label htlmFor="firstName"></label>
                         <Input type="text"
-                         id= "nombre"
-                         name="nombre"
+                         id= "firstName"
+                         name="firstName"
                          placeholder='Nombre'
-                         value={formik.values.nombre}
+                         value={formik.values.firstName}
                          onChange={formik.handleChange}
                          onBlur={formik.handleBlur}
                          />
-                    {formik.touched.nombre && formik.errors.nombre && <span style={{ color: "red" }}>{formik.errors.nombre}</span>}
+                    {formik.touched.firstName && formik.errors.firstName && <span style={{ color: "red" }}>{formik.errors.firstName}</span>}
                     </InputsContainer>
 
                     <InputsContainer>
                         <H6> Apellido </H6>
-                        <label htlmFor="apellido"> </label>
+                        <label htlmFor="lastName"> </label>
                         <Input type="text"
-                        id= "apellido"
-                        name="apellido"
+                        id= "lastName"
+                        name="lastName"
                         placeholder='Apellido'
-                        value={formik.values.apellido}
+                        value={formik.values.lastName}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         />
-                        {formik.touched.apellido && formik.errors.apellido && <span style={{ color: "red" }}>{formik.errors.apellido}</span>}
+                        {formik.touched.lastName && formik.errors.lastName && <span style={{ color: "red" }}>{formik.errors.lastName}</span>}
                     </InputsContainer>
 
                     <InputsContainer>
@@ -143,7 +185,7 @@ const RegisterFormik = () => {
                         />
                         {formik.touched.password && formik.errors.password && <span style={{ color: "red" }}>{formik.errors.password}</span>}
                     </InputsContainer>
-
+{/* 
                     <InputsContainer>
                         <H6> Confirmar Contraseña </H6>
                         <label htlmFor="password"></label>
@@ -156,6 +198,21 @@ const RegisterFormik = () => {
                         onBlur={formik.handleBlur}
                         />
                         {formik.touched.repeatPassword &&formik.errors.repeatPassword && <span style={{ color: "red" }}>{formik.errors.repeatPassword}</span>}
+                    </InputsContainer> */}
+
+
+                    <InputsContainer>
+                        <H6> Ciudad </H6>
+                        <label htlmFor="city"></label>
+                        <Input type="text"
+                        id= "city"
+                        name="city"
+                        placeholder='Ciudad'
+                        value={formik.values.city}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        />
+                        {formik.touched.city}
                     </InputsContainer>
             </TwoDiv>
                     
@@ -178,7 +235,6 @@ const RegisterFormik = () => {
                     Entra aquí
                 </ButtonLogin >
                 <Login mostrar={show} cerrarModal={handleClose}/>
-                {/*<p> <Link to="/signin" style={{textDecoration: "none", color:"#FCA311"}}> ㅤEntra aquí </Link> </p>*/}
             </TextLink>
             <LastParagraph>Al hacer clic en el botón Registrar, acepta nuestros Términos y Condiciones</LastParagraph>
 
