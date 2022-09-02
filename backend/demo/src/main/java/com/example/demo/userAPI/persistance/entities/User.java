@@ -31,20 +31,15 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<Reservation> reservations = new HashSet<>();
 
-    @JoinColumn(name = "city_id")
-    @ManyToOne(fetch = FetchType.EAGER)
-    private City city;
-
     @JoinColumn(name = "role_id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Role role;
 
-    public User(String firstName, String lastName, String email, String password, Role role, City city) {
+    public User(String firstName, String lastName, String email, String password, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.city = city;
         this.role = role;
     }
 
