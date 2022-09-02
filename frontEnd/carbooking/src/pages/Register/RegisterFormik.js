@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import {useFormik} from "formik"; 
 import * as Yup from "yup"; 
 //import axios from 'axios';
+//import sweet alert for message of success or error
+import Swal from "sweetalert2"
+import { useNavigate } from 'react-router-dom';
 
 import SuccessMessageModal from '../../components/SuccessMessageModal/SuccessMessageModal';
 import Login from '../Login/Login';
@@ -27,7 +30,7 @@ import {PrincipalForm,
 
 
 const RegisterFormik = () => {
-
+    const navigate = useNavigate();
 
     // async function postData(valores) {
     //     try{
@@ -88,7 +91,19 @@ const RegisterFormik = () => {
                     cambiarFormularioEnviada(true);
                     setTimeout(()=> cambiarFormularioEnviada(false), 2500);
                     return response.json();
-                }
+
+                    //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
+                }else if(response.ok !== true)
+                    Swal.fire({
+                        title: 'algo salio mal',
+                        text:'intentalo mas tarde',
+                        icon:'error'
+                    }).then(response =>{
+                        if (response.isConfirmed) {
+                            navigate("/reserva")
+                        }
+                    })
+                
                 
            })
            .then(function(data) {
