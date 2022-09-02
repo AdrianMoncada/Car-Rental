@@ -4,6 +4,7 @@ import * as Yup from "yup";
 //import sweet alert for message of success or error
 import Swal from "sweetalert2"
 import { useNavigate } from 'react-router-dom';
+import SuccessMessageModal from '../../components/SuccessMessageModal/SuccessMessageModal';
 import Login from '../Login/Login';
 
 
@@ -25,7 +26,7 @@ import {PrincipalForm,
 } from './Register.styles';
 
 
-const RegisterFormik = () => {
+const LoginFormik = () => {
     const navigate = useNavigate();
 
     // async function postData(valores) {
@@ -77,18 +78,15 @@ const RegisterFormik = () => {
                 body: JSON.stringify(valores),
                 headers: {
                     "Content-type": "application/json",
-                    "Accept": "application/json",
+                    "Accept": "application/json"
                 }
             }
         
             fetch("http://18.219.33.103:8080/users", settings)
            .then((response) => {
                 if(response.ok){
-                    Swal.fire({
-                        title: 'Resgistrado con éxito',
-                        text:'Bienvendio',
-                        icon:'success'
-                    })
+                    cambiarFormularioEnviada(true);
+                    setTimeout(()=> cambiarFormularioEnviada(false), 2500);
                     return response.json();
 
                     //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
@@ -98,11 +96,8 @@ const RegisterFormik = () => {
                         text:'intentalo mas tarde',
                         icon:'error'
                     }).then(response =>{
-                        if (response.isConfirmed && response.jwt) {
-                            //guardo en LocalStorage el objeto con el token
-                            window.localStorage.setItem('jwt', JSON.stringify(response.jwt));
-                            //redireccionamos a la página
-                            navigate("/reserva");
+                        if (response.isConfirmed) {
+                            navigate("/reserva")
                         }
                     })
                 
@@ -122,9 +117,13 @@ const RegisterFormik = () => {
 
     
 
-    const [formularioEnviado] = useState(false);
+    const [formularioEnviado, cambiarFormularioEnviada] = useState(false);
 
-   
+    // Lógica Modal MessageSuccess
+    const [showModalMessageSuccess, setShowModalMessageSuccess] = useState(false);
+    const handleShowMessageSuccess = () => setShowModalMessageSuccess(true);
+    // Cierra lógica modal MessageSuccess
+
     // Lógica para activar el modal de iniciar sesión
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -218,12 +217,14 @@ const RegisterFormik = () => {
                     
 
             <ThreeDiv>
-                <Button type="submit"> Registrarse </Button>
+                <Button type="submit" onClick={() => {handleShowMessageSuccess()}}> Registrarse </Button>
             </ThreeDiv>
 
             {/*Al botón de envíar registro le inserto el componente 
             SuccessMessageModal(Modal de "Mensaje de éxtio") */}
-            {formularioEnviado}
+            {formularioEnviado && <SuccessMessageModal 
+            showModalMessageSuccess={showModalMessageSuccess}>
+            </SuccessMessageModal>}
             
 
             <TextLink>
@@ -241,4 +242,4 @@ const RegisterFormik = () => {
 	);
 }
 
-export default RegisterFormik
+export default LoginFormik
