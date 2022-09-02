@@ -1,16 +1,14 @@
 import React, { useState, useEffect }  from 'react'
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"
+import { FaChevronCircleLeft } from "react-icons/fa"
 import { Calendar, GridContainer, PersonalData, Policies, ReservedProduct, Schedule } from './Booking.styled'
-import {
-    Container,
-    Main,
-    IconArrow,
-    InfoProduct,
-  } from "../Product/ProductDetails.Styles";
+import {Container,Main,IconArrow,InfoProduct,} from "../Product/ProductDetails.Styles";
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
-import { FaChevronCircleLeft } from "react-icons/fa";
+import FormBooking from './FormBooking';
+import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva';
+
 
 
 const Booking = () => {
@@ -47,8 +45,8 @@ const Booking = () => {
                 </IconArrow>
               </Main>
               <GridContainer>
-                <PersonalData>escribe tus datos aqui</PersonalData>
-                <Calendar>este es el calendario doble</Calendar>
+                <PersonalData> <FormBooking/></PersonalData>
+                <Calendar><CalendarioReserva/></Calendar>
                 <ReservedProduct>este es el producto reservado</ReservedProduct>
                 <Policies>politicas de la empresa</Policies>
                 <Schedule>horario de entrega y recogida</Schedule>

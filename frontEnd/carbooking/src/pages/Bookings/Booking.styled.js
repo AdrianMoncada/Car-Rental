@@ -19,7 +19,7 @@ export const GridContainer = styled.div`
  display: grid;
  background:yellow;
  width: 100%;
- height: 600px;
+ height: 100%;
  margin:0;
  padding:0;
   grid-template-columns: 7.1fr 0.1fr 5.4fr;
@@ -34,6 +34,9 @@ export const GridContainer = styled.div`
 `
 export const PersonalData = styled.div`
  grid-area: 1 / 1 / 2 / 2; 
+ display: flex;
+ height:300px;
+ 
  background:red;
  @media (max-width: 1224px) {
   grid-area: 1 / 1 / 2 / 4; 
