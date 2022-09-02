@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 
@@ -13,13 +13,9 @@ import {
 } from "../pages/home/home.styles";
 import ModalRegister from "../pages/Register/ModalRegister";
 
-const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, }) => {
+const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, mostrarModalRegister, cerrarModalRegister, mostrarRegister }) => {
 
-   // Logica Modal Register
-    const [showModalRegister, setShowModalRegister] = useState(false);
-    const handleCloseRegister = () => setShowModalRegister(false);
-    const handleShowRegister = () => setShowModalRegister(true);
-    // Cierra logica modal register 
+ 
 
 
   const handleClick = () => {
@@ -42,7 +38,7 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, }) => {
           mostrarModal={mostrarModal}
           setUsuario={setUsuario}
           cerrarModal={cerrarModal}
-          handleShowRegister={handleShowRegister}
+          handleShowRegister={mostrarModalRegister}
         />
       </ContainerMenu>
 
@@ -60,14 +56,14 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, }) => {
           </>
         ) : (
           <>
-          <ButtonSign onClick={() => {handleShowRegister()}}>Crear cuenta</ButtonSign>
+          <ButtonSign onClick={() => mostrarModalRegister()}>Crear cuenta</ButtonSign>
           <ButtonSign onClick={() => mostrarModal()}>Iniciar sesion</ButtonSign>
           </>
         )}
       </ContainerBtn>
     </Headers>
     {/*Importación del ModalRegister */}
-    <ModalRegister showModalRegister={showModalRegister} handleCloseModalRegister={handleCloseRegister}>
+    <ModalRegister toggleModal= {mostrarModal} showModalRegister={mostrarRegister} handleCloseModalRegister={cerrarModalRegister}>
     </ModalRegister>
     </>
   );

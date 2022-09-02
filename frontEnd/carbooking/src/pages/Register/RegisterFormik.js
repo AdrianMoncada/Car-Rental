@@ -3,9 +3,8 @@ import {useFormik} from "formik";
 import * as Yup from "yup"; 
 //import sweet alert for message of success or error
 import Swal from "sweetalert2"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import Login from '../Login/Login';
-
 
 import {PrincipalForm, 
     Button,
@@ -21,31 +20,13 @@ import {PrincipalForm,
     ButtonLogin,
     InputsContainer, 
     Input,
-    //MessageError
 } from './Register.styles';
 
 
-const RegisterFormik = () => {
+const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
+
     const navigate = useNavigate();
 
-    // async function postData(valores) {
-    //     try{
-    //         const response = await axios({
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             url: 'http://18.219.33.103:8080/users',
-    //             data: JSON.stringify(valores)
-    //             });
-    //             return response
-    //             } catch(e){
-    //                 console.log(e);
-    //             }
-    // }
-
- 
     const formik = useFormik({
 
         initialValues:{
@@ -53,9 +34,7 @@ const RegisterFormik = () => {
             lastName: "",
             email: "",
             password: "",
-            repeatPassword: "",
-            city: "",
-    
+            repeatPassword: "", 
         },
 
         validationSchema: Yup.object({
@@ -66,11 +45,10 @@ const RegisterFormik = () => {
             repeatPassword: Yup.string().min(4, "Debe contener  4 digitos o más").max(50).required("La confirmación es obligatoria").oneOf([Yup.ref("password")], "Las contraseñas no coinciden"),
         }),
 
-        onSubmit: (valores, {resetForm}) => {
+        onSubmit: (valores) => {
             formik.resetForm();
-            console.log(valores);
-            //postData(valores);
-
+            cerrarModalRegister();
+           // console.log("Valores: ",valores);
 
             const settings = {
                 method: "POST",
@@ -89,27 +67,23 @@ const RegisterFormik = () => {
                         text:'Bienvendio',
                         icon:'success'
                     })
+                    //console.log("respuesta: ", response)
                     return response.json();
 
                     //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
                 }else if(response.ok !== true)
                     Swal.fire({
-                        title: 'algo salio mal',
-                        text:'intentalo mas tarde',
+                        title: 'Algo salio mal',
+                        text:'“Lamentablemente no ha podido registrarse. Por favor intente más tarde”',
                         icon:'error'
-                    }).then(response =>{
-                        if (response.isConfirmed && response.jwt) {
-                            //guardo en LocalStorage el objeto con el token
-                            window.localStorage.setItem('jwt', JSON.stringify(response.jwt));
-                            //redireccionamos a la página
-                            navigate("/reserva");
-                        }
                     })
                 
                 
            })
            .then(function(data) {
-                console.log(data);
+                //console.log(data);
+                localStorage.setItem('jwt', JSON.stringify(data.token));
+             navigate("/", {state: {fromRegister: true}})
            })
            .catch(function(error) {
                 console.error(error);
@@ -119,18 +93,12 @@ const RegisterFormik = () => {
     }
     
     );
-
-    
-
-    const [formularioEnviado] = useState(false);
-
    
     // Lógica para activar el modal de iniciar sesión
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    // const handleShow = () => setShow(true);
     // Cierra lógica para activar el modal de iniciar sesión
-
 
 	return (
 		<>
@@ -213,22 +181,16 @@ const RegisterFormik = () => {
                         />
                         {formik.touched.repeatPassword &&formik.errors.repeatPassword && <span style={{ color: "red" }}>{formik.errors.repeatPassword}</span>}
                     </InputsContainer> 
-            </TwoDiv>
-                    
-                    
+            </TwoDiv>  
 
             <ThreeDiv>
                 <Button type="submit"> Registrarse </Button>
             </ThreeDiv>
 
-            {/*Al botón de envíar registro le inserto el componente 
-            SuccessMessageModal(Modal de "Mensaje de éxtio") */}
-            {formularioEnviado}
-            
 
             <TextLink>
                 <p> ¿Ya tienes una cuenta?</p>
-                <ButtonLogin onClick={() => handleShow()}>
+                <ButtonLogin onClick={() => toggleModal()}>
                     Entra aquí
                 </ButtonLogin >
                 <Login mostrar={show} cerrarModal={handleClose}/>
