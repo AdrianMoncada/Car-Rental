@@ -49,7 +49,14 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(generateJWTToken(user));
     }
 
-
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        User loggedUser = service.obtainByCredentials(user);
+        if(loggedUser != null){
+            return ResponseEntity.status(HttpStatus.OK).body(generateJWTToken(loggedUser));
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Incorrect email or password");
+    }
 
     private Map<String, String> generateJWTToken(User user){
         long timestamp = System.currentTimeMillis();
