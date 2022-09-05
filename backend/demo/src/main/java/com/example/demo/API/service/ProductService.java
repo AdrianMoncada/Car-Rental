@@ -32,7 +32,6 @@ public class ProductService {
         productDto.setCategory(product.getCategory());
         productDto.setCity(product.getCity());
         productDto.setImages(product.getImages());
-        productDto.setReservations(product.getReservations());
         productDto.setDescription(product.getDescription());
         productDto.setCharacteristics(product.getCharacteristics());
         productDto.setMainImage(product.getMainImage());

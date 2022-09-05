@@ -38,7 +38,7 @@ public class Product {
     @ManyToOne(fetch = FetchType.EAGER)
     private City city;
 
-    @JsonManagedReference(value="product-image")
+    @JsonManagedReference
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 
