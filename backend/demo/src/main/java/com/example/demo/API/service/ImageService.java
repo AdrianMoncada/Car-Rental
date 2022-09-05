@@ -10,6 +10,7 @@ public class ImageService {
     ImageRepository imageRepository;
 
     public Image save(Image i){
+        System.out.println("objeto parametro: " + i.toString());
         return imageRepository.save(i);
     }
 

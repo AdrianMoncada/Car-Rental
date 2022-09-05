@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Setter
 @Getter
 @Entity
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "images")

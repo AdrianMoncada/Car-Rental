@@ -27,8 +27,10 @@ public class User {
 
     private String password;
 
-    @JsonManagedReference(value="user-reservation")
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private Set<Reservation> reservations = new HashSet<>();
 
     @JoinColumn(name = "role_id")

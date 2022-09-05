@@ -2,44 +2,43 @@ package com.example.demo.userAPI.persistance.entities;
 import com.example.demo.API.persistence.entities.Product;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
-
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
 @Entity
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "reservations")
 public class Reservation {
     @Id
-    @SequenceGenerator(name = "address_sequence", sequenceName = "address_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_sequence")
+    @SequenceGenerator(name = "reservation_sequence", sequenceName = "reservation_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reservation_sequence")
     private Long id;
 
-    private Date startHour;
+    private LocalDateTime startHour;
 
-    private Date startDate;
+    private LocalDate startDate;
 
-    private Date endDate;
+    private LocalDate endDate;
 
-    @JsonBackReference(value="product-reservation")
+    /*@JsonBackReference(value="product-reservation")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
-    Product product;
+    Product product;*/
 
-    @JsonBackReference(value="user-reservation")
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "user")
     User user;
 
-    public Reservation(Date startHour, Date startDate, Date endDate,User user) {
+    public Reservation(LocalDateTime startHour, LocalDate startDate, LocalDate endDate,User user) {
         this.startHour = startHour;
         this.startDate = startDate;
         this.endDate = endDate;
-
         this.user = user;
     }
 }
