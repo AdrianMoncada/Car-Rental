@@ -54,6 +54,8 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                 method: "POST",
                 body: JSON.stringify(valores),
                 headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
+
                     "Content-type": "application/json",
                     "Accept": "application/json",
                 }
