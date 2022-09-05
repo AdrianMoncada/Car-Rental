@@ -19,7 +19,7 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reservation_sequence")
     private Long id;
 
-    private LocalDateTime startHour;
+    private LocalDate startHour;
 
     private LocalDate startDate;
 
@@ -35,7 +35,7 @@ public class Reservation {
     @JoinColumn(name = "user")
     User user;
 
-    public Reservation(LocalDateTime startHour, LocalDate startDate, LocalDate endDate,User user) {
+    public Reservation(LocalDate startHour, LocalDate startDate, LocalDate endDate,User user) {
         this.startHour = startHour;
         this.startDate = startDate;
         this.endDate = endDate;
