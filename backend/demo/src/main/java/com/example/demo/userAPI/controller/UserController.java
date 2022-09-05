@@ -16,6 +16,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UserController {
