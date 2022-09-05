@@ -29,6 +29,11 @@ public class UserController {
     public String checkTokenValidation(HttpServletRequest request) {
         return "Usted cuenta con un token válido.";
     }
+
+    @GetMapping("/CorsValidate")
+    public String checkCors(){
+        return "Sin modificaciones en el cors";
+    }
     @GetMapping()
     public List<User> getAll() {
         return service.getAll();
