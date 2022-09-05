@@ -15,7 +15,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public FilterRegistrationBean<CorsFilter> corsFilter() {
 		FilterRegistrationBean<CorsFilter> registrationBean = new FilterRegistrationBean<>();
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -26,7 +26,7 @@ public class DemoApplication {
 		registrationBean.setFilter(new CorsFilter(source));
 		registrationBean.setOrder(0);
 		return registrationBean;
-	}
+	}*/
 
 	@Bean
 	public FilterRegistrationBean<AuthFilter> filterFilterRegistrationBean(){
