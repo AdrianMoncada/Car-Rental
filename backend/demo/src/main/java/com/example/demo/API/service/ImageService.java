@@ -10,6 +10,7 @@ public class ImageService {
     ImageRepository imageRepository;
 
     public Image save(Image i){
+        System.out.println(i.getProduct());
         return imageRepository.save(i);
     }
 

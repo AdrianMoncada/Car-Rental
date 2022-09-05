@@ -2,6 +2,8 @@ package com.example.demo.userAPI.persistance.entities;
 import com.example.demo.API.persistence.entities.Product;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -25,9 +27,10 @@ public class Reservation {
 
     private Date endDate;
 
+    @NotFound(action = NotFoundAction.IGNORE)
     @JsonBackReference(value="product-reservation")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "product")
+    @JoinColumn(name = "product", nullable = true)
     Product product;
 
     @JsonBackReference(value="user-reservation")
@@ -35,11 +38,11 @@ public class Reservation {
     @JoinColumn(name = "user")
     User user;
 
-    public Reservation(Date startHour, Date startDate, Date endDate,User user) {
+    public Reservation(Date startHour, Date startDate, Date endDate, User user, Product product) {
         this.startHour = startHour;
         this.startDate = startDate;
         this.endDate = endDate;
-
+        this.product = product;
         this.user = user;
     }
 }

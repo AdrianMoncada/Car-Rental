@@ -21,7 +21,7 @@ public class Image {
     @Column(name = "url")
     private String url;
 
-    @JsonBackReference
+    @JsonBackReference(value="product-image")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
     Product product;

@@ -29,7 +29,7 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-            /*cityRepository.save(new City("Buenos Aires"));
+/*            cityRepository.save(new City("Buenos Aires"));
             cityRepository.save(new City("Córdoba"));
             cityRepository.save(new City("Medellín"));
             cityRepository.save(new City("Bogotá"));
