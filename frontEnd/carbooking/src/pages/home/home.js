@@ -6,7 +6,7 @@ import Footer from "../../components/footer";
 
 import AllCategories from "../../components/category/AllCategories";
 import ProductsHome from "../Product/ProductsHome";
-import Login from "../Login/Login";
+import LoginModal from  "../Login/LoginModal"
 import {ContainerAll} from "../home/home.styles";
 
 
@@ -41,7 +41,7 @@ const Home = () => {
     acceso: false,
   });
 
-  console.log(location.key);
+  //console.log(location.key);
 
   useEffect(()=>{
     if (location.state?.fromRegister || location.state?.fromRegister != null) {
@@ -50,7 +50,7 @@ const Home = () => {
     }
   }, [location] )
 
-  console.log(location.state?.fromRegister);
+  //console.log(location.state?.fromRegister);
 
   const handleClose = () => setShow(false);
   // const handleShow = () => setShow(true);
@@ -74,7 +74,7 @@ const Home = () => {
       <ProductsHome city={city}  />
       </ContainerAll>
       <Footer />
-      <Login mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
+      <LoginModal mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
     </Container>
   );
 };

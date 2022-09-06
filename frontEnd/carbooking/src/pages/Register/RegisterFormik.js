@@ -4,7 +4,7 @@ import * as Yup from "yup";
 //import sweet alert for message of success or error
 import Swal from "sweetalert2"
 import { useNavigate} from 'react-router-dom';
-import Login from '../Login/Login';
+import LoginModal from '../Login/LoginModal';
 
 import {PrincipalForm, 
     Button,
@@ -54,12 +54,19 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                 method: "POST",
                 body: JSON.stringify(valores),
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem("token")}`,
-
                     "Content-type": "application/json",
                     "Accept": "application/json",
                 }
             }
+
+            const settingsGet = {
+                 method: "GET",
+                 headers: {
+                 'Authorization': `Bearer ${localStorage.getItem("data.token")}`,
+                  "Content-type": "application/json",
+                  "Accept": "application/json",
+              }
+          }
         
             fetch("http://18.219.33.103:8080/users", settings)
            .then((response) => {
@@ -69,7 +76,7 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                         text:'Bienvendio',
                         icon:'success'
                     })
-                    //console.log("respuesta: ", response)
+                    console.log("respuesta: ", response)
                     return response.json();
 
                     //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
@@ -83,13 +90,45 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                 
            })
            .then(function(data) {
-                //console.log(data);
+                console.log(data);
                 localStorage.setItem('jwt', JSON.stringify(data.token));
              navigate("/", {state: {fromRegister: true}})
            })
            .catch(function(error) {
                 console.error(error);
            });
+
+        
+
+         //const urlToken = "http://18.219.33.103:8080/users/tokenFilter";
+           fetch("http://18.219.33.103:8080/users/tokenFilter" , settingsGet)
+           .then((response) => {
+              if(response.ok){
+                  Swal.fire({
+                      title: 'Token valido',
+                      text:'Bienvendio',
+                      icon:'success', 
+                      timer: 10000
+                  })
+                  console.log("respuesta token: ", response)
+                  return response.json();
+
+        //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
+              }else if(response.ok !== true)
+                  Swal.fire({
+                      title: 'Token no valido',
+                      text:'“Lamentablemente no ha podido registrarse. Por favor intente más tarde”',
+                      icon:'error'
+                  })
+                  console.log("respuesta token: ", response)
+         })
+         .then(function(data) {
+              //console.log(data);
+          localStorage.setItem('jwt', JSON.stringify(data.token));
+           navigate("/", {state: {fromRegister: true}})
+         })
+
+
         }
 
     }
@@ -195,7 +234,7 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                 <ButtonLogin onClick={() => toggleModal()}>
                     Entra aquí
                 </ButtonLogin >
-                <Login mostrar={show} cerrarModal={handleClose}/>
+                <LoginModal mostrar={show} cerrarModal={handleClose}/>
             </TextLink>
             <LastParagraph>Al hacer clic en el botón Registrar, acepta nuestros Términos y Condiciones</LastParagraph>
 
