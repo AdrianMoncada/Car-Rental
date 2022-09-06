@@ -19,26 +19,27 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reservation_sequence")
     private Long id;
 
-    private LocalDate startHour;
+    private LocalDateTime startHour;
 
     private LocalDate startDate;
 
     private LocalDate endDate;
 
-    /*@JsonBackReference(value="product-reservation")
+    @JsonBackReference(value="product-reservation")
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "product")
-    Product product;*/
+    Product product;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "user")
     User user;
 
-    public Reservation(LocalDate startHour, LocalDate startDate, LocalDate endDate,User user) {
+    public Reservation(LocalDateTime startHour, LocalDate startDate, LocalDate endDate,User user, Product product) {
         this.startHour = startHour;
         this.startDate = startDate;
         this.endDate = endDate;
         this.user = user;
+        this.product = product;
     }
 }

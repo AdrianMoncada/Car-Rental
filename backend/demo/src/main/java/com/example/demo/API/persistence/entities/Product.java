@@ -42,9 +42,9 @@ public class Product {
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<Image> images = new HashSet<>();
 
-    /*@JsonManagedReference(value="product-reservation")
+    @JsonManagedReference(value="product-reservation")
     @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
-    private Set<Reservation> reservations = new HashSet<>();*/
+    private Set<Reservation> reservations = new HashSet<>();
 
     @Column(name = "main_image")
     @NotNull

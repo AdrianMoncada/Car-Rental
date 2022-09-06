@@ -3,6 +3,7 @@ import com.example.demo.API.persistence.entities.Category;
 import com.example.demo.API.persistence.entities.Characteristic;
 import com.example.demo.API.persistence.entities.City;
 import com.example.demo.API.persistence.entities.Image;
+import com.example.demo.userAPI.persistance.entities.Reservation;
 import lombok.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -19,6 +20,7 @@ public class ProductDto implements Serializable {
     private Category category;
     private City city;
     private Set<Image> images;
+    private Set<Reservation> reservations;
     private Set<Characteristic> characteristics;
     private String mainImage;
 }
