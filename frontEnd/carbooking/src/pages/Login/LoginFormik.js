@@ -32,8 +32,6 @@ const LoginFormik = () => {
                 method: "POST",
                 body: JSON.stringify(valores),
                 headers: {
-                 
-
                     "Content-type": "application/json",
                     "Accept": "application/json",
                 }
@@ -43,7 +41,7 @@ const LoginFormik = () => {
           .then((response) => {
                 if(response.ok){
                     Swal.fire({
-                        title: 'Resgistrado con éxito',
+                        title: 'Inicio exitoso',
                         text:'Bienvendio',
                         icon:'success'
                     })
@@ -52,7 +50,7 @@ const LoginFormik = () => {
                 }else if(response.ok !== true)
                     Swal.fire({
                         title: 'Algo salio mal',
-                        text:'“Lamentablemente no ha podido registrarse. Por favor intente más tarde”',
+                        text:'“No se pudo realizar el registro. Por favor intente más tarde”',
                         icon:'error'
                     })
                 
