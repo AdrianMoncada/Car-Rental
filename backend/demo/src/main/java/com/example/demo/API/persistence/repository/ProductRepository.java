@@ -20,7 +20,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query(value = " SELECT * FROM products p WHERE NOT EXISTS (SELECT 1\n" +
             "\t\t\t\t\tFROM reservations r\n" +
             "                    WHERE p.id = r.product AND\n" +
-            "                    r.end_date >= '2022-03-03' AND\n" +
-            "                    r.start_date <= '2022-03-07')", nativeQuery = true)
+            "                    r.end_date >= (:endDate) AND\n" +
+            "                    r.start_date <= (:startDate)) AND p.city_id = (:idCity)", nativeQuery = true)
     List<Product> findByCityIdAndDate(@Param("idCity") Long idCity, @Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 }
