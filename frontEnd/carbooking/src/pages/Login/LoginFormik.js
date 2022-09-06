@@ -49,7 +49,7 @@ const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegis
                 }else if(response.status === 401)
                     Swal.fire({
                         title: 'Algo salio mal',
-                        text:'“No estas registrado”',
+                        text:'“No estas registrado o no son credenciales validas”',
                         icon:'error'
                     })           
           })
