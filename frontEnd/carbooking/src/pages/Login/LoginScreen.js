@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 //import { Link } from "react-router-dom";
+
 import {
   Button,
   ErrorMessage,
@@ -17,7 +18,7 @@ import {
   ButtonRegister
 } from "./login.styles";
 
-function LoginScreens({ usuario, cambiarUsuario, cerrarModal}) {
+function LoginScreens({ usuario, cambiarUsuario, cerrarModal }) {
   const [correo, cambiarCorreo] = useState("");
   const [password, cambiarPassword] = useState("");
   const [primerCarga, cambiarPrimerCarga] = useState(true);
@@ -50,63 +51,64 @@ function LoginScreens({ usuario, cambiarUsuario, cerrarModal}) {
     }
 
     cambiarFormularioValido(formValido);
+
   };
 
 
 
   return (
     <ContainerForm>
-    <Form action="" onSubmit={onSubmit} autocomplete="off" >
+      <Form action="" onSubmit={onSubmit} autocomplete="off" >
 
-      <OneDiv>
-      <Title> Iniciar Sesión </Title>
+        <OneDiv>
+          <Title> Iniciar Sesión </Title>
 
           {!primerCarga && !formularioValido && (
             <ErrorMessage>
-                Por favor vuelva a intentarlo, sus credenciales son inválidas
+              Por favor vuelva a intentarlo, sus credenciales son inválidas
             </ErrorMessage>
-)}
-      </OneDiv>
-      
-      <TwoDiv>
-      <InputsContainer>
-      <H6> E-mail </H6>
-      <Inputs
-        type="email"
-        placeholder="Correo Electrónico"
-        name="email"
-        value={correo}
-        onChange={(e) => cambiarCorreo(e.target.value)}
-      />
+          )}
+        </OneDiv>
 
-      <H6> Contraseña </H6>
-      <Inputs
-        type="password"
-        placeholder="Contraseña"
-        name="password"
-        value={password}
-        onChange={(e) => cambiarPassword(e.target.value)}
-      />
-      </InputsContainer>
-      </TwoDiv>
+        <TwoDiv>
+          <InputsContainer>
+            <H6> E-mail </H6>
+            <Inputs
+              type="email"
+              placeholder="Correo Electrónico"
+              name="email"
+              value={correo}
+              onChange={(e) => cambiarCorreo(e.target.value)}
+            />
 
-      <ThreeDiv>
-      <Button type="submit"> Iniciar sesión </Button>
-      </ThreeDiv>
+            <H6> Contraseña </H6>
+            <Inputs
+              type="password"
+              placeholder="Contraseña"
+              name="password"
+              value={password}
+              onChange={(e) => cambiarPassword(e.target.value)}
+            />
+          </InputsContainer>
+        </TwoDiv>
 
-      <TextLink>
-      <p> ¿No te has registrado?</p>
-      <ButtonRegister>
-        Entra aquí
-      </ButtonRegister>
-      {/* <p> <Link to="/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>*/}
+        <ThreeDiv>
+          <Button type="submit"> Iniciar sesión </Button>
+        </ThreeDiv>
 
-      </TextLink>
-      <LastParagraph>
-        Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y
-        Condiciones
-      </LastParagraph>
-    </Form>
+        <TextLink>
+          <p> ¿No te has registrado?</p>
+          <ButtonRegister>
+            Entra aquí
+          </ButtonRegister>
+          {/* <p> <Link to="/signup" style={{textDecoration: "none", color:"#FCA311"}}>ㅤ Entra aquí </Link> </p>*/}
+
+        </TextLink>
+        <LastParagraph>
+          Al hacer clic en el botón Iniciar Sesión, acepta nuestros Términos y
+          Condiciones
+        </LastParagraph>
+      </Form>
     </ContainerForm>
   );
 }
