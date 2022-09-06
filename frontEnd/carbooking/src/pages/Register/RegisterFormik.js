@@ -54,6 +54,11 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                 method: "POST",
                 body: JSON.stringify(valores),
                 headers: {
+<<<<<<< HEAD
+=======
+                 
+
+>>>>>>> 99eecf1d5b3d33a2d4a71dd1af5b7bd163a5d034
                     "Content-type": "application/json",
                     "Accept": "application/json",
                 }
