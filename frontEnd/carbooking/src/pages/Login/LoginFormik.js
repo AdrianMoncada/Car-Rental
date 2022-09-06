@@ -1,14 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {useFormik} from "formik"; 
 import * as Yup from "yup"; 
 import Swal from "sweetalert2"
 import { useNavigate} from 'react-router-dom';
-import {Button, ErrorMessage,Form,Inputs,LastParagraph,Title,OneDiv,
+import {Button, Form, Inputs,LastParagraph,Title,OneDiv,
     TwoDiv,ThreeDiv,H6,InputsContainer,TextLink,ContainerForm,ButtonRegister} from "./login.styles";
+import ModalRegister from '../Register/ModalRegister';
 
 
 
-const LoginFormik = () => {
+const LoginFormik = ({mostrarModalRegister, cerrarModalRegister, cerrarModal}) => {
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -20,14 +21,12 @@ const LoginFormik = () => {
 
         validationSchema: Yup.object({
             email: Yup.string().email("No es un correo valido").required("El correo es obligatorio"),
-            password: Yup.string().min(4, "Debe contener 4 digitos o más").max(50).required("La contraseña es obligatoria").oneOf([Yup.ref("repeatPassword")], "Las contraseñas no coinciden"),     
+            password: Yup.string().min(4, "Debe contener 4 digitos o más").max(50).required("La contraseña es obligatoria"),     
         }),
 
         onSubmit: (valores) => {
             formik.resetForm();
-            cerrarModalRegister();
            // console.log("Valores: ",valores);
-
             const settings = {
                 method: "POST",
                 body: JSON.stringify(valores),
@@ -37,7 +36,7 @@ const LoginFormik = () => {
                 }
             }
         
-            fetch("http://18.219.33.103:8080/users/login", settings)
+          fetch("http://18.219.33.103:8080/users/login", settings)
           .then((response) => {
                 if(response.ok){
                     Swal.fire({
@@ -47,19 +46,17 @@ const LoginFormik = () => {
                     })
                     //console.log("respuesta: ", response)
                     return response.json();
-                }else if(response.ok !== true)
+                }else if(response.status === 401)
                     Swal.fire({
                         title: 'Algo salio mal',
-                        text:'“No se pudo realizar el registro. Por favor intente más tarde”',
+                        text:'“No estas registrado”',
                         icon:'error'
-                    })
-                
-               
+                    })           
           })
           .then(function(data) {
                //console.log(data);
                 localStorage.setItem('jwt', JSON.stringify(data.token));
-             navigate("/", {state: {fromRegister: true}})
+             navigate("/", {state: {fromLogin: true}})
           })
           .catch(function(error) {
                console.error(error);
@@ -69,22 +66,16 @@ const LoginFormik = () => {
     }
     
     );
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
     
 
     return (
         <ContainerForm>
-          <Form action="" onSubmit={onSubmit} autocomplete="off" >
+          <Form action="" onSubmit={formik.handleSubmit} autocomplete="off" >
     
             <OneDiv>
               <Title> Iniciar Sesión </Title>
     
-              {!primerCarga && !formularioValido && (
-                <ErrorMessage>
-                  Por favor vuelva a intentarlo, sus credenciales son inválidas
-                </ErrorMessage>
-              )}
+
             </OneDiv>
     
             <TwoDiv>
@@ -94,18 +85,22 @@ const LoginFormik = () => {
                   type="email"
                   placeholder="Correo Electrónico"
                   name="email"
-                  value={correo}
-                  onChange={(e) => cambiarCorreo(e.target.value)}
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                 />
+                {formik.touched.email && formik.errors.email && <span style={{ color: "red" }}>{formik.errors.email}</span>}
     
                 <H6> Contraseña </H6>
                 <Inputs
                   type="password"
                   placeholder="Contraseña"
                   name="password"
-                  value={password}
-                  onChange={(e) => cambiarPassword(e.target.value)}
+                  value={formik.values.password}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                 />
+                {formik.touched.password && formik.errors.password && <span style={{ color: "red" }}>{formik.errors.password}</span>}
               </InputsContainer>
             </TwoDiv>
     
@@ -115,10 +110,10 @@ const LoginFormik = () => {
     
             <TextLink>
               <p> ¿No te has registrado?</p>
-              <ButtonRegister>
+              <ButtonRegister onClick={() => mostrarModalRegister()}>
                 Entra aquí
               </ButtonRegister>
-              
+              <ModalRegister  mostrarModalRegister={mostrarModalRegister} cerrarModalRegister={cerrarModalRegister}></ModalRegister>
     
             </TextLink>
             <LastParagraph>

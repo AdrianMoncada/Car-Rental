@@ -50,6 +50,14 @@ const Home = () => {
     }
   }, [location] )
 
+
+  useEffect(() =>{
+    if (location.state?.fromLogin || location.state?.fromLogin != null) {
+      setShow(false);
+      navigate("/", {state: null})
+    }
+  }, [location])
+
   //console.log(location.state?.fromRegister);
 
   const handleClose = () => setShow(false);
