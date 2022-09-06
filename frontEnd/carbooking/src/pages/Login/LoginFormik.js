@@ -9,7 +9,7 @@ import ModalRegister from '../Register/ModalRegister';
 
 
 
-const LoginFormik = ({mostrarModalRegister, cerrarModalRegister, cerrarModal}) => {
+const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegistro, cerrarModal}) => {
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -110,10 +110,10 @@ const LoginFormik = ({mostrarModalRegister, cerrarModalRegister, cerrarModal}) =
     
             <TextLink>
               <p> ¿No te has registrado?</p>
-              <ButtonRegister onClick={() => mostrarModalRegister()}>
+              <ButtonRegister onClick={() => cierraLoginAbreRegistro()}>
                 Entra aquí
               </ButtonRegister>
-              <ModalRegister  mostrarModalRegister={mostrarModalRegister} cerrarModalRegister={cerrarModalRegister}></ModalRegister>
+              <ModalRegister cierraLoginAbreRegistro={cierraLoginAbreRegistro} mostrarRegister={mostrarRegister} cerrarModalRegister={cerrarModalRegister}></ModalRegister>
     
             </TextLink>
             <LastParagraph>

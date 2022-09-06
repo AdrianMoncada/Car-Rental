@@ -34,6 +34,11 @@ const Home = () => {
     // Cierra logica modal register 
 
 
+    const cierraLoginAbreRegistro = () => {
+      setShowModalRegister(true);
+      setShow(false);
+    }
+
   const [user, setUser] = useState({
     nombre: "Administrador",
     correo: "admin@carbooking.com",
@@ -72,7 +77,8 @@ const Home = () => {
     cerrarModal:handleClose,
     mostrarRegister: showModalRegister,
     mostrarModalRegister:handleShowRegister,
-    cerrarModalRegister:handleCloseRegister }
+    cerrarModalRegister:handleCloseRegister,
+    cierraLoginAbreRegistro: cierraLoginAbreRegistro }
   return (
     <Container>
       <Header {...headersProps}/>
@@ -82,7 +88,7 @@ const Home = () => {
       <ProductsHome city={city}  />
       </ContainerAll>
       <Footer />
-      <LoginModal mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
+      <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
     </Container>
   );
 };
