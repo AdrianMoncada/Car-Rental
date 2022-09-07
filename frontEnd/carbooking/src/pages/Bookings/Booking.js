@@ -7,8 +7,6 @@ import {Container,Main,IconArrow,InfoProduct,} from "../Product/ProductDetails.S
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import FormBooking from './FormBooking';
-import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva';
-
 
 
 const Booking = () => {
@@ -27,15 +25,16 @@ const Booking = () => {
 
     return (
         <div>
-        {dataProduct &&
-        dataProduct?.map((product) => (
+        {/* {dataProduct &&
+        dataProduct?.map((product) => ( */}
+
             <Container>
               <Header />
   
               <Main>
                 <InfoProduct>
-                  <h2>{product.category.name}</h2>
-                  <h4>{product.name}</h4>
+                  <h2>esto es un titulo</h2>
+                  <h4>esto es un subtitulo</h4>
                 </InfoProduct>
                 <IconArrow>
                   <Link to="/">
@@ -46,17 +45,15 @@ const Booking = () => {
                 </IconArrow>
               </Main>
               <GridContainer>
-                <PersonalData> <FormBooking/></PersonalData>
-                <Calendar><CalendarioReserva/></Calendar>
-                <ReservedProduct>este es el producto reservado</ReservedProduct>
                 <Policies>politicas de la empresa</Policies>
-                <Schedule>horario de entrega y recogida</Schedule>
+                <FormBooking />
+                
             </GridContainer>
   
       
               <Footer />
             </Container>
-           ))}
+           {/* ))} */}
       </div>
     )
 }
