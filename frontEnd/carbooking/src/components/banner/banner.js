@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-// import ciudades from "../helpers/ciudades";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaCalendarAlt} from 'react-icons/fa';
@@ -11,12 +10,12 @@ import { BrowserContainer,
          CheckInContainer,
          CheckOutContainer,
          Button,
-         ButtonContainer
+         ButtonContainer,
         } from "./banner.styles";
 import "./banner.css";
 
 // const Banner = ({setCity}) => {
-  const Banner = ({setCity setInitialDate, setFinalDate}) => {
+  const Banner = ({setCity, setInitialDate, setFinalDate}) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
@@ -24,7 +23,7 @@ import "./banner.css";
   // define handler change function on check-in date
   const handleCheckInDate = (date) => {
     setCheckInDate(date);
-    setCheckOutDate(null);
+    // setCheckOutDate(null);
   };
 
   // define handler change function on check-out date
@@ -52,7 +51,7 @@ import "./banner.css";
     setInitialDate(checkInDate);
     setFinalDate(checkOutDate);
   }
-  const [categoryValue, setCategoryValue] = useState("");
+  // const [categoryValue, setCategoryValue] = useState("");
 
   return (
     <BrowserContainer>

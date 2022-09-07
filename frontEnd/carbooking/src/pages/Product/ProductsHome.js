@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Card, BoxOne, BoxTwo, Image, MiniBoxOne, PCity, HInMiniBoxOne, MiniBoxTwo, Button} from "./ProductsHome.styles";
 
 
-
 export default function ProductsHome({city, category, initialDate, finalDate}){
     console.log("initialDate: ", initialDate);
     console.log("finalDate: ", finalDate);
@@ -18,21 +17,22 @@ export default function ProductsHome({city, category, initialDate, finalDate}){
         request();
       }, []);
 
-      const productsRandom = dataApi?.map(value => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value)
+      let products = [];
+      products = dataApi?.map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value)
+  
+      if( city !== ""){
+          products = products.filter( product => product.city.name === city );
+      }
+  
+      if( category !== ""){
+          products = products.filter( product => product.category.id === category );
+      }
    
-      if( city != ""){
-        Product = Product.filter( product => product.city.name == city );
-    }
-
-    if( category != ""){
-        Product = Product.filter( product => product.category.id == category );
-    }
-    
     return(
       <>
-      {productsRandom && productsRandom.map(item => {
+      {products && products.map(item => {
               return city === "" || city === item.city.name ? 
               <Container  key={item.id}>
               <Card>

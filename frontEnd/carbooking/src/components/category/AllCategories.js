@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { CardsContainer, Description, NameCategory, ProductCard, ProductCardImg,CantForRent, ViewMore } from "./AllCategories.styled";
 
 
-const AllCategories = () => {
+const AllCategories = ({setCategory}) => {
 
   const [dataApi, setDataApi] = useState(null);
-  const navigate = useNavigate();
+  
   useEffect(() => {
     const request = async () => {
       const response = await fetch("http://18.219.33.103:8080/categories");
@@ -16,8 +15,6 @@ const AllCategories = () => {
     request();
   }, []);
 
-
-  
 
   return (
     <>
@@ -36,7 +33,7 @@ const AllCategories = () => {
                   <p>10 For rent</p>
                 </CantForRent>
               </Description>
-              <ViewMore onClick={() => navigate(`/category/${item.id}`)}>Ver mas</ViewMore>
+              <ViewMore onClick={() => setCategory(item.id)}>Ver mas</ViewMore>
             </ProductCard>
           ))}
       </CardsContainer>
