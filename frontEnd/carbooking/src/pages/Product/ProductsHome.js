@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
-import { Container, Card, BoxOne, BoxTwo, Image, MiniBoxOne, HInMiniBoxOne, MiniBoxTwo, Button} from "./ProductsHome.styles";
+import { Container, Card, BoxOne, BoxTwo, Image, MiniBoxOne, PCity, HInMiniBoxOne, MiniBoxTwo, Button} from "./ProductsHome.styles";
 
 
 
@@ -30,7 +30,7 @@ export default function ProductsHome({city}){
                   <MiniBoxOne> 
                       <h3> {item.name} </h3> 
                       <HInMiniBoxOne> {item.category.name} </HInMiniBoxOne>
-                      <HInMiniBoxOne> {item.city.name}</HInMiniBoxOne>
+                      <HInMiniBoxOne> <PCity> {item.city.name} </PCity></HInMiniBoxOne>
                       <Button onClick={() => navigate(`/product/${item.id}`)} > Ver más </Button>
 
                   </MiniBoxOne>
@@ -43,7 +43,7 @@ export default function ProductsHome({city}){
               </BoxOne>
 
               <BoxTwo>
-                  <Image src={item.images[0].url} alt={item.name} /> 
+                  <Image src={item.mainImage} alt={item.name} /> 
               </BoxTwo>
           </Card>
           </Container>

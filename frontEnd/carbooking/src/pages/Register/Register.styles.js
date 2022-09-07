@@ -96,7 +96,7 @@ export const InputsContainer = styled.div`
 
     color: ${Orange};
     line-height: 1.5;
-    background-color: red;
+
 
     
 
@@ -194,6 +194,12 @@ export const LastParagraph = styled.p`
     position: relative;
     bottom: -6px;
 }
-    
 
 `
+
+export const MessageError = styled.p`
+    color: #8BFF38;
+    border: solid 1px ${PetrolBlue};
+    position: relative;
+    top:40px;
+` 

@@ -77,6 +77,10 @@ export const HInMiniBoxOne = styled.div`
 
 `
 
+export const PCity = styled.p`
+    font-weight: bold;
+`
+
 export const Button = styled.button`
     cursor: pointer;
     padding: 0.4rem 2rem;

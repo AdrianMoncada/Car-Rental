@@ -7,7 +7,7 @@ const FontFamily = "'Quicksand', sans-serif;";
 
 
 export const ContainerAll = styled.div`
- width: 90%;
+ width: 100%;
  display: flex;
  overflow: hidden;
  padding-left: 100px;
