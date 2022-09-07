@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
 import { FaChevronCircleLeft } from "react-icons/fa";
+import AppContext from "../../Context/AppContext";
 
 //Import for carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -31,6 +32,8 @@ import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
 
 const ProductDetails = () => {
+  const {state} = useContext(AppContext)
+  console.log(state);
   const [modalState, setModalState] = useState(false);
 
   const { id } = useParams();

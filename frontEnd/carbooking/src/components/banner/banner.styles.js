@@ -17,18 +17,37 @@ export const BrowserContainer = styled.div`
     background-color:#34495E;
     color: #fff;
     padding: 2%;
+    border: 2px solid ${Orange};
 
     @media (max-width: 667px) {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 200px;
+        width: 70%;
+        height: 350px;
         align-items: center;
         z-index: 0; 
+        padding:  0;
+    }
+
+    @media (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 70%;
+      height: 350px;
+      align-items: center;
+      z-index: 0; 
+      padding:  0;
     }
 `;
 
 export const SelectContainer = styled.div`
+
+    @media (max-width: 667px) {
+      position: relative;
+      left: 5px;
+    }
 `;
 
 export const Select = styled.select`

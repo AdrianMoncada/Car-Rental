@@ -6,7 +6,7 @@ const FontFamily = "'Quicksand', sans-serif;";
 
 export const Container = styled.div`
     display: flex;
-    margin 50px;
+    margin 45px;
     height: 100%; 
     justify-content: space-around;
     flex-wrap: wrap; 
@@ -75,6 +75,10 @@ export const HInMiniBoxOne = styled.div`
     position: relative;
     bottom: 10px; 
 
+`
+
+export const PCity = styled.p`
+    font-weight: bold;
 `
 
 export const Button = styled.button`

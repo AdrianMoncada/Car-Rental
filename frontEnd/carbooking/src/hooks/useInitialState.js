@@ -1,16 +1,16 @@
 import {useState} from 'react'
 
 const useInitialState = () => {
+    
+    
+
 
     const [state, setState] = useState({
         nombre: '',
         apellido: '',
-        mail: '',
         id:null,
         auth: false,
         redirect:false,
-        rol:'',
-        ciudad:''
     });
 
     const setAuth = () => {
@@ -24,3 +24,4 @@ const useInitialState = () => {
 }
 
 export default useInitialState
+
