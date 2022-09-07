@@ -52,7 +52,7 @@ const Home = () => {
 
   useEffect(()=>{
     if (location.state?.fromRegister || location.state?.fromRegister != null) {
-      setShow(true);
+      setShow(false);
       navigate("/", {state: null})
     }
   }, [location, navigate] )

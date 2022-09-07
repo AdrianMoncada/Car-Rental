@@ -6,7 +6,7 @@ const useInitialState = () => {
 
 
     const [state, setState] = useState({
-        nombre: '',
+        nombre: 'Simon',
         apellido: '',
         id:null,
         auth: false,

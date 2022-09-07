@@ -30,10 +30,15 @@ import {
 import { FaCar, FaDesktop, FaWifi, FaStar} from "react-icons/fa";
 import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
+import LoginModal from "../Login/LoginModal";
+import ModalRegister from "../Register/ModalRegister";
 
-const ProductDetails = () => {
+
+
+const ProductDetails = ({headersProps, show, handleClose, setUsuario, mostrarModal, mostrarRegister, cerrarModalRegister}) => {
   const {state} = useContext(AppContext)
   console.log(state);
+
   const [modalState, setModalState] = useState(false);
 
   const { id } = useParams();
@@ -54,8 +59,10 @@ const ProductDetails = () => {
       {dataProduct &&
         dataProduct?.map((product) => (
           <Container>
-            <Header />
-
+            <Header {...headersProps}/>
+            <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>
+            <ModalRegister setUsuario={setUsuario} toggleModal= {mostrarModal} showModalRegister={mostrarRegister} handleCloseModalRegister={cerrarModalRegister}>
+    </ModalRegister>
             <Main>
               <InfoProduct>
                 <h2>{product.category.name}</h2>

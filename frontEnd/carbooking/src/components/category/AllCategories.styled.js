@@ -107,8 +107,8 @@ height: 32px;
 opacity: 0.9;
 margin-left:5px;
 display:flex;
-justify-content: flex-start
-color: #fff;
+justify-content: flex-start;
+color: ${PetrolBlue};
 `;
 export const H1 = styled.h1`
   text-align: left;
