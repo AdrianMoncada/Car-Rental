@@ -4,8 +4,10 @@ import { Container, Card, BoxOne, BoxTwo, Image, MiniBoxOne, PCity, HInMiniBoxOn
 
 
 
-export default function ProductsHome({city}){
-    
+export default function ProductsHome({city, category, initialDate, finalDate}){
+    console.log("initialDate: ", initialDate);
+    console.log("finalDate: ", finalDate);
+
     const [dataApi, setDataApi] = useState(null);
     const navigate = useNavigate();
     useEffect(() => {
@@ -20,6 +22,14 @@ export default function ProductsHome({city}){
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value)
    
+      if( city != ""){
+        Product = Product.filter( product => product.city.name == city );
+    }
+
+    if( category != ""){
+        Product = Product.filter( product => product.category.id == category );
+    }
+    
     return(
       <>
       {productsRandom && productsRandom.map(item => {

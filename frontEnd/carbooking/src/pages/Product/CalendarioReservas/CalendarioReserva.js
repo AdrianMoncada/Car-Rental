@@ -30,6 +30,14 @@ const CalendarioReserva = () => {
 
     console.log("getFechasReservadas: ", getFechasReservadas());
 
+    const holidays = [
+      new Date(2022, 9, 20),
+      new Date(2022, 9, 25),
+      new Date(2022, 10, 1),
+      new Date(2022, 10, 3),
+      new Date(2022, 10, 7)
+    ];
+    
     registerLocale("es", es);
     setDefaultLocale("es");
 

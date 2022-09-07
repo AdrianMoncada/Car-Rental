@@ -84,10 +84,11 @@ const Home = () => {
   return (
     <Container>
       <Header {...headersProps}/>
-      <AllCategories category= {category} setCategory={setCategory}/>
-      <Banner setCity={setCity}/>
+      {/* <AllCategories category= {category} setCategory={setCategory}/> */}
+      <AllCategories setCategory={setCategory}/>
+      <Banner setCity={setCity} setInitialDate={setInitialDate} setFinalDate={setFinalDate}/>
       <ContainerAll>
-      <ProductsHome city={city}  />
+      <ProductsHome city={city} category={category} initialDate={initialDate} finalDate={finalDate}/>
       </ContainerAll>
       <Footer />
       <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>

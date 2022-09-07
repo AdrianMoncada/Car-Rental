@@ -15,7 +15,8 @@ import { BrowserContainer,
         } from "./banner.styles";
 import "./banner.css";
 
-const Banner = ({setCity}) => {
+// const Banner = ({setCity}) => {
+  const Banner = ({setCity setInitialDate, setFinalDate}) => {
   // define check-in and check-out state
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
@@ -48,8 +49,10 @@ const Banner = ({setCity}) => {
   const [cityValue, setCityValue] = useState("");
   const search = () => {
     setCity(cityValue);
+    setInitialDate(checkInDate);
+    setFinalDate(checkOutDate);
   }
-
+  const [categoryValue, setCategoryValue] = useState("");
 
   return (
     <BrowserContainer>
