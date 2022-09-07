@@ -46,7 +46,7 @@ deploy to s3:
         name: amazon/aws-cli:2.4.11
         entrypoint: [""]
     rules:
-        - if: $CI_COMMIT_REF_NAME == "frontendSprint3"
+        - if: $CI_COMMIT_REF_NAME == "frontEndSprint3"
     script:
         - aws --version
         - aws s3 sync frontEnd/carbooking/build s3://$AWS_S3_BUCKET --delete

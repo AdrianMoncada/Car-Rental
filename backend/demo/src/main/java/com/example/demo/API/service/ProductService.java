@@ -4,6 +4,8 @@ import com.example.demo.API.persistence.entities.Product;
 import com.example.demo.API.persistence.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,6 +34,7 @@ public class ProductService {
         productDto.setCategory(product.getCategory());
         productDto.setCity(product.getCity());
         productDto.setImages(product.getImages());
+        productDto.setReservations(product.getReservations());
         productDto.setDescription(product.getDescription());
         productDto.setCharacteristics(product.getCharacteristics());
         productDto.setMainImage(product.getMainImage());
@@ -60,6 +63,10 @@ public class ProductService {
 
     public List<Product> findByCityId(Long id) {
         return productRepository.findByCityId(id);
+    }
+
+    public List<Product> findByCityIdAndDate(Long idCity, LocalDate startDate, LocalDate endDate) {
+        return productRepository.findByCityIdAndDate(idCity, startDate, endDate);
     }
 
     public Optional<Product> update(Product p, Long id) {
