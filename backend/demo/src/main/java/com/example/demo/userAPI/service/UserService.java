@@ -30,6 +30,10 @@ public class UserService {
         return repository.findAll();
     }
 
+    public User getByemail(String email){
+        return repository.getByemail(email);
+    }
+
     public User obtainByCredentials(User user) {
         User userObtained = repository.getByemail(user.getEmail());
         System.out.println("The user is: " + repository.getByemail(user.getEmail()));

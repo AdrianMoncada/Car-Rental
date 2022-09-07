@@ -33,6 +33,11 @@ public class UserController {
         return service.getAll();
     }
 
+    @GetMapping("/getByEmail")
+    public User getByemail(@RequestBody User user){
+        return service.getByemail(user.getEmail());
+    }
+
     @PostMapping
     public ResponseEntity<?> create(@RequestBody User user) throws BadRequestException {
         ResponseEntity<String> response = null;
