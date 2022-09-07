@@ -11,6 +11,7 @@ import Booking from './pages/Bookings/Booking';
 
 function App() {
 
+  //No se vuelve a modificar
   const initialState = useInitialState();
 
   return (

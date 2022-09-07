@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/Modal";
 // import Register from "./Register";
 import RegisterFormik from "./RegisterFormik";
 
-const ModalRegister = ({showModalRegister, handleCloseModalRegister, toggleModal}) => {
+const ModalRegister = ({showModalRegister, handleCloseModalRegister, toggleModal, setUsuario}) => {
 
 
   return (
@@ -15,7 +15,7 @@ const ModalRegister = ({showModalRegister, handleCloseModalRegister, toggleModal
       </Modal.Header>
       <Modal.Body>
         {/*Componente REGISTRO */}
-        <RegisterFormik toggleModal={toggleModal} cerrarModalRegister={handleCloseModalRegister}/>    
+        <RegisterFormik setUsuario={setUsuario} toggleModal={toggleModal} cerrarModalRegister={handleCloseModalRegister}/>    
         </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleCloseModalRegister}>

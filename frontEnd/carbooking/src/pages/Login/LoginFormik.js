@@ -9,7 +9,7 @@ import ModalRegister from '../Register/ModalRegister';
 
 
 
-const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegistro, cerrarModal}) => {
+const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLoginAbreRegistro, cerrarModal}) => {
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -27,6 +27,29 @@ const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegis
         onSubmit: (valores) => {
             formik.resetForm();
            // console.log("Valores: ",valores);
+          console.log("Valor de email en LOGIN: ", valores.email)
+          //setUsuario({name: valores.firstName, lastName: valores.lastName, acceso: true  });
+          //   console.log("Valores Login: ", setUsuario);
+            cerrarModal();
+
+            const settingsGET = {
+              method: "GET",
+              headers: {
+                  "email": "valores.email"
+              }}
+          
+          
+            fetch("http://18.219.33.103:8080/users/getByEmail", settingsGET)
+            .then((response) => {
+              console.log("RESPUESTA GET", response)})           
+            .then(function(data) {
+              // declaro una variable por fuera y aquí le paso como valor el data
+             console.log(data);})
+          .catch(function(error) {
+             console.error("RESPUESTA GET", error);
+          });
+
+
             const settings = {
                 method: "POST",
                 body: JSON.stringify(valores),
@@ -41,10 +64,10 @@ const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegis
                 if(response.ok){
                     Swal.fire({
                         title: 'Inicio exitoso',
-                        text:'Bienvendio',
+                        text:'Inició tu sesión',
                         icon:'success'
                     })
-                    //console.log("respuesta: ", response)
+                   // console.log("respuesta: ", response)
                     return response.json();
                 }else if(response.status === 401)
                     Swal.fire({
@@ -54,12 +77,12 @@ const LoginFormik = ({mostrarRegister, cerrarModalRegister, cierraLoginAbreRegis
                     })           
           })
           .then(function(data) {
-               //console.log(data);
+               console.log("LOGIN DATA", data);
                 localStorage.setItem('jwt', JSON.stringify(data.token));
              navigate("/", {state: {fromLogin: true}})
           })
           .catch(function(error) {
-               console.error(error);
+               //console.error(error);
           });
         }
 

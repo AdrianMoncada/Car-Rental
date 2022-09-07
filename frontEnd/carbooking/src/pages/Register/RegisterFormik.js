@@ -23,7 +23,7 @@ import {PrincipalForm,
 } from './Register.styles';
 
 
-const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
+const RegisterFormik = ({toggleModal, cerrarModalRegister, setUsuario}) => {
 
     const navigate = useNavigate();
 
@@ -46,9 +46,11 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
         }),
 
         onSubmit: (valores) => {
-            formik.resetForm();
+           // formik.resetForm();
             cerrarModalRegister();
            // console.log("Valores: ",valores);
+           setUsuario({name: valores.firstName, lastName: valores.lastName, acceso: true  });
+
 
             const settings = {
                 method: "POST",
@@ -100,7 +102,6 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
 
         
 
-         //const urlToken = "http://18.219.33.103:8080/users/tokenFilter";
            fetch("http://18.219.33.103:8080/users/tokenFilter" , settingsGet)
            .then((response) => {
               if(response.ok){
@@ -129,26 +130,31 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
          })
 
 
-        }
+        }, 
 
     }
     
     );
-   
+
+
     // Lógica para activar el modal de iniciar sesión
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     // const handleShow = () => setShow(true);
     // Cierra lógica para activar el modal de iniciar sesión
 
+
+
+
 	return (
 		<>
+
             <Body>
                 <PrincipalForm onSubmit={formik.handleSubmit}>
                     
                 <OneDiv>
                 <Title> Registro </Title>
-
+                    
                 <CenteredText> Por favor, complete este formulario para crear una cuenta.</CenteredText>
             </OneDiv>
 
@@ -165,6 +171,7 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister}) => {
                          onBlur={formik.handleBlur}
                          />
                     {formik.touched.firstName && formik.errors.firstName && <span style={{ color: "red" }}>{formik.errors.firstName}</span>}
+                    
                     </InputsContainer>
 
                     <InputsContainer>

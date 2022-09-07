@@ -21,7 +21,6 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, mostrarModalRe
   const handleClick = () => {
     setUsuario({ ...usuario, acceso: false });
     cerrarModal();
-
   };
 
   return (
@@ -47,9 +46,10 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, mostrarModalRe
         {usuario?.acceso ? (
           <>
             <Avatar>
-            {usuario.nombre.substr(0, 1)}
+            {usuario.name.substr(0, 1)}
             </Avatar>
-            <div>Bienvenido {usuario.nombre}</div>
+
+            <div> Hola, {usuario.name}</div>
             <ButtonSign onClick={() => handleClick()}>
               <p>Cerrar</p>
             </ButtonSign>
@@ -63,7 +63,7 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, mostrarModalRe
       </ContainerBtn>
     </Headers>
     {/*Importación del ModalRegister */}
-    <ModalRegister toggleModal= {mostrarModal} showModalRegister={mostrarRegister} handleCloseModalRegister={cerrarModalRegister}>
+    <ModalRegister setUsuario={setUsuario} toggleModal= {mostrarModal} showModalRegister={mostrarRegister} handleCloseModalRegister={cerrarModalRegister}>
     </ModalRegister>
     </>
   );

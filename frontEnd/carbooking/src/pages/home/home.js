@@ -39,21 +39,23 @@ const Home = () => {
       setShow(false);
     }
 
-  const [user, setUser] = useState({
-    nombre: "Administrador",
-    correo: "admin@carbooking.com",
-    password: "123456",
+   const [user, setUser] = useState({
+    name: "",
+    lastName: "",
     acceso: false,
   });
 
-  //console.log(location.key);
+  //console.log("Valores HOME: ", user)
+
+  
+
 
   useEffect(()=>{
     if (location.state?.fromRegister || location.state?.fromRegister != null) {
       setShow(true);
       navigate("/", {state: null})
     }
-  }, [location] )
+  }, [location, navigate] )
 
 
   useEffect(() =>{
@@ -61,7 +63,7 @@ const Home = () => {
       setShow(false);
       navigate("/", {state: null})
     }
-  }, [location])
+  }, [location, navigate])
 
   //console.log(location.state?.fromRegister);
 
@@ -88,7 +90,7 @@ const Home = () => {
       <ProductsHome city={city}  />
       </ContainerAll>
       <Footer />
-      <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose} usuario={user} cambiarUsuario={setUser} />
+      <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>
     </Container>
   );
 };
