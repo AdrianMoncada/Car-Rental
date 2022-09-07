@@ -29,27 +29,52 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
            // console.log("Valores: ",valores);
           console.log("Valor de email en LOGIN: ", valores.email)
           //setUsuario({name: valores.firstName, lastName: valores.lastName, acceso: true  });
-          //   console.log("Valores Login: ", setUsuario);
+          //console.log("Valores Login: ", setUsuario);
             cerrarModal();
 
+            // Configuración  que se la pasa al fetch GET-API para recuperar el 
+            // nombre de la persona que inicia sesión con email
+            // recibe un objeto {"email": "valores.email"}
+            // y como respuesta se espera un objeto que contiene nombre, apellido... 
+           // se necesita el valor de nombre para poder hacer el avatar en el header
             const settingsGET = {
               method: "GET",
               headers: {
                   "email": "valores.email"
               }}
+
+            // const myHeaders = new Headers();
+            // myHeaders.append("Content-Type", "application/json");
+            
+            // const raw = JSON.stringify({
+            //   "email": valores.email
+            // });
+            
+            // const requestOptions = {
+            //   method: 'GET',
+            //   headers: myHeaders,
+            //   body: raw,
+            //   redirect: 'follow'
+            // };
+            
+
           
-          
+          // Obtener nombre del usuario pasando como condicion el correo
             fetch("http://18.219.33.103:8080/users/getByEmail", settingsGET)
             .then((response) => {
+              // Se espera que sea un 200 ok
               console.log("RESPUESTA GET", response)})           
             .then(function(data) {
               // declaro una variable por fuera y aquí le paso como valor el data
+              // Se espera un objeto en el que se puede recuperar el nombre
              console.log(data);})
           .catch(function(error) {
              console.error("RESPUESTA GET", error);
           });
 
-
+          
+          // Configuración que se le pasa al fetch POST-API para vefificar que es
+          // un usuario con Token 
             const settings = {
                 method: "POST",
                 body: JSON.stringify(valores),
@@ -59,6 +84,8 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
                 }
             }
         
+
+          
           fetch("http://18.219.33.103:8080/users/login", settings)
           .then((response) => {
                 if(response.ok){

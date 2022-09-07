@@ -27,14 +27,15 @@ const Booking = () => {
 
     return (
         <div>
-        
+        {dataProduct &&
+        dataProduct?.map((product) => (
             <Container>
               <Header />
   
               <Main>
                 <InfoProduct>
-                  <h2>categoria</h2>
-                  <h4>producto</h4>
+                  <h2>{product.category.name}</h2>
+                  <h4>{product.name}</h4>
                 </InfoProduct>
                 <IconArrow>
                   <Link to="/">
@@ -55,13 +56,8 @@ const Booking = () => {
       
               <Footer />
             </Container>
-          
+           ))}
       </div>
-    
-    
-           
-    
-    
     )
 }
 

@@ -109,7 +109,6 @@ const RegisterFormik = ({toggleModal, cerrarModalRegister, setUsuario}) => {
                       title: 'Token valido',
                       text:'Bienvendio',
                       icon:'success', 
-                      timer: 10000
                   })
                   console.log("respuesta token: ", response)
                   return response.json();
