@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
 import { FaChevronCircleLeft } from "react-icons/fa";
-import AppContext from "../../Context/AppContext";
 
 //Import for carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -35,9 +34,8 @@ import ModalRegister from "../Register/ModalRegister";
 
 
 
-const ProductDetails = ({headersProps, show, handleClose, setUsuario, mostrarModal, mostrarRegister, cerrarModalRegister}) => {
-  const {state} = useContext(AppContext)
-  console.log(state);
+const ProductDetails = () => {
+ 
 
   const [modalState, setModalState] = useState(false);
 
@@ -54,14 +52,15 @@ const ProductDetails = ({headersProps, show, handleClose, setUsuario, mostrarMod
 
   console.log(dataProduct);
 
+
   return (
     <div>
       {dataProduct &&
         dataProduct?.map((product) => (
           <Container>
-            <Header {...headersProps}/>
-            <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>
-            <ModalRegister setUsuario={setUsuario} toggleModal= {mostrarModal} showModalRegister={mostrarRegister} handleCloseModalRegister={cerrarModalRegister}>
+            <Header/>
+            <LoginModal/>
+            <ModalRegister>
     </ModalRegister>
             <Main>
               <InfoProduct>

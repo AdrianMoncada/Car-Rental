@@ -73,6 +73,7 @@ const Home = () => {
   const [city, setCity] = useState("");
   const [category, setCategory] = useState("");
   const headersProps = {
+    mostrarModalLogin: show,
     usuario:user, 
     mostrarModal:handleShowLogin,
     setUsuario:setUser,
@@ -86,8 +87,8 @@ const Home = () => {
       <Header {...headersProps}/>
       <AllCategories category= {category} setCategory={setCategory}/>
       <Banner setCity={setCity}/>
-      <ContainerAll>
-      <ProductsHome city={city}  />
+      <ContainerAll >
+      <ProductsHome city={city} {...headersProps} />
       </ContainerAll>
       <Footer />
       <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>
