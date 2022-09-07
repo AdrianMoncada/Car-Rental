@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Hora() {
-    const [value, onChange] = useState('10:00');
+   // const [value, onChange] = useState('10:00');
 
     return (
         <div>
