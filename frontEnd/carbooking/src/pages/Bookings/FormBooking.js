@@ -29,7 +29,7 @@ const FormBooking = () => {
           </Calendar>
 
           <Schedule>
-            <h2>Indica tu hora de llegada estimada</h2>
+            <h2>Indica tu hora de llegada </h2>
             <Hora />
           </Schedule>
           <ReservedProduct>
