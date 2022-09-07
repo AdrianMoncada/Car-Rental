@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 `;
 
-export const GridContainer = styled.div`
+export const GridContainer = styled.form`
  display: grid;
  background:yellow;
  width: 100%;
@@ -53,6 +53,7 @@ export const Calendar = styled.div`
 export const ReservedProduct = styled.div`
  grid-area: 1 / 3 / 6 / 4; 
  background:green;
+
  @media (max-width: 1224px) {
   grid-area: 6 / 1 / 7 / 4; 
   height:200px;
@@ -61,6 +62,7 @@ export const ReservedProduct = styled.div`
 export const Policies = styled.div`
  grid-area: 7 / 1 / 8 / 4; 
  background:purple;
+ height:200px;
 `
 
 export const Schedule = styled.div`

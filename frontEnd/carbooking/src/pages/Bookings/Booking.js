@@ -1,13 +1,11 @@
 import React, { useState, useEffect }  from 'react'
 import { useParams, Link } from "react-router-dom"
 import { FaChevronCircleLeft } from "react-icons/fa"
-import { Calendar, GridContainer, PersonalData, Policies, ReservedProduct, Schedule } from './Booking.styled'
 import {Container,Main,IconArrow,InfoProduct,} from "../Product/ProductDetails.Styles";
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import FormBooking from './FormBooking';
-import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva';
 
 
 
@@ -27,15 +25,14 @@ const Booking = () => {
 
     return (
         <div>
-        {dataProduct &&
-        dataProduct?.map((product) => (
+        
             <Container>
               <Header />
   
               <Main>
                 <InfoProduct>
-                  <h2>{product.category.name}</h2>
-                  <h4>{product.name}</h4>
+                  <h2>categoria</h2>
+                  <h4>producto</h4>
                 </InfoProduct>
                 <IconArrow>
                   <Link to="/">
@@ -45,19 +42,16 @@ const Booking = () => {
                   </Link>
                 </IconArrow>
               </Main>
-              <GridContainer>
-                <PersonalData> <FormBooking/></PersonalData>
-                <Calendar><CalendarioReserva/></Calendar>
-                <ReservedProduct>este es el producto reservado</ReservedProduct>
-                <Policies>politicas de la empresa</Policies>
-                <Schedule>horario de entrega y recogida</Schedule>
-            </GridContainer>
-  
-      
+              <FormBooking/>
               <Footer />
             </Container>
-           ))}
+          
       </div>
+    
+    
+           
+    
+    
     )
 }
 
