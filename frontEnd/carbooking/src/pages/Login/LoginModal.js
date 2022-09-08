@@ -12,7 +12,6 @@ export default function Login ({mostrar, cerrarModal, usuario, setUsuario, mostr
       </Modal.Header>
       <Modal.Body>
         <LoginFormik usuario={usuario} setUsuario={setUsuario} mostrarRegister={mostrarRegister} cerrarModal={cerrarModal} cierraLoginAbreRegistro={cierraLoginAbreRegistro}> </LoginFormik>
-        {/* <LoginScreens usuario={usuario} cambiarUsuario={cambiarUsuario} cerrarModal={cerrarModal}  /> */}
       </Modal.Body>
     </Modal>
   );

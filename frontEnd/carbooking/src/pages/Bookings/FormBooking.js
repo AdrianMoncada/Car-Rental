@@ -3,6 +3,7 @@ import React from 'react'
 import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva'
 import Hora from "../Product/CalendarioReservas/Hora"
 import {Container,GridContainer, PersonalData,Calendar,Schedule,ReservedProduct,Policies} from "./Booking.styled"
+import Swal from "sweetalert2"
 
 
 const FormBooking = ({dataBooking, setDataBooking, dataHour, setDataHour, dataProduct}) => {
@@ -20,7 +21,22 @@ const FormBooking = ({dataBooking, setDataBooking, dataHour, setDataHour, dataPr
     };
 
     fetch("http://18.219.33.103:8080/reservations", requestOptions)
-      .then(response => response.text())
+      .then(response => {if(response.ok){
+        Swal.fire({
+            title: 'Reserva exitosa',
+            text:'Disfruta tu viaje',
+            icon:'success'
+        })
+        console.log("respuesta: ", response)
+        return response.json();
+
+        //this  code send a screen alert   if confirm the alert your'e redirect to reservas for example
+    }else if(response.ok !== true)
+        Swal.fire({
+            title: 'Lamentablemente la reserva no ha podido realizarse',
+            text:'Por favor, intente más tarde',
+            icon:'error'
+        })})
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
   };

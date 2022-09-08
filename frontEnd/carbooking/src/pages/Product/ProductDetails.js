@@ -37,8 +37,9 @@ import ModalRegister from "../Register/ModalRegister";
 
 const ProductDetails = () => {
 
-   const {headersProps} = useContext(AppContext);
-   console.log(headersProps);
+
+   const {...headersProps} = useContext(AppContext);
+  console.log(headersProps.mostrarModal)
 
 
   const [modalState, setModalState] = useState(false);
@@ -63,7 +64,7 @@ const ProductDetails = () => {
         dataProduct?.map((product) => (
           <Container>
             <Header headersProps={headersProps}  />
-            <LoginModal  headersProps={headersProps} />
+            <LoginModal  usuario={headersProps.usuario} setUsuario={headersProps.setUsuario} mostrarRegister={headersProps.mostrarRegister} cerrarModal={headersProps.cerrarModal} cierraLoginAbreRegistro={headersProps.cierraLoginAbreRegistro} />
             <ModalRegister headersProps={headersProps} >
     </ModalRegister>
             <Main>

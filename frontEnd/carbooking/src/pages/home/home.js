@@ -13,6 +13,7 @@ import {ContainerAll} from "../home/home.styles";
 // Estilos
 import { Container } from "./home.styles";
 
+
 const Home = () => {
 
   const location = useLocation();
@@ -65,13 +66,13 @@ const Home = () => {
   //console.log(location.state?.fromRegister);
 
   const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  //const handleShow = () => setShow(true);
 
   const [city, setCity] = useState("");
   const [initialDate, setInitialDate] = useState("");
   const [finalDate, setFinalDate] = useState("");
   const [category, setCategory] = useState("");
-  
+
   const headersProps = {
     mostrarModalLogin: show,
     usuario:user, 

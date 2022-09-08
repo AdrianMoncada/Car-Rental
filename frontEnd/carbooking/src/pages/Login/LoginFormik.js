@@ -10,7 +10,8 @@ import ModalRegister from '../Register/ModalRegister';
 
 
 const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLoginAbreRegistro, cerrarModal}) => {
-    const navigate = useNavigate();
+    
+  const navigate = useNavigate();
 
     const formik = useFormik({
 
@@ -40,6 +41,7 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
             .then((data) => {
               setUsuario({name: data.firstName, acceso: true  })
             })
+            
           // Configuración que se le pasa al fetch POST-API para vefificar que es
           // un usuario con Token 
             const settings = {
@@ -62,6 +64,7 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
                         icon:'success'
                     })
                    // console.log("respuesta: ", response)
+                   //setUsuario( prevState =>  ({ ...prevState, acceso: true  }))
                     return response.json();
                 }else if(response.status === 401)
                     Swal.fire({

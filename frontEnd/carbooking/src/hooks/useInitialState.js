@@ -1,8 +1,9 @@
-import {useState} from 'react'
+import {useState} from 'react';
+
 
 const useInitialState = () => {
     
-    
+
     
     // Logica Modal Register
     const [showModalRegister, setShowModalRegister] = useState(false);
@@ -32,6 +33,9 @@ const useInitialState = () => {
     acceso: false,
   });
 
+
+
+  
   // const handleShow = () => setShow(true);
 
   const headersProps = {
@@ -46,22 +50,8 @@ const useInitialState = () => {
     cierraLoginAbreRegistro: cierraLoginAbreRegistro }
 
 
-    const [state, setState] = useState({
-        nombre: 'Simon',
-        apellido: '',
-        id:null,
-        auth: false,
-        redirect:false,
-    });
-
-    const setAuth = () => {
-        setState({
-            ...state,
-            auth: true
-        })
-    };
         
-  return {setAuth, state, headersProps, handleShowLogin }
+  return {...headersProps}
 }
 
 export default useInitialState
