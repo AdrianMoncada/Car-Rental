@@ -6,40 +6,48 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Container, Row, Col } from "react-bootstrap";
 import FechaRangoContextProvider from "../../../Context/FechaRangoContextProvider";
 
-import { useParams } from "react-router-dom";
-// import axiosConnection from "../helpers/axiosConnection";
-
-const CalendarioReserva = () => {
+const CalendarioReserva = ({dataBooking, setDataBooking, dataHour, dataProduct}) => {
     useContext(FechaRangoContextProvider);
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
-    const { id } = useParams();
+    // const [dataReservas] = useState(reservations);
+    // setRango(dateRange);
 
-    const [dataReservas] = useState([]);
-   
+    // useEffect(() => {
+    //   axiosConnection.get("/reserva/listarReservas").then((response) => {
+    //     setDataReservas(response.data.data);
+    //     console.log("response.data.data: ", response.data.data);
+    //   });
+    //   return
+    // }, []);
 
     const getFechasReservadas = () => {
-        const reservas = dataReservas
-        .filter((reserva) => reserva.producto?.id === id)
-        .map((fecha) => ({
-            start: new Date(fecha.fechaInicial),
-            end: new Date(fecha.fechaFinal),
-        }));
-        return reservas;
+      // ({
+      //   start: new Date(fecha.fechaInicial),
+      //   end: new Date(fecha.fechaFinal),
+      // })
+      console.log(dataProduct);
+      const reservas = dataProduct?.reservations?.map((reserva) => {
+        return {
+          start: new Date(reserva.startDate),
+          end: new Date(reserva.endDate),
+        } 
+      });
+      return reservas;
     };
-
     console.log("getFechasReservadas: ", getFechasReservadas());
 
-  //  const holidays = [
-     // new Date(2022, 9, 20),
-     // new Date(2022, 9, 25),
-     // new Date(2022, 10, 1),
-     // new Date(2022, 10, 3),
-     // new Date(2022, 10, 7)
-    //];
-    
     registerLocale("es", es);
     setDefaultLocale("es");
+
+    const changeDateInitial = (dates) => {
+      setDataBooking({
+        ...dataBooking,
+        startHour: dates[0]?.toISOString().slice(0,10) + "T" + dataHour,
+        startDate: dates[0]?.toISOString().slice(0,10),
+        endDate: dates[1]?.toISOString().slice(0,10),
+      })
+    }
 
   return (
     <>
@@ -52,9 +60,6 @@ const CalendarioReserva = () => {
                   <DatePicker
                     calendarClassName="bordeCalendario"
                     excludeDateIntervals={getFechasReservadas()}
-                    excludeDates={getFechasReservadas()?.map(
-                      (date) => date.end
-                    )}
                     selected={startDate}
                     selectsRange={true}
                     startDate={startDate}
@@ -62,6 +67,7 @@ const CalendarioReserva = () => {
                     minDate={new Date()}
                     onChange={(update) => {
                       setDateRange(update);
+                      changeDateInitial(update);
                     }}
                     monthsShown={1}
                     inline
@@ -70,15 +76,13 @@ const CalendarioReserva = () => {
                   <DatePicker
                     calendarClassName="bordeCalendario"
                     excludeDateIntervals={getFechasReservadas()}
-                    excludeDates={getFechasReservadas()?.map(
-                      (date) => date.end
-                    )}
                     selectsRange={true}
                     startDate={startDate}
                     endDate={endDate}
                     minDate={new Date()}
                     onChange={(update) => {
                       setDateRange(update);
+                      changeDateInitial(update);
                     }}
                     monthsShown={2}
                     inline

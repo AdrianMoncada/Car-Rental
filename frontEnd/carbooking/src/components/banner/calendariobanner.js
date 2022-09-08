@@ -9,10 +9,7 @@ import Datepicker from "../DatePicker/Datepicker";
 
 export default function calendariobanner({startDate, endDate, setDateRange}) {
     
-      //registerLocale("es", es);
-      //setDefaultLocale("es");
-
-  return (
+    return (
     <div>
         <Datepicker
             placeholderText=" Check in - Check out"
