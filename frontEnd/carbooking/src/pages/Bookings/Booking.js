@@ -8,20 +8,29 @@ import Footer from '../../components/footer'
 import FormBooking from './FormBooking';
 
 
-
 const Booking = () => {
-    const { id } = useParams();
+  const { id } = useParams();
   const [dataProduct, setDataProduct] = useState(null);
   useEffect(() => {
     const request = async () => {
       const response = await fetch(`http://18.219.33.103:8080/products/${id}`);
       const result = await response.json();
-      setDataProduct(result);
+      setDataProduct(result[0]);
     };
     request();
   }, [id]);
 
   console.log(dataProduct);
+
+  const [dataBooking, setDataBooking] = useState({
+    startHour: "",
+    startDate: "",
+    endDate: "",
+    user: {id: 1},
+    product: {id: id}
+  });
+
+  const [dataHour, setDataHour] = useState("00:00:00");
 
     return (
         <div>
@@ -42,7 +51,7 @@ const Booking = () => {
                   </Link>
                 </IconArrow>
               </Main>
-              <FormBooking/>
+              <FormBooking dataBooking={dataBooking} setDataBooking={setDataBooking} dataHour={dataHour} setDataHour={setDataHour} dataProduct={dataProduct} />
               <Footer />
             </Container>
           

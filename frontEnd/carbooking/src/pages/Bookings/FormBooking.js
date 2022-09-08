@@ -5,7 +5,26 @@ import Hora from "../Product/CalendarioReservas/Hora"
 import {Container,GridContainer, PersonalData,Calendar,Schedule,ReservedProduct,Policies} from "./Booking.styled"
 
 
-const FormBooking = () => {
+const FormBooking = ({dataBooking, setDataBooking, dataHour, setDataHour, dataProduct}) => {
+  const handleClick = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify(dataBooking);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://18.219.33.103:8080/reservations", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  };
+
   return (
     <Container>
         <GridContainer>
@@ -25,15 +44,15 @@ const FormBooking = () => {
           </PersonalData>
           <Calendar>
             <h2>Seleccioná tu fecha de reserva</h2>
-            <CalendarioReserva />
+            <CalendarioReserva dataBooking={dataBooking} setDataBooking={setDataBooking} dataHour={dataHour} dataProduct={dataProduct}/>
           </Calendar>
 
           <Schedule>
             <h2>Indica tu hora de llegada </h2>
-            <Hora />
+            <Hora dataBooking={dataBooking} setDataBooking={setDataBooking} setDataHour={setDataHour}/>
           </Schedule>
           <ReservedProduct>
-          <button type="submit" style={{ backgroundColor: "#14213D", borderRadius: "8px", color: "#fff", width: "120px", height: "50px", border: "1px solid #14213D" }}>Iniciar reserva</button>
+          <button type="button" onClick={() => handleClick()} style={{ backgroundColor: "#14213D", borderRadius: "8px", color: "#fff", width: "120px", height: "50px", border: "1px solid #14213D" }}>Iniciar reserva</button>
           </ReservedProduct>
           <Policies>politicas</Policies>
         </GridContainer>
@@ -41,5 +60,7 @@ const FormBooking = () => {
     </Container>
   )
 }
+
+
 
 export default FormBooking

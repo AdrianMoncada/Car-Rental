@@ -200,7 +200,7 @@ const ProductDetails = () => {
                 </ul>
               </Text>
             </BlockPolicies>
-            <Reserva />
+            <Reserva id={id} />
             <Footer />
           </Container>
         ))}

@@ -21,11 +21,12 @@ function App() {
 
         <Route path="" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails/>} />
-        <Route path="/reserva" element={<Booking/>} />
+        <Route path="/reserva/:id" element={<Booking/>} />
         <Route path="*" element={<Error/>} />
         <Route path="/category/:id" element={<ProductByCategory/>} />
         
-
+        {/* <Route path="/producto/:id/reserva" element={<Booking/>} /> */}
+       
       </Routes>
     </BrowserRouter>
     </AppContext.Provider>
