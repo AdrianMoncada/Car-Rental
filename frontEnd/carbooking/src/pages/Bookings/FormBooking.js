@@ -1,5 +1,5 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+
 
 import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva'
 import Hora from "../Product/CalendarioReservas/Hora"
@@ -26,11 +26,11 @@ import Swal from "sweetalert2"
 
 const FormBooking = ({dataBooking, setDataBooking, dataHour, setDataHour, dataProduct}) => {
 
-  const navigate = useNavigate();
+
   const handleClick = () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    navigate("/")
+ 
     const raw = JSON.stringify(dataBooking);
 
     const requestOptions = {
@@ -54,7 +54,7 @@ const FormBooking = ({dataBooking, setDataBooking, dataHour, setDataHour, dataPr
     }else if(response.ok !== true)
         Swal.fire({
             title: 'Lamentablemente la reserva no ha podido realizarse',
-            text:'Registrate para realizar una reserva',
+            text:'Completa todos los campos',
             icon:'error'
         })})
       .then(result => console.log(result))

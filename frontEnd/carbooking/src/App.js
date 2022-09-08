@@ -7,7 +7,7 @@ import Error from './components/Error/Error';
 import ProductByCategory from './components/category/ProductByCategory';
 import AppContext from './Context/AppContext';
 import useInitialState from './hooks/useInitialState';
-import Booking from './pages/Bookings/Booking';
+import Booking from './pages/Bookings/FormBooking';
 
 function App() {
 
