@@ -26,7 +26,7 @@ const CalendarioReserva = ({dataBooking, setDataBooking, dataHour, dataProduct})
       //   start: new Date(fecha.fechaInicial),
       //   end: new Date(fecha.fechaFinal),
       // })
-      console.log(dataProduct);
+      //console.log(dataProduct);
       const reservas = dataProduct?.reservations?.map((reserva) => {
         return {
           start: new Date(reserva.startDate),
@@ -35,7 +35,7 @@ const CalendarioReserva = ({dataBooking, setDataBooking, dataHour, dataProduct})
       });
       return reservas;
     };
-    console.log("getFechasReservadas: ", getFechasReservadas());
+    //console.log("getFechasReservadas: ", getFechasReservadas());
 
     registerLocale("es", es);
     setDefaultLocale("es");

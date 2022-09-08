@@ -54,7 +54,7 @@ const ProductDetails = () => {
     request();
   }, [id]);
 
-  console.log(dataProduct);
+  //console.log(dataProduct);
 
 
   return (

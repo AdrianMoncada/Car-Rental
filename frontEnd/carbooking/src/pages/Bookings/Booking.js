@@ -20,7 +20,7 @@ const Booking = () => {
     request();
   }, [id]);
 
-  console.log(dataProduct);
+  //console.log(dataProduct);
 
   const [dataBooking, setDataBooking] = useState({
     startHour: "",
