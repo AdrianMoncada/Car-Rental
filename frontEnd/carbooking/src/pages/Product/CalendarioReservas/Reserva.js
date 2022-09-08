@@ -1,8 +1,7 @@
 import React from "react";
 import CalendarioReserva from "../../../pages/Product/CalendarioReservas/CalendarioReserva";
 import { useNavigate } from 'react-router-dom';
-import FormBooking from "../../Bookings/FormBooking";
-
+//import Formulario from "./Formulario"
 
 export default function Reserva() {
   const navigate = useNavigate();

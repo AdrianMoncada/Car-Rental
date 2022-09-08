@@ -20,7 +20,7 @@ const Modal = ({children, view, changeView}) => {
 
     <Overlay>
 
-        <ModalContainer>
+        <ModalContainer style={{ "z-index": "1"}}>
             <EncabezadoModal>
                 <Cerrar onClick={() => changeView(false)}> <FaWindowClose/> </Cerrar>
                 {children}
