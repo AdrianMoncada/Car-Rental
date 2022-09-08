@@ -71,6 +71,7 @@ const Home = () => {
   const [initialDate, setInitialDate] = useState("");
   const [finalDate, setFinalDate] = useState("");
   const [category, setCategory] = useState("");
+  
   const headersProps = {
     mostrarModalLogin: show,
     usuario:user, 

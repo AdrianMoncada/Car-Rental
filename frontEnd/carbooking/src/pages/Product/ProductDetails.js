@@ -1,10 +1,11 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Modal from "../../components/Modal/Modal";
 import Carousel from "../../components/Modal/Slider/Slider";
 import { FaChevronCircleLeft } from "react-icons/fa";
+import AppContext from "../../Context/AppContext";
 
 //Import for carousel
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -35,7 +36,10 @@ import ModalRegister from "../Register/ModalRegister";
 
 
 const ProductDetails = () => {
- 
+
+   const {headersProps} = useContext(AppContext);
+   console.log(headersProps);
+
 
   const [modalState, setModalState] = useState(false);
 
@@ -58,9 +62,9 @@ const ProductDetails = () => {
       {dataProduct &&
         dataProduct?.map((product) => (
           <Container>
-            <Header/>
-            <LoginModal/>
-            <ModalRegister>
+            <Header headersProps={headersProps}  />
+            <LoginModal  headersProps={headersProps} />
+            <ModalRegister headersProps={headersProps} >
     </ModalRegister>
             <Main>
               <InfoProduct>

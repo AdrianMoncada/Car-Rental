@@ -44,7 +44,7 @@ const Header = ({ mostrarModal, cerrarModal, usuario, setUsuario, mostrarModalRe
       <ContainerBtn>
        
         {usuario?.acceso ? (
-          <>
+          <> 
             <Avatar>
             {usuario.name.substr(0, 1)}
             </Avatar>
