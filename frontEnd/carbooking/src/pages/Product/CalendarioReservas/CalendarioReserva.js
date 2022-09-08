@@ -30,6 +30,7 @@ const CalendarioReserva = () => {
 
     console.log("getFechasReservadas: ", getFechasReservadas());
 
+
     registerLocale("es", es);
     setDefaultLocale("es");
 

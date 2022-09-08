@@ -6,7 +6,7 @@ import Footer from "../../components/footer";
 
 import AllCategories from "../../components/category/AllCategories";
 import ProductsHome from "../Product/ProductsHome";
-import LoginModal from  "../Login/LoginModal"
+import LoginModal from  "../Login/LoginModal";
 import {ContainerAll} from "../home/home.styles";
 
 
@@ -47,9 +47,6 @@ const Home = () => {
 
   //console.log("Valores HOME: ", user)
 
-  
-
-
   useEffect(()=>{
     if (location.state?.fromRegister || location.state?.fromRegister != null) {
       setShow(false);
@@ -71,6 +68,8 @@ const Home = () => {
   // const handleShow = () => setShow(true);
 
   const [city, setCity] = useState("");
+  const [initialDate, setInitialDate] = useState("");
+  const [finalDate, setFinalDate] = useState("");
   const [category, setCategory] = useState("");
   const headersProps = {
     mostrarModalLogin: show,
@@ -82,13 +81,15 @@ const Home = () => {
     mostrarModalRegister:handleShowRegister,
     cerrarModalRegister:handleCloseRegister,
     cierraLoginAbreRegistro: cierraLoginAbreRegistro }
+
   return (
     <Container>
       <Header {...headersProps}/>
-      <AllCategories category= {category} setCategory={setCategory}/>
-      <Banner setCity={setCity}/>
-      <ContainerAll >
-      <ProductsHome city={city} {...headersProps} />
+      {/* <AllCategories category= {category} setCategory={setCategory}/> */}
+      <AllCategories setCategory={setCategory}/>
+      <Banner setCity={setCity} setInitialDate={setInitialDate} setFinalDate={setFinalDate}/>
+      <ContainerAll>
+      <ProductsHome city={city} category={category} initialDate={initialDate} finalDate={finalDate}/>
       </ContainerAll>
       <Footer />
       <LoginModal {...headersProps} mostrar={show} cerrarModal={handleClose}/>

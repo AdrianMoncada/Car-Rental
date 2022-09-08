@@ -1,6 +1,8 @@
 import React from "react";
 import CalendarioReserva from "../../../pages/Product/CalendarioReservas/CalendarioReserva";
 import { useNavigate } from 'react-router-dom';
+
+
 export default function Reserva() {
   const navigate = useNavigate();
   return (
@@ -13,6 +15,7 @@ export default function Reserva() {
                     <button onClick={() => navigate(`/reserva`)} 
                     style={{backgroundColor:"#14213D", borderRadius: "8px", color: "#fff", width: "120px", height: "50px", border: "1px solid #14213D" }}>Iniciar reserva</button>
                     </div>
+                    <div>Formulario</div>
             </div> 
     </>
   );
