@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {useFormik} from "formik"; 
 import * as Yup from "yup"; 
 import Swal from "sweetalert2"
@@ -10,7 +10,8 @@ import ModalRegister from '../Register/ModalRegister';
 
 
 const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLoginAbreRegistro, cerrarModal}) => {
-    const navigate = useNavigate();
+    
+  const navigate = useNavigate();
 
     const formik = useFormik({
 
@@ -26,30 +27,23 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
 
         onSubmit: (valores) => {
             formik.resetForm();
-           // console.log("Valores: ",valores);
+ 
+           let valorEmail = valores.email
+
           console.log("Valor de email en LOGIN: ", valores.email)
-          //setUsuario({name: valores.firstName, lastName: valores.lastName, acceso: true  });
-          //   console.log("Valores Login: ", setUsuario);
+
             cerrarModal();
-
-            const settingsGET = {
-              method: "GET",
-              headers: {
-                  "email": "valores.email"
-              }}
-          
-          
-            fetch("http://18.219.33.103:8080/users/getByEmail", settingsGET)
+            
+            fetch(`http://18.219.33.103:8080/users/${valorEmail}`)
             .then((response) => {
-              console.log("RESPUESTA GET", response)})           
-            .then(function(data) {
-              // declaro una variable por fuera y aquí le paso como valor el data
-             console.log(data);})
-          .catch(function(error) {
-             console.error("RESPUESTA GET", error);
-          });
-
-
+              return response.json();
+            })
+            .then((data) => {
+              setUsuario({name: data.firstName, acceso: true  })
+            })
+            
+          // Configuración que se le pasa al fetch POST-API para vefificar que es
+          // un usuario con Token 
             const settings = {
                 method: "POST",
                 body: JSON.stringify(valores),
@@ -59,6 +53,8 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
                 }
             }
         
+
+          
           fetch("http://18.219.33.103:8080/users/login", settings)
           .then((response) => {
                 if(response.ok){
@@ -68,6 +64,7 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
                         icon:'success'
                     })
                    // console.log("respuesta: ", response)
+                   //setUsuario( prevState =>  ({ ...prevState, acceso: true  }))
                     return response.json();
                 }else if(response.status === 401)
                     Swal.fire({
@@ -77,7 +74,7 @@ const LoginFormik = ({setUsuario, mostrarRegister, cerrarModalRegister, cierraLo
                     })           
           })
           .then(function(data) {
-               console.log("LOGIN DATA", data);
+               console.log("LOGIN TOKEN", data);
                 localStorage.setItem('jwt', JSON.stringify(data.token));
              navigate("/", {state: {fromLogin: true}})
           })

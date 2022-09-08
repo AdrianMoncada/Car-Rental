@@ -1,29 +1,36 @@
 import React, { useState, useEffect }  from 'react'
 import { useParams, Link } from "react-router-dom"
 import { FaChevronCircleLeft } from "react-icons/fa"
-import { Calendar, GridContainer, PersonalData, Policies, ReservedProduct, Schedule } from './Booking.styled'
 import {Container,Main,IconArrow,InfoProduct,} from "../Product/ProductDetails.Styles";
 
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import FormBooking from './FormBooking';
-import CalendarioReserva from '../Product/CalendarioReservas/CalendarioReserva';
-
 
 
 const Booking = () => {
-    const { id } = useParams();
+  const { id } = useParams();
   const [dataProduct, setDataProduct] = useState(null);
   useEffect(() => {
     const request = async () => {
       const response = await fetch(`http://18.219.33.103:8080/products/${id}`);
       const result = await response.json();
-      setDataProduct(result);
+      setDataProduct(result[0]);
     };
     request();
   }, [id]);
 
-  console.log(dataProduct);
+  //console.log(dataProduct);
+
+  const [dataBooking, setDataBooking] = useState({
+    startHour: "",
+    startDate: "",
+    endDate: "",
+    user: {id: 1},
+    product: {id: id}
+  });
+
+  const [dataHour, setDataHour] = useState("00:00:00");
 
     return (
         <div>
@@ -44,15 +51,7 @@ const Booking = () => {
                   </Link>
                 </IconArrow>
               </Main>
-              <GridContainer>
-                <PersonalData> <FormBooking/></PersonalData>
-                <Calendar><CalendarioReserva/></Calendar>
-                <ReservedProduct>este es el producto reservado</ReservedProduct>
-                <Policies>politicas de la empresa</Policies>
-                <Schedule>horario de entrega y recogida</Schedule>
-            </GridContainer>
-  
-      
+              <FormBooking dataBooking={dataBooking} setDataBooking={setDataBooking} dataHour={dataHour} setDataHour={setDataHour} dataProduct={dataProduct} />
               <Footer />
             </Container>
           

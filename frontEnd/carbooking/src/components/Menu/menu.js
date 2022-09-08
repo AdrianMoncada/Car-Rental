@@ -14,10 +14,9 @@ const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario, handleShowRegis
          </label>
          <div id="sidebar" class="sidebar">
          <ul class="menu">
-         <li ><button class = "primero" onClick={() => handleShowRegister()}>Crear cuenta</button></li>
          {usuario?.acceso ? (
           <>
-            Bienvenido {usuario.nombre}
+            Hola {usuario.name}
             <li><button class = "primero"
               onClick={() => {
                 setUsuario((user) => {
@@ -33,7 +32,10 @@ const Menum = ({ mostrarModal, cerrarModal, usuario, setUsuario, handleShowRegis
             </button></li>
           </>
         ) : (
+          <>
          <li><button class = "primero" onClick={() => mostrarModal()}>Iniciar sesion</button></li>
+         <li ><button class = "primero" onClick={() => handleShowRegister()}>Crear cuenta</button></li>
+         </>
          )}
          
        

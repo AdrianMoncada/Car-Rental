@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
@@ -30,10 +30,18 @@ import {
 import { FaCar, FaDesktop, FaWifi, FaStar} from "react-icons/fa";
 import { GiCarDoor, GiGps } from "react-icons/gi";
 import Reserva from "./CalendarioReservas/Reserva";
+import LoginModal from "../Login/LoginModal";
+import ModalRegister from "../Register/ModalRegister";
+
+
 
 const ProductDetails = () => {
-  const {state} = useContext(AppContext)
-  console.log(state);
+
+
+   const {...headersProps} = useContext(AppContext);
+  console.log(headersProps.mostrarModal)
+
+
   const [modalState, setModalState] = useState(false);
 
   const { id } = useParams();
@@ -47,15 +55,18 @@ const ProductDetails = () => {
     request();
   }, [id]);
 
-  console.log(dataProduct);
+  //console.log(dataProduct);
+
 
   return (
     <div>
       {dataProduct &&
         dataProduct?.map((product) => (
           <Container>
-            <Header />
-
+            <Header headersProps={headersProps}  />
+            <LoginModal  usuario={headersProps.usuario} setUsuario={headersProps.setUsuario} mostrarRegister={headersProps.mostrarRegister} cerrarModal={headersProps.cerrarModal} cierraLoginAbreRegistro={headersProps.cierraLoginAbreRegistro} />
+            <ModalRegister headersProps={headersProps} >
+    </ModalRegister>
             <Main>
               <InfoProduct>
                 <h2>{product.category.name}</h2>
@@ -190,7 +201,7 @@ const ProductDetails = () => {
                 </ul>
               </Text>
             </BlockPolicies>
-            <Reserva />
+            <Reserva id={id} />
             <Footer />
           </Container>
         ))}
