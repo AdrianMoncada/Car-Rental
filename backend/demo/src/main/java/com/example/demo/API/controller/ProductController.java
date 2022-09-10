@@ -6,6 +6,7 @@ import com.example.demo.API.service.CityService;
 import com.example.demo.API.service.ProductService;
 import com.example.demo.userAPI.persistance.entities.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -50,12 +51,37 @@ public class ProductController {
         return productService.findByCityId(id);
     }
 
-    @GetMapping("reservation/{idCity}")
+    /*@GetMapping("reservation/{idCity}")
     public List<Product> findByCityIdAndDate(@PathVariable Long idCity, @RequestBody Reservation reservation){
         System.out.println(idCity);
         System.out.println(reservation.getStartDate());
         System.out.println(reservation.getEndDate());
         return productService.findByCityIdAndDate(idCity, reservation.getStartDate(), reservation.getEndDate());
+    }*/
+
+    /*@RequestMapping(value="/reservation", method = RequestMethod.GET)
+    public @ResponseBody
+    List<Product> findByCityIdAndDate(@RequestParam Long idCity, @RequestParam LocalDate startDate, @RequestParam LocalDate endDate){
+        System.out.println(idCity + " " + startDate + " " + endDate);
+        return productService.findByCityIdAndDate(idCity, startDate, endDate);
+    }*/
+
+    /*@GetMapping("/reservation")
+    @ResponseBody
+    public List<Product> findByCityIdAndDate(@RequestParam Long idCity,
+                                             @RequestParam String startDate,
+                                             @RequestParam String endDate){
+
+        return productService.findByCityIdAndDate(idCity, startDate, endDate);
+    }*/
+
+    @GetMapping("/reservation")
+    @ResponseBody
+    public List<Product> findByCityIdAndDate(@RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate fromDate,
+                                             @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate toDate,
+                                             @RequestParam("cityId") Long cityId){
+
+        return productService.findByCityIdAndDate(cityId, fromDate, toDate);
     }
 
     @PostMapping

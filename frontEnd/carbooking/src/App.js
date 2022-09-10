@@ -1,5 +1,5 @@
-import './App.css';
-import { BrowserRouter,Routes,Route,} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from './pages/home/home';
 import ProductDetails from './pages/Product/ProductDetails';
@@ -10,6 +10,27 @@ import useInitialState from './hooks/useInitialState';
 import Booking from './pages/Bookings/FormBooking';
 
 function App() {
+
+  // POST RESERVA FUNCIONAL
+  const settings = {
+    method: "GET",
+    headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json",
+    }
+}
+
+  fetch("http://localhost:8080/products/reservation?cityId={cityId}&from={start}&to={to}", settings)
+    .then((response) => {
+      if (response.ok) {
+        console.log("respuesta: ", response);
+        return response.json();
+      } else if (response.ok !== true) console.log("diff de OK");
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+
 
   //No se vuelve a modificar
   const initialState = useInitialState();

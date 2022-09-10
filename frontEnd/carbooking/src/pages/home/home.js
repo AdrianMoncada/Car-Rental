@@ -15,6 +15,28 @@ import { Container } from "./home.styles";
 
 
 const Home = () => {
+  
+
+  // fetch(`http://18.219.33.103:8080/users/alguien@gmail.com`)
+  //           .then((data) => {
+  //             let info = data.json()
+  //             Se espera que sea un 200 ok
+  //             console.log(info)})           
+  //           .then((data) => {
+  //             console.log("data " + data)
+  //             ;})
+  //         .catch((error) => {
+  //            console.error("RESPUESTA GET ERROR", error);
+  //         });
+
+    fetch(`http://18.219.33.103:8080/users/alguien@gmail.com`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = data;
+      console.log(authors.id)
+    })
 
   const location = useLocation();
   const navigate = useNavigate();

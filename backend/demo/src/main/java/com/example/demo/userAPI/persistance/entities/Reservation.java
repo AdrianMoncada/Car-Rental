@@ -42,4 +42,9 @@ public class Reservation {
         this.user = user;
         this.product = product;
     }
+
+    public Reservation(LocalDate startDate, LocalDate endDate) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 }
