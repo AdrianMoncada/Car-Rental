@@ -33,9 +33,12 @@ public class UserController {
         return service.getAll();
     }
 
-    @GetMapping("/getByEmail")
-    public User getByemail(@RequestBody User user){
-        return service.getByemail(user.getEmail());
+    @GetMapping("/{email}")
+    public ResponseEntity<?> getByemail(@PathVariable String email){
+        if(service.exist(email)){
+            return ResponseEntity.status(HttpStatus.OK).body(service.getByemail(email));
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario inexistente con email: " + email);
     }
 
     @PostMapping

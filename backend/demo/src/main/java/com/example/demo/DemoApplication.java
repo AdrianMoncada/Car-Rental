@@ -33,7 +33,7 @@ public class DemoApplication {
 		FilterRegistrationBean<AuthFilter> registrationBean = new FilterRegistrationBean<>();
 		AuthFilter authFilter = new AuthFilter();
 		registrationBean.setFilter(authFilter);
-		registrationBean.addUrlPatterns("/users/tokenFilter");
+		registrationBean.addUrlPatterns("/users/tokenFilter", "/reservations/JWT");
 		return registrationBean;
 	}
 

@@ -26,6 +26,7 @@ import "./banner.css";
     // setCheckOutDate(null);
   };
 
+  
   // define handler change function on check-out date
   const handleCheckOutDate = (date) => {
     setCheckOutDate(date);
@@ -53,6 +54,7 @@ import "./banner.css";
   }
   // const [categoryValue, setCategoryValue] = useState("");
 
+
   return (
     <BrowserContainer>
       <h4>Alquila tu vehiculo</h4>
@@ -70,6 +72,7 @@ import "./banner.css";
           <DatePicker className="checkIn"
             placeholderText="Fecha de recogida"
             selected={checkInDate}
+            
             minDate={new Date()}
             onChange={handleCheckInDate}
           />
@@ -85,11 +88,18 @@ import "./banner.css";
           />
         </CheckOutContainer>
         <ButtonContainer>
-            <Button onClick={search}>Buscar</Button>
+            <Button onClick={search()}>Buscar</Button>
         </ButtonContainer>
      
     </BrowserContainer>
   );
 };
+
+// handleCheckInDate
+// handleCheckOutDate
+
+// render() {
+//     return <button onClick={this.handleClick(checkInDate, checkOutDate)}>Speak</button>;
+//   }
 
 export default Banner;
