@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "6cff083a-4615-4c4d-adf4-9af664eb39c7",
+		"name": "CATEGORY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18125925"
+	},
+	"item": [
+		{
+			"name": "CREATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", () => {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"const response = pm.response.json();",
+							"",
+							"pm.globals.set(\"variable_id\", response.id);",
+							"",
+							"pm.test(\"Response object should not have null values\", () => {",
+							"    pm.expect(response.title).to.not.be.null;",
+							"    pm.expect(response.description).to.not.be.null;",
+							"    pm.expect(response.urlImage).to.not.be.null;",
+							"});",
+							"",
+							"postman.setNextRequest(\"GET ALL\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"{{$randomAdjective}} car\",\n    \"description\": \"{{$randomCatchPhraseDescriptor}}, {{$randomCatchPhraseDescriptor}}\",\n    \"urlImage\": \"{{$randomTransportImage}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLBASE}}categories",
+					"host": [
+						"{{URLBASE}}categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"response must be valid and have a body\", function () {",
+							"pm.collectionVariables.get(\"variable_key\");",
+							"pm.environment.get(\"variable_key\");",
+							"     pm.response.to.be.ok;",
+							"     pm.response.to.be.withBody;",
+							"     pm.response.to.be.json;",
+							"});",
+							"",
+							"postman.setNextRequest(\"UPDATE\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLBASE}}categories",
+					"host": [
+						"{{URLBASE}}categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"if (pm.response.code === 200) { ",
+							"const response = pm.response.json();",
+							"",
+							"pm.test(\"Response object should not have null values\", () => {",
+							"    pm.expect(response.title).to.not.be.null;",
+							"    pm.expect(response.description).to.not.be.null;",
+							"    pm.expect(response.urlImage).to.not.be.null;",
+							"});",
+							"}",
+							"postman.setNextRequest(\"DELETE\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"title\": \"minivan\",\n        \"description\": \"minivan\",\n        \"urlImage\": \"minivan.COM\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URLBASE}}categories/{{variable_id}}",
+					"host": [
+						"{{URLBASE}}categories"
+					],
+					"path": [
+						"{{variable_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URLBASE}}categories/{{variable_id}}",
+					"host": [
+						"{{URLBASE}}categories"
+					],
+					"path": [
+						"{{variable_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "[{\"key\":\"{{URL}}\",\"value\":\"\",\"enabled\":true,\"type\":\"default\",\"sessionValue\":\"http://localhost:8080/\",\"sessionIndex\":0}]"
+		}
+	]
+}

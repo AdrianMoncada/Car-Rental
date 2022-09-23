@@ -1,0 +1,123 @@
+{
+	"id": "fd104359-0818-4652-9f4b-39ff7936a392",
+	"name": "API-CLOUD",
+	"timestamp": "2022-09-22T02:44:23.418Z",
+	"collection_id": "20434972-e2ff3e3c-5372-4930-bd5b-1f7501a9feb1",
+	"folder_id": "20434972-2640e6de-a76c-47a3-8282-56eaf8455b5f",
+	"environment_id": "0",
+	"totalPass": 5,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "59a3c3ae-3572-4e44-b62a-129c1f64d91c",
+			"name": "CREATE RESERVATION",
+			"url": "http://18.219.33.103:8080/reservations",
+			"time": 444,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				444
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "769b80a4-c39d-4b7d-b664-ce4b453c904e",
+			"name": "GET ALL RESERVATIONS",
+			"url": "http://18.219.33.103:8080/reservations",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				217
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "7296cfbd-79bf-499c-aa23-c725b06587e1",
+			"name": "GET BY PRODUCT ID",
+			"url": "http://18.219.33.103:8080/reservations/4",
+			"time": 250,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				250
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 911,
+	"collection": {
+		"requests": [
+			{
+				"id": "59a3c3ae-3572-4e44-b62a-129c1f64d91c",
+				"method": "POST"
+			},
+			{
+				"id": "769b80a4-c39d-4b7d-b664-ce4b453c904e",
+				"method": "GET"
+			},
+			{
+				"id": "7296cfbd-79bf-499c-aa23-c725b06587e1",
+				"method": "GET"
+			}
+		]
+	}
+}

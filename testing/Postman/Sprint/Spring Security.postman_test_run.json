@@ -1,0 +1,49 @@
+{
+	"id": "76a4457b-381f-429e-bd40-a0cd71536686",
+	"name": "Spring Security",
+	"timestamp": "2022-09-22T02:58:21.833Z",
+	"collection_id": "20434972-75fc9a22-a12b-4720-b22d-2ee47c8c880b",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 1,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "faff4f42-ea75-439f-b643-8c4c4877ae89",
+			"name": "Auth",
+			"url": "http://18.219.33.103:8080/auth/token",
+			"time": 528,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				528
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 528,
+	"collection": {
+		"requests": [
+			{
+				"id": "faff4f42-ea75-439f-b643-8c4c4877ae89",
+				"method": "POST"
+			}
+		]
+	}
+}

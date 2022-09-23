@@ -1,0 +1,191 @@
+{
+	"id": "332d87ce-26c7-4408-aad2-e1024fcb1ad3",
+	"name": "API-CLOUD",
+	"timestamp": "2022-09-22T02:43:38.338Z",
+	"collection_id": "20434972-e2ff3e3c-5372-4930-bd5b-1f7501a9feb1",
+	"folder_id": "20434972-92c00eed-5ec6-4caa-ac16-9588231e324c",
+	"environment_id": "0",
+	"totalPass": 7,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "2970ba80-3439-4f07-8e27-e693d0358df9",
+			"name": "POST CHARACTERISTIC",
+			"url": "http://18.219.33.103:8080/characteristics",
+			"time": 399,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				399
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "09276870-d08c-463b-8eb8-8f42f0b696c3",
+			"name": "GET ALL",
+			"url": "http://18.219.33.103:8080/characteristics",
+			"time": 190,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				190
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "9d7f156f-d5eb-4f8b-8f29-3092daed11f4",
+			"name": "GET BY ID",
+			"url": "http://18.219.33.103:8080/characteristics/6",
+			"time": 190,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				190
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "e98974b0-1a15-4dcb-af88-1c494f37fae6",
+			"name": "PUT CHARACTERISTIC",
+			"url": "http://18.219.33.103:8080/characteristics/67",
+			"time": 211,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				211
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "4d61accf-da9b-4e8e-8d55-f85c051a5c87",
+			"name": "DELETE CHARACTERISTIC",
+			"url": "http://18.219.33.103:8080/characteristics/66",
+			"time": 202,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 200": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Status code is 200": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1192,
+	"collection": {
+		"requests": [
+			{
+				"id": "2970ba80-3439-4f07-8e27-e693d0358df9",
+				"method": "POST"
+			},
+			{
+				"id": "09276870-d08c-463b-8eb8-8f42f0b696c3",
+				"method": "GET"
+			},
+			{
+				"id": "9d7f156f-d5eb-4f8b-8f29-3092daed11f4",
+				"method": "GET"
+			},
+			{
+				"id": "e98974b0-1a15-4dcb-af88-1c494f37fae6",
+				"method": "PUT"
+			},
+			{
+				"id": "4d61accf-da9b-4e8e-8d55-f85c051a5c87",
+				"method": "DELETE"
+			}
+		]
+	}
+}

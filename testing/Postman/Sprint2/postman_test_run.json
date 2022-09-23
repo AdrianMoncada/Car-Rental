@@ -1,0 +1,160 @@
+{
+	"id": "f05cf180-d89a-48d6-a1a2-eee726d4245a",
+	"name": "CATEGORY",
+	"timestamp": "2022-08-09T17:39:35.565Z",
+	"collection_id": "20434972-6cff083a-4615-4c4d-adf4-9af664eb39c7",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 7,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "fb131f6f-7e09-4a79-801e-6095f32d2cbb",
+			"name": "CREATE",
+			"url": "http://localhost:8080/categories",
+			"time": 92,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				92
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "07c74920-b65a-4ca6-acb0-2a95d3edbf9c",
+			"name": "GET ALL",
+			"url": "http://localhost:8080/categories",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "c62348ed-0d03-4046-9635-dd36a97cddff",
+			"name": "UPDATE",
+			"url": "http://localhost:8080/categories/7",
+			"time": 39,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response object should not have null values": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response object should not have null values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				39
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response object should not have null values": true
+				}
+			]
+		},
+		{
+			"id": "e96f7a69-bf0a-4bd0-84f3-ff8658f3843a",
+			"name": "DELETE",
+			"url": "http://localhost:8080/categories/7",
+			"time": 30,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				30
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 182,
+	"collection": {
+		"requests": [
+			{
+				"id": "fb131f6f-7e09-4a79-801e-6095f32d2cbb",
+				"method": "POST"
+			},
+			{
+				"id": "07c74920-b65a-4ca6-acb0-2a95d3edbf9c",
+				"method": "GET"
+			},
+			{
+				"id": "c62348ed-0d03-4046-9635-dd36a97cddff",
+				"method": "PUT"
+			},
+			{
+				"id": "e96f7a69-bf0a-4bd0-84f3-ff8658f3843a",
+				"method": "DELETE"
+			}
+		]
+	}
+}

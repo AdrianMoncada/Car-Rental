@@ -1,0 +1,80 @@
+{
+	"id": "dd53e17b-f42c-42db-962f-8dcbf3fab8d9",
+	"name": "Production",
+	"timestamp": "2022-09-22T02:57:13.975Z",
+	"collection_id": "20434972-b11a3146-3b83-42b8-9957-0cfb81fc1138",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 2,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "ebf52ad4-d89f-4ce6-bd16-77183fb216f6",
+			"name": "New User Admin",
+			"url": "http://18.219.33.103:8080/api/v1/user",
+			"time": 294,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				294
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "5fea946a-0366-4fd1-8838-75b1663e0bdb",
+			"name": "New User",
+			"url": "http://18.219.33.103:8080/api/v1/user",
+			"time": 294,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				294
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 588,
+	"collection": {
+		"requests": [
+			{
+				"id": "ebf52ad4-d89f-4ce6-bd16-77183fb216f6",
+				"method": "POST"
+			},
+			{
+				"id": "5fea946a-0366-4fd1-8838-75b1663e0bdb",
+				"method": "POST"
+			}
+		]
+	}
+}

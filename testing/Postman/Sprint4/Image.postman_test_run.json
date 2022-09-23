@@ -1,0 +1,80 @@
+{
+	"id": "a280d9f4-1e30-4dfd-8901-25cb66768b0b",
+	"name": "API-CLOUD",
+	"timestamp": "2022-09-22T02:43:14.543Z",
+	"collection_id": "20434972-e2ff3e3c-5372-4930-bd5b-1f7501a9feb1",
+	"folder_id": "20434972-b1446844-7eeb-47af-840c-624133ced8c2",
+	"environment_id": "0",
+	"totalPass": 1,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "39b87882-d23c-499f-91ff-55080f22bb21",
+			"name": "POST IMAGE",
+			"url": "http://18.219.33.103:8080/images",
+			"time": 407,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				407
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7c6b29a5-3a68-42f6-9f18-96dcee05db36",
+			"name": "DELETE IMAGE",
+			"url": "http://18.219.33.103:8080/images/4",
+			"time": 201,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 404": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status code is 404": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 608,
+	"collection": {
+		"requests": [
+			{
+				"id": "39b87882-d23c-499f-91ff-55080f22bb21",
+				"method": "POST"
+			},
+			{
+				"id": "7c6b29a5-3a68-42f6-9f18-96dcee05db36",
+				"method": "DELETE"
+			}
+		]
+	}
+}

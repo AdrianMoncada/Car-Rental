@@ -1,0 +1,92 @@
+{
+	"id": "d48804ce-c047-4454-ac1d-cc19b64a3e73",
+	"name": "API-USERS",
+	"timestamp": "2022-09-22T02:46:40.256Z",
+	"collection_id": "20434972-9ddc17ba-92b2-443b-ba92-e8ddc8321578",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 3,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "9359734c-fcb4-4d76-b970-a353976692e7",
+			"name": "Get All Users",
+			"url": "http://18.219.33.103:8080/api/v1/user",
+			"time": 499,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"response must be valid and have a body": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				499
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"response must be valid and have a body": true
+				}
+			]
+		},
+		{
+			"id": "adae3927-0990-4d79-bb96-76f3bbaa6584",
+			"name": "Token Filter",
+			"url": "http://18.219.33.103:8080/token",
+			"time": 254,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"response must be valid and have a body": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response must be valid and have a body": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				254
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"response must be valid and have a body": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 753,
+	"collection": {
+		"requests": [
+			{
+				"id": "9359734c-fcb4-4d76-b970-a353976692e7",
+				"method": "GET"
+			},
+			{
+				"id": "adae3927-0990-4d79-bb96-76f3bbaa6584",
+				"method": "GET"
+			}
+		]
+	}
+}
