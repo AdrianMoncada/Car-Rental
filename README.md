@@ -29,8 +29,6 @@ Available users are:
 
 |User email|Password|Role|
 |----------|--------|----|
-|admin@admin.com|pwd|Admin|
-|userman@userman.com|pwd|User manager|
-|user1@user1.com|pwd|User|
-|user2@user2.com|pwd|User|
+|admin@morgam.com|admin|Admin|
+|user1@user1.com|user1|User|
 |...|
