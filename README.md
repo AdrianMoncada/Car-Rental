@@ -13,7 +13,7 @@ The application has the following features:
 * CRUD operations on whole data;
 * sign-in to permit the registration of new users;
 * authentication based on oauth2 JWT, with token refresh;
-* consumes REST resources `/api/glee`, `/api/users` and `/api/signin`
+* consumes REST resources `/products` and `/reservations`;
 
 The server side is implemented with Spring boot, runned on an AWS EC2 instance.
 Server implementation features the following:
