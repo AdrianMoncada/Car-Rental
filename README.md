@@ -19,9 +19,7 @@ The server side is implemented with Spring boot, runned on an AWS EC2 instance.
 Server implementation features the following:
 * oauth2 JWT authentication with spring-boot, using grant types `password` and `refresh token`;
 * publish 2 authenticated REST resources `/api/glee`, `/api/users` and one public `/api/signin` for user registration;
-* method-level authorization based on `@PreAuthorize` and `@PostAuthorize`;
 * data access based on logged user's permissions;
-* Spring based JSR-349 data validation;
 * CORS configuration for running separated local server and client development environments;
 
 
